@@ -2,6 +2,7 @@
 
 import { LayoutGrid } from "@/components/ui/layout-grid";
 import { Badge } from "@/components/ui/badge";
+import AnimatedButton from "@/components/ui/animated-button";
 import { Play, Heart, Shield, Star } from "lucide-react";
 
 export default function GallerySection() {
@@ -360,17 +361,24 @@ export default function GallerySection() {
             the best possible care for your beloved companion animals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="tel:03489032106"
-              className="bg-vet-green hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300"
-            >
-              Call Now: 0348-9032106
+            <a href="tel:03489032106">
+              <AnimatedButton 
+                className="bg-vet-green hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg w-full sm:w-auto"
+                hoverScale={1.05}
+                tapScale={0.95}
+              >
+                Call Now: 0348-9032106
+              </AnimatedButton>
             </a>
-            <a 
-              href="#contact"
-              className="border-2 border-vet-blue text-vet-blue hover:bg-vet-blue hover:text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300"
-            >
-              Book Online
+            <a href="#contact">
+              <AnimatedButton 
+                variant="outline"
+                className="border-2 border-vet-blue text-vet-blue hover:bg-vet-blue hover:text-white font-semibold px-8 py-3 rounded-lg shadow-lg w-full sm:w-auto"
+                hoverScale={1.05}
+                tapScale={0.95}
+              >
+                Book Online
+              </AnimatedButton>
             </a>
           </div>
         </div>

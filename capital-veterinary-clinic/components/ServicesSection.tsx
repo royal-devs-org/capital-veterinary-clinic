@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MovingBorder } from "@/components/ui/moving-border";
+import AnimatedButton from "@/components/ui/animated-button";
 import { 
   Shield, 
   Heart, 

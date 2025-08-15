@@ -17,13 +17,56 @@ interface Review {
 }
 
 export default function TestimonialsSection() {
+  // Featured reviews (first 6 from the reviews data)
+  const featuredReviews: Review[] = [
+    {
+      name: "Hayat Ullah",
+      image: "/images/reviews/hayat-ullah.webp",
+      review: "Dr. Usama is truly one of the most compassionate and skilled vets I've come across. The staff was friendly, professional, and very attentive to my pet's needs. Highly recommend this clinic to any pet owner!",
+      rating: 5
+    },
+    {
+      name: "Hammad Afzal",
+      image: "/images/reviews/hammad-afzal.webp",
+      review: "I had a great experience at Capital Veterinary Clinic with Dr. Usama Naseer. Dr. Usama was patient, knowledgeable, and took the time to explain everything clearly. Highly recommended for anyone looking for a trustworthy vet.",
+      rating: 5
+    },
+    {
+      name: "Bro is Done",
+      image: "/images/reviews/bro-is-done.webp",
+      review: "Amazing service... I love how my cats are treated and taken care of here. Dr Usama is very patient, explained the situation of my cat carefully and extensively... forever grateful and thankful to him.",
+      rating: 5
+    },
+    {
+      name: "Raji Kanwel",
+      image: "/images/reviews/raji-kanwel.webp",
+      review: "Took my cat to get a hair cut from Dr.Usama, he and his team handled her with care. Showed professionalism and gave best advice. Very happy and satisfied with their service, totally recommend 👍🏻",
+      rating: 5
+    },
+    {
+      name: "Mubeen Mujeeb",
+      image: "/images/reviews/mubeen-mujeeb.webp",
+      review: "I can't say enough good things! When my puppies suddenly fell ill, he was there without hesitation. His compassion, quick response, and expert care made all the difference. Highly recommend!",
+      rating: 5
+    },
+    {
+      name: "Kashaf Malik",
+      image: "/images/reviews/kashaf-malik.webp",
+      review: "Doctor Usama is humble person. He gives our cats good treatment. Very caring and friendly to animals. If you look for good clinic for your pets I recommend you to come to his clinic.",
+      rating: 5
+    }
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
   
-  const groupSize =3;
+  const groupSize = 3; // Show 3 cards at a time on desktop
+  
+  // Calculate total groups for desktop
+  const totalGroups = Math.ceil(featuredReviews.length / groupSize);
   // Animated stats
   const [isVisible, setIsVisible] = useState(false);
   const [counts, setCounts] = useState({
@@ -110,71 +153,31 @@ export default function TestimonialsSection() {
     return () => clearInterval(timer);
   }, [isVisible]);
 
-  // Featured reviews (first 6 from the reviews data)
-  const featuredReviews: Review[] = [
-    {
-      name: "Hayat Ullah",
-      image: "/images/reviews/hayat-ullah.webp",
-      review: "Dr. Usama is truly one of the most compassionate and skilled vets I've come across. The staff was friendly, professional, and very attentive to my pet's needs. Highly recommend this clinic to any pet owner!",
-      rating: 5
-    },
-    {
-      name: "Hammad Afzal",
-      image: "/images/reviews/hammad-afzal.webp",
-      review: "I had a great experience at Capital Veterinary Clinic with Dr. Usama Naseer. Dr. Usama was patient, knowledgeable, and took the time to explain everything clearly. Highly recommended for anyone looking for a trustworthy vet.",
-      rating: 5
-    },
-    {
-      name: "Bro is Done",
-      image: "/images/reviews/bro-is-done.webp",
-      review: "Amazing service... I love how my cats are treated and taken care of here. Dr Usama is very patient, explained the situation of my cat carefully and extensively... forever grateful and thankful to him.",
-      rating: 5
-    },
-    {
-      name: "Raji Kanwel",
-      image: "/images/reviews/raji-kanwel.webp",
-      review: "Took my cat to get a hair cut from Dr.Usama, he and his team handled her with care. Showed professionalism and gave best advice. Very happy and satisfied with their service, totally recommend 👍🏻",
-      rating: 5
-    },
-    {
-      name: "Mubeen Mujeeb",
-      image: "/images/reviews/mubeen-mujeeb.webp",
-      review: "I can't say enough good things! When my puppies suddenly fell ill, he was there without hesitation. His compassion, quick response, and expert care made all the difference. Highly recommend!",
-      rating: 5
-    },
-    {
-      name: "Kashaf Malik",
-      image: "/images/reviews/kashaf-malik.webp",
-      review: "Doctor Usama is humble person. He gives our cats good treatment. Very caring and friendly to animals. If you look for good clinic for your pets I recommend you to come to his clinic.",
-      rating: 5
-    }
-  ];
-
-  // Auto-play carousel
+  // Auto-play carousel - move by groups of 3 on desktop
   useEffect(() => {
     if (!isAutoPlaying || isDragging) return;
     
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % featuredReviews.length);
+      setCurrentIndex((prev) => (prev + 1) % totalGroups);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying, isDragging, featuredReviews.length]);
+  }, [isAutoPlaying, isDragging, totalGroups]);
 
   const nextReview = () => {
-    setCurrentIndex((prev) => (prev + 1) % featuredReviews.length);
+    setCurrentIndex((prev) => (prev + 1) % totalGroups);
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 5000);
   };
 
   const prevReview = () => {
-    setCurrentIndex((prev) => (prev - 1 + featuredReviews.length) % featuredReviews.length);
+    setCurrentIndex((prev) => (prev - 1 + totalGroups) % totalGroups);
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 5000);
   };
 
-  const goToReview = (index: number) => {
-    setCurrentIndex(index);
+  const goToGroup = (groupIndex: number) => {
+    setCurrentIndex(groupIndex);
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 5000);
   };
@@ -317,7 +320,7 @@ export default function TestimonialsSection() {
             <motion.div
               className="flex transition-transform duration-500 ease-out"
               style={{
-                transform: `translateX(-${currentIndex * (100 / 3)}%) translateX(${dragOffset}px)`,
+                transform: `translateX(-${currentIndex * 100}%) translateX(${dragOffset}px)`,
               }}
               onMouseDown={handleDragStart}
               onMouseMove={handleDragMove}
@@ -330,56 +333,60 @@ export default function TestimonialsSection() {
               dragConstraints={{ left: 0, right: 0 }}
               whileDrag={{ cursor: "grabbing" }}
             >
-              {featuredReviews.map((review, index) => (
-                <motion.div
-                  key={index}
-                  className="flex-shrink-0 w-full md:w-1/3 px-4"
-                  whileHover={{ y: -10 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <Card className="h-full border-2 border-gray-200 hover:border-vet-blue transition-all duration-300 bg-white shadow-lg hover:shadow-2xl">
-                    <CardContent className="p-8 h-full flex flex-col">
-                      {/* Quote Icon */}
-                      <div className="flex justify-center mb-6">
-                        <div className="w-12 h-12 bg-gradient-to-br from-vet-blue to-vet-purple rounded-full flex items-center justify-center">
-                          <Quote className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
-
-                      {/* Review Text */}
-                      <p className="text-gray-700 leading-relaxed italic flex-grow text-center mb-6">
-                        "{review.review}"
-                      </p>
-
-                      {/* Rating */}
-                      <div className="flex justify-center gap-1 mb-6">
-                        {renderStars(review.rating)}
-                      </div>
-
-                      {/* Reviewer Info */}
-                      <div className="flex items-center justify-center gap-4">
-                        <div className="relative">
-                          <Image
-                            src={review.image}
-                            alt={review.name}
-                            width={60}
-                            height={60}
-                            className="rounded-full object-cover border-4 border-white shadow-lg"
-                          />
-                          <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-vet-green rounded-full flex items-center justify-center">
-                            <Heart className="w-3 h-3 text-white" />
+              {Array.from({ length: totalGroups }).map((_, groupIndex) => (
+                <div key={groupIndex} className="flex w-full flex-shrink-0">
+                  {featuredReviews.slice(groupIndex * groupSize, (groupIndex + 1) * groupSize).map((review, index) => (
+                    <motion.div
+                      key={`${groupIndex}-${index}`}
+                      className="flex-shrink-0 w-full md:w-1/3 px-4"
+                      whileHover={{ y: -10 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <Card className="h-full border-2 border-gray-200 hover:border-vet-blue transition-all duration-300 bg-white shadow-lg hover:shadow-2xl">
+                        <CardContent className="p-8 h-full flex flex-col">
+                          {/* Quote Icon */}
+                          <div className="flex justify-center mb-6">
+                            <div className="w-12 h-12 bg-gradient-to-br from-vet-blue to-vet-purple rounded-full flex items-center justify-center">
+                              <Quote className="w-6 h-6 text-white" />
+                            </div>
                           </div>
-                        </div>
-                        <div className="text-center">
-                          <h4 className="font-bold text-gray-900 text-lg">
-                            {review.name}
-                          </h4>
-                          <p className="text-gray-600">Verified Client</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+
+                          {/* Review Text */}
+                          <p className="text-gray-700 leading-relaxed italic flex-grow text-center mb-6">
+                            "{review.review}"
+                          </p>
+
+                          {/* Rating */}
+                          <div className="flex justify-center gap-1 mb-6">
+                            {renderStars(review.rating)}
+                          </div>
+
+                          {/* Reviewer Info */}
+                          <div className="flex items-center justify-center gap-4">
+                            <div className="relative">
+                              <Image
+                                src={review.image}
+                                alt={review.name}
+                                width={60}
+                                height={60}
+                                className="rounded-full object-cover border-4 border-white shadow-lg"
+                              />
+                              <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-vet-green rounded-full flex items-center justify-center">
+                                <Heart className="w-3 h-3 text-white" />
+                              </div>
+                            </div>
+                            <div className="text-center">
+                              <h4 className="font-bold text-gray-900 text-lg">
+                                {review.name}
+                              </h4>
+                              <p className="text-gray-600">Verified Client</p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </div>
               ))}
             </motion.div>
 
@@ -402,14 +409,14 @@ export default function TestimonialsSection() {
             </motion.button>
           </div>
 
-          {/* Dots Indicator */}
+          {/* Dots Indicator - Show dots for groups */}
           <div className="flex justify-center gap-3 mt-8">
-            {featuredReviews.map((_, index) => (
+            {Array.from({ length: totalGroups }).map((_, groupIndex) => (
               <motion.button
-                key={index}
-                onClick={() => goToReview(index)}
+                key={groupIndex}
+                onClick={() => goToGroup(groupIndex)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
+                  groupIndex === currentIndex 
                     ? 'bg-vet-blue scale-125' 
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}

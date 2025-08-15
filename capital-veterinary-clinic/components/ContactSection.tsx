@@ -92,10 +92,7 @@ export default function ContactSection() {
   transition={{ duration: 0.8 }}
   viewport={{ once: true }}
 >
-  {/* Background pattern */}
-  <div 
-    className="absolute inset-0 z-0 bg-[url('/images/paw-pattern.svg')] bg-cover bg-center opacity-3 mx-20" 
-  />
+
 
       <div className="container mx-auto px-4 z-10">
         {/* Header */}
@@ -366,7 +363,7 @@ export default function ContactSection() {
                   </div>
 
                   {/* Pet Information */}
-                  <div className="grid md:grid-cols-3 gap-4">
+                  <div className="grid md:grid-cols-2 gap-4 w-full">
                     <div>
                       <Label
                         htmlFor="petType"
@@ -403,7 +400,7 @@ export default function ContactSection() {
                         type="text"
                         value={formData.petAge}
                         onChange={handleInputChange}
-                        className="mt-1"
+                        className="mt-1 w-full"
                         placeholder="e.g., 2 years"
                       />
                     </div>
@@ -558,7 +555,10 @@ export default function ContactSection() {
           </div>
           
         </div>
-        
+          {/* Background pattern */}
+  <div 
+    className="absolute inset-0 z-0 bg-[url('/images/paw-pattern.svg')] bg-cover bg-center opacity-2 mx-20" 
+  />
     </motion.section>
   );
 }
