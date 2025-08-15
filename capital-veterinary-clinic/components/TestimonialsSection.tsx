@@ -23,6 +23,7 @@ export default function TestimonialsSection() {
   const [dragStart, setDragStart] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
   
+  const groupSize =3;
   // Animated stats
   const [isVisible, setIsVisible] = useState(false);
   const [counts, setCounts] = useState({

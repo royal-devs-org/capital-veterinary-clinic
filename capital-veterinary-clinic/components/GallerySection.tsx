@@ -7,22 +7,22 @@ import { Play, Heart, Shield, Star } from "lucide-react";
 export default function GallerySection() {
   // Mixed media layout grid - images and videos with uneven sizes
   const mixedMediaGrid = [
-    {
+        {
       id: 1,
       type: "image",
       content: (
         <div>
           <p className="font-bold md:text-2xl text-lg text-white">
-            Post-Surgery Recovery
+            Multiple Cats Care
           </p>
           <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-            Comprehensive post-operative care and monitoring.
+            Handling multiple pets with patience and expertise.
           </p>
         </div>
       ),
-      className: "object-top object-cover col-span-1 md:row-span-2",
-      thumbnail: "/images/media/Cat after Surgery (2).png",
-      title: "Recovery Care"
+      className: "col-span-1", // Small
+      thumbnail: "/images/media/Vet and Cats.png",
+      title: "Multi-Pet Handling"
     },
     {
       id: 2,
@@ -101,21 +101,21 @@ export default function GallerySection() {
       title: "Surgical Operations"
     },
     {
-      id: 5,
+      id: 6,
       type: "image",
       content: (
         <div>
           <p className="font-bold md:text-2xl text-lg text-white">
-            Multiple Cats Care
+            Post-Surgery Recovery
           </p>
           <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-            Handling multiple pets with patience and expertise.
+            Comprehensive post-operative care and monitoring.
           </p>
         </div>
       ),
-      className: "col-span-1", // Small
-      thumbnail: "/images/media/Vet and Cats.png",
-      title: "Multi-Pet Handling"
+      className: "object-top object-cover col-span-1 md:row-span-1",
+      thumbnail: "/images/media/Cat after Surgery (2).png",
+      title: "Recovery Care"
     },
     {
       id: 6,
@@ -307,7 +307,7 @@ export default function GallerySection() {
   ];
 
   return (
-    <section id="gallery" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="gallery" className="md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -323,11 +323,6 @@ export default function GallerySection() {
 
         {/* Mixed Media Layout Grid */}
         <div className="mb-20">
-          <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">
-            <span className="inline-flex items-center gap-2">
-              Our Medical Services & Care
-            </span>
-          </h3>
           <LayoutGrid cards={mixedMediaGrid} />
         </div>
 

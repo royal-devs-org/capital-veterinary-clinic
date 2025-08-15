@@ -187,12 +187,12 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 items-center justify-centerw-full"
               variants={itemVariants}
             >
               <AnimatedButton
                 size="lg" 
-                className="bg-vet-green hover:bg-green-600 text-white font-semibold px-8 py-4 text-lg shadow-lg"
+                className="w-full bg-vet-green hover:bg-green-600 text-white font-semibold px-8 py-4 text-lg shadow-lg"
                 hoverScale={1.05}
                 tapScale={0.95}
               >
@@ -203,7 +203,7 @@ export default function HeroSection() {
               <AnimatedButton
                 variant="outline" 
                 size="lg"
-                className="border-vet-blue text-vet-blue hover:bg-vet-blue hover:text-white font-semibold px-8 py-4 text-lg shadow-lg"
+                className="w-full border-vet-blue text-vet-blue hover:bg-vet-blue hover:text-white font-semibold px-8 py-4 text-lg shadow-lg"
                 hoverScale={1.05}
                 tapScale={0.95}
               >
@@ -214,7 +214,7 @@ export default function HeroSection() {
 
             {/* Quick Info */}
             <motion.div 
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4"
+              className="grid grid-cols-2 gap-4 pt-4"
               variants={itemVariants}
             >
               <motion.div 

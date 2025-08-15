@@ -84,16 +84,20 @@ export default function ContactSection() {
   };
 
   return (
-    <motion.section 
-      id="contact" 
-      className="relative py-20 bg-gradient-to-br from-gray-50 to-blue-50"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-    >
-         <div className="absolute inset-0 bg-[url('/images/paw-pattern.svg')] opacity-4"></div>
-      <div className="container mx-auto px-4">
+   <motion.section 
+  id="contact" 
+  className="relative py-20 bg-gradient-to-br from-gray-50 to-blue-50 overflow-hidden"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+>
+  {/* Background pattern */}
+  <div 
+    className="absolute inset-0 z-0 bg-[url('/images/paw-pattern.svg')] bg-cover bg-center opacity-3 mx-20" 
+  />
+
+      <div className="container mx-auto px-4 z-10">
         {/* Header */}
         <motion.div 
           className="text-center mb-16 "
