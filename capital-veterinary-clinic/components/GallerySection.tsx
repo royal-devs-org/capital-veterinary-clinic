@@ -1,104 +1,309 @@
 "use client";
 
 import { LayoutGrid } from "@/components/ui/layout-grid";
-import { FocusCards } from "@/components/ui/focus-cards";
 import { Badge } from "@/components/ui/badge";
+import { Play, Heart, Shield, Star } from "lucide-react";
 
 export default function GallerySection() {
-  // Layout Grid cards - mix of sizes
-  const layoutGridCards = [
+  // Mixed media layout grid - images and videos with uneven sizes
+  const mixedMediaGrid = [
     {
       id: 1,
+      type: "image",
       content: (
         <div>
-          <p className="font-bold md:text-4xl text-xl text-white">
-            Professional Surgery
+          <p className="font-bold md:text-2xl text-lg text-white">
+            Post-Surgery Recovery
           </p>
-          <p className="font-normal text-base text-white"></p>
           <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-            State-of-the-art surgical procedures performed with precision and care for your beloved pets.
+            Comprehensive post-operative care and monitoring.
           </p>
         </div>
       ),
-      className: "md:col-span-2",
-      thumbnail: "/images/media/Vet in OT (2).png",
+      className: "object-top object-cover col-span-1 md:row-span-2",
+      thumbnail: "/images/media/Cat after Surgery (2).png",
+      title: "Recovery Care"
     },
     {
       id: 2,
+      type: "video",
       content: (
         <div>
-          <p className="font-bold md:text-4xl text-xl text-white">
-            Multi-Species Care
-          </p>
-          <p className="font-normal text-base text-white"></p>
+          <div className="flex items-center gap-2 mb-2">
+            <Play className="w-6 h-6 text-white" />
+            <p className="font-bold md:text-4xl text-2xl text-white">
+              Professional Treatment
+            </p>
+          </div>
           <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-            Expert care for cats, dogs, birds, and exotic animals.
+            Watch our skilled veterinarian providing compassionate care to a feline patient.
           </p>
         </div>
       ),
-      className: "col-span-1",
-      thumbnail: "/images/media/Vet and Cats.png",
+      className: "md:col-span-2 md:row-span-2",
+      thumbnail: "/images/media/Vet treating Cat.mp4",
+      isVideo: true,
+      title: "Professional Cat Treatment"
     },
     {
       id: 3,
+      type: "image",
       content: (
         <div>
-          <p className="font-bold md:text-4xl text-xl text-white">
-            Emergency Care
+          <p className="font-bold md:text-2xl text-lg text-white">
+            Professional Uniform
           </p>
-          <p className="font-normal text-base text-white"></p>
           <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-            24/7 emergency services available for urgent pet care needs.
+            Dr. Usama Naseer in professional veterinary attire.
+          </p>
+        </div>
+      ),
+      className: "col-span-1", // Small
+      thumbnail: "/images/media/Vet in Uniform.png",
+      title: "Dr. Usama Naseer"
+    },
+    {
+      id: 4,
+      type: "video",
+      content: (
+        <div>
+          <div className="flex items-center gap-2 mb-2">
+            <Play className="w-6 h-6 text-white" />
+            <p className="font-bold md:text-3xl text-xl text-white">
+              Veterinary Excellence
+            </p>
+          </div>
+          <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+            Comprehensive care for animals of all sizes and species.
+          </p>
+        </div>
+      ),
+      className: "md:col-span-3 row-span-2",
+      thumbnail: "/images/media/Vet with different amimals.mp4",
+      isVideo: true,
+      title: "Multi-Species Care"
+    },
+    {
+      id: 5,
+      type: "image",
+      content: (
+        <div>
+          <p className="font-bold md:text-2xl text-lg text-white">
+            Surgical Expertise
+          </p>
+          <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+            State-of-the-art surgical procedures in our modern operating theater.
           </p>
         </div>
       ),
       className: "col-span-1",
-      thumbnail: "/images/media/Vet with Dog.png",
+      thumbnail: "/images/media/Vet in OT.png",
+      title: "Surgical Operations"
     },
     {
-      id: 4,
+      id: 5,
+      type: "image",
       content: (
         <div>
-          <p className="font-bold md:text-4xl text-xl text-white">
-            Exotic Animal Care
+          <p className="font-bold md:text-2xl text-lg text-white">
+            Multiple Cats Care
           </p>
-          <p className="font-normal text-base text-white"></p>
+          <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+            Handling multiple pets with patience and expertise.
+          </p>
+        </div>
+      ),
+      className: "col-span-1", // Small
+      thumbnail: "/images/media/Vet and Cats.png",
+      title: "Multi-Pet Handling"
+    },
+    {
+      id: 6,
+      type: "image",
+      content: (
+        <div>
+          <p className="font-bold md:text-3xl text-xl text-white">
+            Exotic Animal Expertise
+          </p>
           <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
             Specialized treatment for reptiles, birds, and other exotic pets.
           </p>
         </div>
       ),
-      className: "md:col-span-2",
+      className: "md:col-span-2", // Medium horizontal
       thumbnail: "/images/media/Vet with Tiger.png",
-    },
-  ];
-
-  // Focus Cards for hover effects
-  const focusCards = [
-    {
-      title: "Post-Surgery Recovery",
-      src: "/images/media/Cat after Surgery (2).png",
+      title: "Exotic Animal Care"
     },
     {
-      title: "Large Breed Specialists",
-      src: "/images/media/Vet with Husky.png",
+      id: 7,
+      type: "image",
+      content: (
+        <div>
+          <p className="font-bold md:text-2xl text-lg text-white">
+            Advanced Surgery
+          </p>
+          <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+            Modern surgical techniques with professional equipment.
+          </p>
+        </div>
+      ),
+      className: "col-span-1", // Small
+      thumbnail: "/images/media/Vet in OT (2).png",
+      title: "Advanced Surgery"
     },
     {
-      title: "Golden Retriever Care",
-      src: "/images/media/Vet with Golden Retriever.png",
+      id: 8,
+      type: "image",
+      content: (
+        <div>
+          <p className="font-bold md:text-2xl text-lg text-white">
+            Avian Medicine
+          </p>
+          <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+            Expert care for birds with specialized avian medicine knowledge.
+          </p>
+        </div>
+      ),
+      className: "col-span-1", // Small
+      thumbnail: "/images/media/Vet and Parrot.png",
+      title: "Bird Veterinary Care"
     },
     {
-      title: "Avian Medicine",
-      src: "/images/media/Vet and Parrot.png",
+      id: 9,
+      type: "image",
+      content: (
+        <div>
+          <p className="font-bold md:text-2xl text-lg text-white">
+            Canine Specialists
+          </p>
+          <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+            Professional care for dogs of all breeds and sizes.
+          </p>
+        </div>
+      ),
+      className: "md:col-span-2", // Medium horizontal
+      thumbnail: "/images/media/Vet with Dog.png",
+      title: "Dog Care Experts"
     },
     {
-      title: "Wildlife Veterinary",
-      src: "/images/media/vet with deer.jpg",
+      id: 10,
+      type: "image",
+      content: (
+        <div>
+          <p className="font-bold md:text-2xl text-lg text-white">
+            Large Breed Care
+          </p>
+          <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+            Specialized care for large breed dogs and their unique needs.
+          </p>
+        </div>
+      ),
+      className: "col-span-2 md:row-span-2", // Tall vertical
+      thumbnail: "/images/media/Vet with Husky.png",
+      title: "Large Breed Specialists"
     },
     {
-      title: "Professional Treatment",
-      src: "/images/media/Vet in Uniform.png",
+      id: 11,
+      type: "image",
+      content: (
+        <div>
+          <p className="font-bold md:text-3xl text-xl text-white">
+            Golden Retriever Care
+          </p>
+          <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+            Breed-specific care tailored to Golden Retrievers' needs.
+          </p>
+        </div>
+      ),
+      className: "md:col-span-2", // Medium horizontal
+      thumbnail: "/images/media/Vet with Golden Retriever.png",
+      title: "Golden Retriever Care"
     },
+    {
+      id: 12,
+      type: "image",
+      content: (
+        <div>
+          <p className="font-bold md:text-2xl text-lg text-white">
+            Waterfowl Treatment
+          </p>
+          <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+            Specialized care for waterfowl and aquatic birds.
+          </p>
+        </div>
+      ),
+      className: "col-span-1 ", // Small
+      thumbnail: "/images/media/Vet with Goose.png",
+      title: "Waterfowl Care"
+    },
+    {
+      id: 13,
+      type: "image",
+      content: (
+        <div>
+          <p className="font-bold md:text-3xl text-xl text-white">
+            Wildlife Veterinary
+          </p>
+          <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+            Specialized care for wildlife and conservation efforts.
+          </p>
+        </div>
+      ),
+      className: "md:col-span-3", // Wide horizontal
+      thumbnail: "/images/media/vet with deer.jpg",
+      title: "Wildlife Conservation"
+    },
+    {
+      id: 14,
+      type: "image",
+      content: (
+        <div>
+          <p className="font-bold md:text-2xl text-lg text-white">
+            Reptile Medicine
+          </p>
+          <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+            Expert care for reptiles and exotic cold-blooded animals.
+          </p>
+        </div>
+      ),
+      className: "col-span-1", // Small
+      thumbnail: "/images/media/Vet with Turtle.png",
+      title: "Reptile Specialists"
+    },
+    {
+      id: 15,
+      type: "image",
+      content: (
+        <div>
+          <p className="font-bold md:text-2xl text-lg text-white">
+            Operating Theater
+          </p>
+          <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+            Modern surgical facilities for complex procedures.
+          </p>
+        </div>
+      ),
+      className: "md:col-span-2", // Medium horizontal
+      thumbnail: "/images/media/Vet While Operating.png",
+      title: "Surgical Excellence"
+    },
+    {
+      id: 16,
+      type: "image",
+      content: (
+        <div>
+          <p className="font-bold md:text-2xl text-lg text-white">
+            Alternative Husky Care
+          </p>
+          <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+            Different approaches to large breed dog care.
+          </p>
+        </div>
+      ),
+      className: "col-span-1", // Small
+      thumbnail: "/images/media/Vet with Husky(1).png",
+      title: "Husky Care Variations"
+    }
   ];
 
   return (
@@ -116,11 +321,38 @@ export default function GallerySection() {
           </p>
         </div>
 
-        {/* Layout Grid Section */}
-
-        {/* Focus Cards Section */}
+        {/* Mixed Media Layout Grid */}
         <div className="mb-20">
-          <FocusCards cards={focusCards} />
+          <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            <span className="inline-flex items-center gap-2">
+              Our Medical Services & Care
+            </span>
+          </h3>
+          <LayoutGrid cards={mixedMediaGrid} />
+        </div>
+
+        {/* Statistics Section */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div className="text-center">
+            <Shield className="w-12 h-12 text-vet-blue mx-auto mb-4" />
+            <div className="text-3xl font-bold text-gray-900 mb-2">200+</div>
+            <div className="text-gray-600">Happy Pets Treated</div>
+          </div>
+          <div className="text-center">
+            <Heart className="w-12 h-12 text-red-500 mx-auto mb-4" />
+            <div className="text-3xl font-bold text-gray-900 mb-2">4+</div>
+            <div className="text-gray-600">Years Experience</div>
+          </div>
+          <div className="text-center">
+            <Star className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
+            <div className="text-3xl font-bold text-gray-900 mb-2">24/7</div>
+            <div className="text-gray-600">Emergency Care</div>
+          </div>
+          <div className="text-center">
+            <Shield className="w-12 h-12 text-vet-green mx-auto mb-4" />
+            <div className="text-3xl font-bold text-gray-900 mb-2">100%</div>
+            <div className="text-gray-600">Care Dedication</div>
+          </div>
         </div>
 
         {/* Call to Action */}

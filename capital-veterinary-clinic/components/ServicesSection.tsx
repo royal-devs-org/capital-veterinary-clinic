@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { MovingBorder } from "@/components/ui/moving-border";
 import { 
   Shield, 
   Heart, 
@@ -157,19 +158,29 @@ export default function ServicesSection() {
         </div>
 
         {/* Additional Services */}
-        <Card className="bg-white border-vet-purple border-2">
-          <CardContent className="p-8">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 mb-4">
-                <PlusCircle className="w-6 h-6 text-vet-purple" />
-                <h3 className="text-2xl font-bold text-vet-purple font-heading">
-                  Additional Services
-                </h3>
+        <MovingBorder 
+          duration={6}
+          borderColors={[
+            "#412F85", // purple-500
+            "#53B7E9", // cyan-500  
+            "#4CB735", // emerald-500
+            "#412F85", // back to purple
+          ]}
+          className="relative"
+        >
+          <Card className="bg-white border-0 shadow-none">
+            <CardContent className="p-8">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 mb-4">
+                  <PlusCircle className="w-6 h-6 text-vet-purple" />
+                  <h3 className="text-2xl font-bold text-vet-purple font-heading">
+                    Additional Services
+                  </h3>
+                </div>
+                <p className="text-gray-600">
+                  Complete care solutions for all your pet's health and wellness needs
+                </p>
               </div>
-              <p className="text-gray-600">
-                Complete care solutions for all your pet's health and wellness needs
-              </p>
-            </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {additionalServices.map((service, index) => (
@@ -182,8 +193,9 @@ export default function ServicesSection() {
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </MovingBorder>
 
         {/* Call to Action */}
         <div className="text-center mt-12">

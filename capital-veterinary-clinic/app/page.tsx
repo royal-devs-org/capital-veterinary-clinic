@@ -51,9 +51,9 @@ export default function Home() {
         </AnimatedSection>
       </ClientOnly>
       
-      {/* <AnimatedSection delay={1.2}>
+      <AnimatedSection delay={1.2}>
         <Footer />
-      </AnimatedSection> */}
+      </AnimatedSection>
     </main>
   );
 }

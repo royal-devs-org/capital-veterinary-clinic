@@ -86,16 +86,17 @@ export default function ContactSection() {
   return (
     <motion.section 
       id="contact" 
-      className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50"
+      className="relative py-20 bg-gradient-to-br from-gray-50 to-blue-50"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
+         <div className="absolute inset-0 bg-[url('/images/paw-pattern.svg')] opacity-4"></div>
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-16 "
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -111,7 +112,7 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 bg-white z-10">
           {/* Contact Information */}
           <motion.div 
             className="space-y-8"

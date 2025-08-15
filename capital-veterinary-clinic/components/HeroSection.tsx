@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import AnimatedButton from "@/components/ui/animated-button";
-import { Phone, Clock, MapPin, Heart, Shield, Star } from "lucide-react";
-import { motion } from "framer-motion";
+import { Phone, Clock, MapPin, Heart, Shield, Star, Send } from "lucide-react";
+import { motion, easeOut } from "framer-motion";
 import { useState, useEffect } from "react";
 
 export default function HeroSection() {
@@ -40,7 +40,7 @@ export default function HeroSection() {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
+        ease: easeOut
       }
     }
   };
@@ -55,7 +55,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-white via-blue-50 to-green-50 min-h-screen flex items-center overflow-hidden">
+    <section className="relative bg-gradient-to-br from-white via-blue-50 to-green-50 min-h-screen flex items-center overflow-hidden py-6">
       {/* Animated Background Pattern */}
       <motion.div 
         className="absolute inset-0 opacity-5"
@@ -196,7 +196,7 @@ export default function HeroSection() {
                 hoverScale={1.05}
                 tapScale={0.95}
               >
-                <Heart className="w-5 h-5 mr-2" />
+                <Send className="w-5 h-5 mr-2" />
                 Book an Appointment
               </AnimatedButton>
               
