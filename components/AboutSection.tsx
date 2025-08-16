@@ -8,7 +8,7 @@ export default function AboutSection() {
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* left Content - Images */}
+          {/* left Content - Images */}
           <div className="space-y-6">
             {/* Main Image */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
@@ -19,31 +19,6 @@ export default function AboutSection() {
                 height={400}
                 className="object-cover object-top w-full h-160"
               />
-            </div>
-
-            {/* Clinic Info Cards */}
-            <div className="grid grid-cols-2 gap-4">
-              <Card className="bg-gradient-to-br from-indigo-200 via-indigo-400 to-blue-600 text-white shadow-md">
-                <CardContent className="p-5">
-                  <MapPin className="w-8 h-8 mb-3" />
-                  <h4 className="font-semibold mb-2">Prime Location</h4>
-                  <p className="text-sm opacity-90">
-                    Westridge 1, opposite Punjab Cash & Carry, Rawalpindi Cantt
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-green-200 via-green-500 to-emerald-600 text-white shadow-md">
-                <CardContent className="p-5">
-                  <Clock className="w-8 h-8 mb-3" />
-                  <h4 className="font-semibold mb-2">Always Available</h4>
-                  <p className="text-sm opacity-90">
-                    OPD: 11 AM - 11 PM
-                    <br />
-                    Emergency: 24/7
-                  </p>
-                </CardContent>
-              </Card>
             </div>
           </div>
 
@@ -57,7 +32,7 @@ export default function AboutSection() {
                 Meet Dr. Usama Naseer
               </h2>
               <p className="text-xl text-vet-blue font-medium">
-                Your Trusted Veterinary Partner in Rawalpindi
+                Your Trusted Veterinary Partner
               </p>
             </div>
 
@@ -110,42 +85,7 @@ export default function AboutSection() {
                 </CardContent>
               </Card>
             </div>
-
-            {/* Key Features */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-vet-purple">
-                Why Choose Capital Veterinary Clinic?
-              </h3>
-              <div className="grid gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-vet-green rounded-full"></div>
-                  <span className="text-gray-700">
-                    24/7 Emergency Services - Always here when you need us
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-vet-green rounded-full"></div>
-                  <span className="text-gray-700">
-                    Multi-species expertise - Cats, dogs, birds, and reptiles
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-vet-green rounded-full"></div>
-                  <span className="text-gray-700">
-                    Home visit services available across multiple cities
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-vet-green rounded-full"></div>
-                  <span className="text-gray-700">
-                    Modern clinic with state-of-the-art equipment
-                  </span>
-                </div>
-              </div>
-            </div>
           </div>
-
-          
         </div>
       </div>
     </section>

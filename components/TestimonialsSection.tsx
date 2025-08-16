@@ -336,55 +336,86 @@ export default function TestimonialsSection() {
               {Array.from({ length: totalGroups }).map((_, groupIndex) => (
                 <div key={groupIndex} className="flex w-full flex-shrink-0">
                   {featuredReviews.slice(groupIndex * groupSize, (groupIndex + 1) * groupSize).map((review, index) => (
-                    <motion.div
-                      key={`${groupIndex}-${index}`}
-                      className="flex-shrink-0 w-full md:w-1/3 px-4"
-                      whileHover={{ y: -10 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <Card className="h-full border-2 border-gray-200 hover:border-vet-blue transition-all duration-300 bg-white shadow-lg hover:shadow-2xl">
-                        <CardContent className="p-8 h-full flex flex-col">
-                          {/* Quote Icon */}
-                          <div className="flex justify-center mb-6">
-                            <div className="w-12 h-12 bg-gradient-to-br from-vet-blue to-vet-purple rounded-full flex items-center justify-center">
-                              <Quote className="w-6 h-6 text-white" />
-                            </div>
-                          </div>
+                    <motion.div 
+  key={`${groupIndex}-${index}`}
+  className="flex-shrink-0 w-full md:w-1/3 px-4"
+  whileHover={{ y: -10 }}
+  transition={{ type: "spring", stiffness: 300 }}
+>
+  <Card className="h-full relative overflow-hidden bg-gradient-to-br from-[#53B7E9]/10 via-white to-[#412F85]/10 border border-[#53B7E9]/20 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 group">
+    
+    {/* Animated Gradient Border */}
+    <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-br from-[#53B7E9]/10 to-[#53B7E9]/40 opacity-80 group-hover:opacity-100 blur-[2px] transition" />
+    
+    <CardContent className="relative z-10 p-8 h-full flex flex-col">
+      
+      {/* Quote Badge */}
+      <div className="flex justify-center mb-6">
+        <motion.div 
+          className="w-16 h-16 bg-gradient-to-br from-[#53B7E9] to-[#412F85] rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+          whileHover={{ rotate: 360 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Quote className="w-8 h-8 text-white" />
+        </motion.div>
+      </div>
 
-                          {/* Review Text */}
-                          <p className="text-gray-700 leading-relaxed italic flex-grow text-center mb-6">
-                            "{review.review}"
-                          </p>
+      {/* Review Text */}
+      <div className="relative mb-6 flex-grow">
+        <p className="text-gray-800 leading-relaxed text-center font-medium italic text-lg">
+          "{review.review}"
+        </p>
+        {/* Decorative subtle pattern */}
+        <div className="absolute inset-0 bg-[url('/images/paw-pattern.svg')] bg-center bg-cover opacity-5 pointer-events-none"></div>
+      </div>
 
-                          {/* Rating */}
-                          <div className="flex justify-center gap-1 mb-6">
-                            {renderStars(review.rating)}
-                          </div>
+      {/* Rating */}
+      <div className="flex justify-center gap-1 mb-6">
+        {renderStars(review.rating).map((star, starIndex) => (
+          <motion.div
+            key={starIndex}
+            initial={{ scale: 0, rotate: -180 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ delay: starIndex * 0.1, type: "spring", stiffness: 500 }}
+          >
+            {star}
+          </motion.div>
+        ))}
+      </div>
 
-                          {/* Reviewer Info */}
-                          <div className="flex items-center justify-center gap-4">
-                            <div className="relative">
-                              <Image
-                                src={review.image}
-                                alt={review.name}
-                                width={60}
-                                height={60}
-                                className="rounded-full object-cover border-4 border-white shadow-lg"
-                              />
-                              <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-vet-green rounded-full flex items-center justify-center">
-                                <Heart className="w-3 h-3 text-white" />
-                              </div>
-                            </div>
-                            <div className="text-center">
-                              <h4 className="font-bold text-gray-900 text-lg">
-                                {review.name}
-                              </h4>
-                              <p className="text-gray-600">Verified Client</p>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
+      {/* Reviewer Info */}
+      <motion.div 
+        className="flex items-center justify-center gap-4 p-4 bg-gradient-to-br from-white/80 to-[#53B7E9]/10 backdrop-blur-sm rounded-xl border border-[#412F85]/10 shadow-inner"
+        whileHover={{ scale: 1.02 }}
+        transition={{ type: "spring", stiffness: 400 }}
+      >
+        <div className="relative">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#53B7E9] to-[#412F85] p-1">
+            <Image
+              src={review.image}
+              alt={review.name}
+              width={60}
+              height={60}
+              className="rounded-full object-cover w-full h-full"
+            />
+          </div>
+          <motion.div 
+            className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-br from-[#4CB735] to-green-500 rounded-full flex items-center justify-center shadow-lg"
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <Heart className="w-3 h-3 text-white" />
+          </motion.div>
+        </div>
+        <div className="text-center">
+          <h4 className="font-bold text-gray-900 text-lg">{review.name}</h4>
+          <p className="text-[#412F85] font-medium text-sm">Verified Client</p>
+        </div>
+      </motion.div>
+    </CardContent>
+  </Card>
+</motion.div>
+
                   ))}
                 </div>
               ))}
@@ -435,54 +466,22 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <Card className="inline-block border-vet-purple border-2 bg-gradient-to-r from-purple-50 to-blue-50 shadow-xl">
-            <CardContent className="p-8">
-              <div className="space-y-4">
-                <div className="flex items-center justify-center gap-2">
-                  <Star className="w-6 h-6 text-yellow-500 fill-current" />
-                  <Star className="w-6 h-6 text-yellow-500 fill-current" />
-                  <Star className="w-6 h-6 text-yellow-500 fill-current" />
-                  <Star className="w-6 h-6 text-yellow-500 fill-current" />
-                  <Star className="w-6 h-6 text-yellow-500 fill-current" />
-                </div>
-                
-                <h3 className="text-2xl font-bold text-gray-900">
-                  Join 200+ Happy Pet Families
-                </h3>
-                
-                <p className="text-gray-600 max-w-md">
-                  Experience the same level of care and compassion that has earned us 
-                  consistently 5-star reviews from pet owners across the region.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <AnimatedButton 
-                    className="bg-vet-green hover:bg-green-600 text-white font-semibold shadow-lg"
-                    hoverScale={1.05}
-                    tapScale={0.95}
-                  >
-                    Book Your Appointment
-                  </AnimatedButton>
-                  
-                  <a
-                    href="https://share.google/SyksRwKyMUEHegTTO"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <AnimatedButton 
-                      variant="outline" 
-                      className="border-vet-blue text-vet-blue hover:bg-vet-blue hover:text-white font-semibold w-full sm:w-auto shadow-lg"
-                      hoverScale={1.05}
-                      tapScale={0.95}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      See All 200+ Reviews
-                    </AnimatedButton>
-                  </a>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <a
+            href="https://share.google/SyksRwKyMUEHegTTO"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AnimatedButton 
+              size="lg"
+              variant="outline" 
+              className="border-vet-blue text-vet-blue hover:bg-vet-blue hover:text-white font-semibold shadow-lg"
+              hoverScale={1.05}
+              tapScale={0.95}
+            >
+              <ExternalLink className="w-5 h-5 mr-2" />
+              See All 200+ Reviews on Google
+            </AnimatedButton>
+          </a>
         </motion.div>
       </div>
     </motion.section>

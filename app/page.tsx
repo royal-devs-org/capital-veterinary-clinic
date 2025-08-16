@@ -2,9 +2,9 @@ import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
-import ServiceAreasSection from "@/components/ServiceAreasSection";
 import GallerySection from "@/components/GallerySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import HappyFamiliesSection from "@/components/HappyFamiliesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ClientOnly from "@/components/ClientOnly";
@@ -21,17 +21,14 @@ export default function Home() {
         <HeroSection />
       </div>
       
-      <AnimatedSection>
+      <AnimatedSection >
+        <ServicesSection />
+      </AnimatedSection>
+
+      <AnimatedSection delay={0.2}>
         <AboutSection />
       </AnimatedSection>
       
-      <AnimatedSection delay={0.2}>
-        <ServicesSection />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={0.4}>
-        <ServiceAreasSection />
-      </AnimatedSection>
       
       <ClientOnly>
         <AnimatedSection delay={0.6}>
@@ -43,6 +40,10 @@ export default function Home() {
         <AnimatedSection delay={0.8}>
           <TestimonialsSection />
         </AnimatedSection>
+      </ClientOnly>
+      
+      <ClientOnly>
+        <HappyFamiliesSection />
       </ClientOnly>
       
       <ClientOnly>

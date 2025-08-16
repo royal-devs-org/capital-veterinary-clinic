@@ -178,63 +178,49 @@ export default function Footer() {
             {/* Social Media */}
             <div>
               <h3 className="text-lg font-bold mb-4">Follow Us</h3>
-              <div className="flex flex-wrap gap-4">
-                <a
+              <div className="flex gap-4">
+                <motion.a
                   href="https://www.instagram.com/capital_veterinary_clinic/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-gradient-to-r from-pink-500 to-yellow-500 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                >
-                  <Instagram className="w-4 h-4" />
-                  @capital_veterinary_clinic
-                </a>
-                
-                <motion.a
-                  href="https://www.instagram.com/dr_usama_naseer/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="w-12 h-12 bg-gradient-to-r from-pink-500 to-yellow-500 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
+                  whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Instagram className="w-4 h-4" />
-                  @dr_usama_naseer
+                  <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </motion.a>
                 
                 <motion.a
                   href="https://www.facebook.com/p/Capital-Veterinary-Clinic-100063850278921/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="w-12 h-12 bg-blue-600 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
+                  whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Facebook className="w-4 h-4" />
-                  Facebook
+                  <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </motion.a>
                 
                 <motion.a
                   href="https://pk.linkedin.com/in/dr-usama-naseer-3b5541245"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-blue-700 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="w-12 h-12 bg-blue-700 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
+                  whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Linkedin className="w-4 h-4" />
-                  LinkedIn
+                  <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </motion.a>
 
                 <motion.a
                   href="https://share.google/SyksRwKyMUEHegTTO"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="w-12 h-12 bg-red-600 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
+                  whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <ExternalLink className="w-4 h-4" />
-                  Google Reviews
+                  <ExternalLink className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </motion.a>
               </div>
             </div>
@@ -256,6 +242,28 @@ export default function Footer() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Animals Image Section */}
+      <div className="relative flex -bottom-4 sm:-bottom-12 justify-center">
+        <motion.div 
+          className="h-50 sm:h-70 w-[90%] sm:w-[70%] overflow-hidden"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <Image
+            src="/images/footer-animals.webp"
+            alt="Happy animals at Capital Veterinary Clinic"
+            width={1200}
+            height={128}
+            className="w-full h-full object-cover object-bottom"
+            style={{
+              filter: 'drop-shadow(0 -4px 8px rgba(0,0,0,0.2))'
+            }}
+          />
+        </motion.div>
       </div>
 
       {/* Bottom Bar */}

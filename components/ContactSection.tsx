@@ -84,19 +84,17 @@ export default function ContactSection() {
   };
 
   return (
-   <motion.section 
-  id="contact" 
-  className="relative py-20 bg-gradient-to-br from-gray-50 to-blue-50 overflow-hidden"
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: true }}
->
-
-
+    <motion.section
+      id="contact"
+      className="relative py-20 bg-gradient-to-br from-gray-50 to-blue-50 overflow-hidden"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
       <div className="container mx-auto px-4 z-10">
         {/* Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16 "
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -113,107 +111,55 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 bg-white z-10">
+        <div className="grid lg:grid-cols-2 gap-12 z-10">
           {/* Contact Information */}
-          <motion.div 
+          <motion.div
             className="space-y-8"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            {/* Contact Details */}
-            <Card className="border-vet-purple border-2 shadow-xl bg-white py-0">
-              <CardContent className="p-8 space-y-6">
-                <motion.h3 
-                  className="text-2xl font-bold text-vet-purple mb-6 flex items-center gap-3"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.4 }}
-                  viewport={{ once: true }}
-                >
-                  <Heart className="w-6 h-6" />
-                  Contact Information
-                </motion.h3>
-
-                <div className="space-y-6">
-                  <motion.div 
-                    className="flex items-start gap-4 p-4 rounded-xl bg-green-50 border border-green-200"
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
+            {/* Emergency Alert */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Card className="border-red-500 border-2 bg-gradient-to-r from-red-50 to-pink-50 shadow-lg">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
                     <motion.div
                       animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
                     >
-                      <Phone className="w-6 h-6 text-vet-green flex-shrink-0 mt-1" />
+                      <AlertCircle className="w-6 h-6 text-red-600" />
                     </motion.div>
-                    <div>
-                      <p className="font-semibold text-gray-900">
-                        Phone & WhatsApp
-                      </p>
-                      <p className="text-gray-600 font-mono text-lg">0348-9032106</p>
-                      <p className="text-sm text-vet-green font-medium">
-                        Available 24/7 for emergencies
-                      </p>
-                    </div>
-                  </motion.div>
-
-                  <motion.div 
-                    className="flex items-start gap-4 p-4 rounded-xl bg-blue-50 border border-blue-200"
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <MapPin className="w-6 h-6 text-vet-blue flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold text-gray-900">
-                        Clinic Address
-                      </p>
-                      <p className="text-gray-600">
-                        Westridge 1, opposite Punjab Cash & Carry
-                        <br />
-                        Rawalpindi Cantt, Pakistan
-                      </p>
-                    </div>
-                  </motion.div>
-
-                  <motion.div 
-                    className="flex items-start gap-4 p-4 rounded-xl bg-purple-50 border border-purple-200"
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <Clock className="w-6 h-6 text-vet-purple flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold text-gray-900">
-                        Operating Hours
-                      </p>
-                      <p className="text-gray-600">
-                        OPD: 11:00 AM - 11:00 PM (Daily)
-                      </p>
-                      <p className="text-vet-green font-semibold">
-                        Emergency: 24/7 Available
-                      </p>
-                    </div>
-                  </motion.div>
-
-                  <div className="flex items-start gap-4">
-                    <Mail className="w-6 h-6 text-vet-green flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold text-gray-900">Email</p>
-                      <p className="text-gray-600">info@capitalvetclinic.com</p>
-                      <p className="text-sm text-gray-500">
-                        Response within 2 hours
-                      </p>
-                    </div>
+                    <h3 className="text-xl font-bold text-red-900">
+                      Emergency?
+                    </h3>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                  <p className="text-red-800 mb-4">
+                    If your pet needs immediate medical attention, don't wait!
+                    Call us right now.
+                  </p>
+                  <a href="tel:03489032106">
+                    <AnimatedButton
+                      className="bg-red-600 hover:bg-red-700 text-white font-semibold w-full shadow-lg"
+                      hoverScale={1.05}
+                      tapScale={0.95}
+                    >
+                      <Phone className="w-4 h-4 mr-2" />
+                      Call Emergency: 0348-9032106
+                    </AnimatedButton>
+                  </a>
+                </CardContent>
+              </Card>
+            </motion.div>
 
             {/* Map Placeholder */}
             <Card className="border-vet-purple border-2 shadow-xl bg-white py-0">
               <CardContent className="p-6">
-                <motion.h3 
+                <motion.h3
                   className="text-xl font-bold text-vet-purple mb-4 flex items-center gap-2"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -225,7 +171,7 @@ export default function ContactSection() {
                 </motion.h3>
 
                 {/* Google Maps Embed */}
-                <motion.div 
+                <motion.div
                   className="aspect-video rounded-lg overflow-hidden border-2 border-gray-200 mb-4"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -247,48 +193,13 @@ export default function ContactSection() {
           </motion.div>
 
           {/* Elegant Appointment Form */}
-          <motion.div 
+          <motion.div
             className="space-y-8"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            {/* Emergency Alert */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <Card className="border-red-500 border-2 bg-gradient-to-r from-red-50 to-pink-50 shadow-lg">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <motion.div
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      <AlertCircle className="w-6 h-6 text-red-600" />
-                    </motion.div>
-                    <h3 className="text-xl font-bold text-red-900">Emergency?</h3>
-                  </div>
-                  <p className="text-red-800 mb-4">
-                    If your pet needs immediate medical attention, don't wait!
-                    Call us right now.
-                  </p>
-                  <a href="tel:03489032106">
-                    <AnimatedButton 
-                      className="bg-red-600 hover:bg-red-700 text-white font-semibold w-full shadow-lg"
-                      hoverScale={1.05}
-                      tapScale={0.95}
-                    >
-                      <Phone className="w-4 h-4 mr-2" />
-                      Call Emergency: 0348-9032106
-                    </AnimatedButton>
-                  </a>
-                </CardContent>
-              </Card>
-            </motion.div>
-            
-
             {/* Elegant Contact Form */}
             <Card className="border-vet-blue border-2 shadow-2xl bg-white">
               <CardContent className="p-8">
@@ -360,50 +271,6 @@ export default function ContactSection() {
                       className="mt-1"
                       placeholder="your.email@example.com"
                     />
-                  </div>
-
-                  {/* Pet Information */}
-                  <div className="grid md:grid-cols-2 gap-4 w-full">
-                    <div>
-                      <Label
-                        htmlFor="petType"
-                        className="text-gray-700 font-medium"
-                      >
-                        Pet Type *
-                      </Label>
-                      <select
-                        id="petType"
-                        name="petType"
-                        required
-                        value={formData.petType}
-                        onChange={handleInputChange}
-                        className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-vet-blue"
-                      >
-                        <option value="">Select pet type</option>
-                        <option value="dog">Dog</option>
-                        <option value="cat">Cat</option>
-                        <option value="bird">Bird</option>
-                        <option value="reptile">Reptile</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                    <div>
-                      <Label
-                        htmlFor="petAge"
-                        className="text-gray-700 font-medium"
-                      >
-                        Pet Age
-                      </Label>
-                      <Input
-                        id="petAge"
-                        name="petAge"
-                        type="text"
-                        value={formData.petAge}
-                        onChange={handleInputChange}
-                        className="mt-1 w-full"
-                        placeholder="e.g., 2 years"
-                      />
-                    </div>
                   </div>
 
                   {/* Service Details */}
@@ -551,14 +418,11 @@ export default function ContactSection() {
                 </form>
               </CardContent>
             </Card>
-            </motion.div>
-          </div>
-          
+          </motion.div>
         </div>
-          {/* Background pattern */}
-  <div 
-    className="absolute inset-0 z-0 bg-[url('/images/paw-pattern.svg')] bg-cover bg-center opacity-2 mx-20" 
-  />
+      </div>
+      {/* Background pattern */}
+      <div className="absolute inset-0 z-0 bg-[url('/images/paw-pattern.svg')] bg-cover bg-center opacity-2 mx-20" />
     </motion.section>
   );
 }

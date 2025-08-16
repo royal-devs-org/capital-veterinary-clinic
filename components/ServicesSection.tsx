@@ -162,9 +162,9 @@ export default function ServicesSection() {
         <MovingBorder 
           duration={6}
           borderColors={[
-            "#412F85", // purple-500
-            "#53B7E9", // cyan-500  
-            "#4CB735", // emerald-500
+            "#412F85", // purple
+            "#53B7E9", // blue
+            "#4CB735", // green
             "#412F85", // back to purple
           ]}
           className="relative"
