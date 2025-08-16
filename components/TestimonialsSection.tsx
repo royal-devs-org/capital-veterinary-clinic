@@ -198,7 +198,7 @@ const featuredReviews: Review[] = [
   return (
     <motion.section
       id="testimonials"
-      className="py-20 bg-gradient-to-br from-gray-50 to-white"
+      className="pb-20 pt-30 bg-gradient-to-br from-gray-50 to-white"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}

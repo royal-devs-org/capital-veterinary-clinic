@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Users, Star, Calendar, Stethoscope } from "lucide-react";
+import { Badge } from "./ui/badge";
 
 export default function StatsSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -114,13 +115,16 @@ export default function StatsSection() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
+                <Badge className="bg-vet-green text-white mb-4">
+                  Stats & Achievements
+                </Badge>
                 <h2 className="text-4xl md:text-5xl font-bold text-vet-purple mb-6">
                   Our Track Record
                 </h2>
                 <p className="text-xl text-gray-700 leading-relaxed max-w-lg">
                   Numbers that speak volumes about our commitment to exceptional
-                  veterinary care and the trust we&apos;ve built in the Rawalpindi
-                  community.
+                  veterinary care and the trust we&apos;ve built in the
+                  Rawalpindi community.
                 </p>
               </motion.div>
 
@@ -139,60 +143,60 @@ export default function StatsSection() {
             </div>
 
             {/* RIGHT COLUMN - Stats Grid */}
-<motion.div
-  className="relative z-20 sm:pb-0 pb-48"
-  initial={{ opacity: 0, x: 50 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8, delay: 0.3 }}
-  viewport={{ once: true }}
->
-  <div className="grid grid-cols-2 gap-3 sm:gap-6" ref={statsRef}>
-    {stats.map((stat, i) => {
-      const Icon = stat.icon;
-      const value = Object.values(counts)[i] as number;
-
-      return (
-        <motion.div
-          key={i}
-          className={`group relative rounded-3xl p-3 sm:p-6 bg-white shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500backdrop-blur-sm flex flex-col items-center text-center`}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: i * 0.15, duration: 0.6 }}
-          whileHover={{ y: -8, scale: 1.02 }}
-        >
-          <div className="relative z-10 flex flex-col items-center">
-            <div
-              className={`inline-flex p-4 rounded-2xl text-vet-green `}
+            <motion.div
+              className="relative z-20 sm:pb-0 pb-48"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
             >
-              <Icon className="w-6 h-6" />
+              <div className="grid grid-cols-2 gap-3 sm:gap-6" ref={statsRef}>
+                {stats.map((stat, i) => {
+                  const Icon = stat.icon;
+                  const value = Object.values(counts)[i] as number;
+
+                  return (
+                    <motion.div
+                      key={i}
+                      className={`group relative rounded-3xl p-3 sm:p-5 bg-white shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500backdrop-blur-sm flex flex-col items-center text-center`}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.15, duration: 0.6 }}
+                      whileHover={{ y: -8, scale: 1.02 }}
+                    >
+                      <div className="relative z-10 flex flex-col items-center">
+                        <div
+                          className={`inline-flex p-4 rounded-2xl text-vet-green `}
+                        >
+                          <Icon className="w-7 h-7" />
+                        </div>
+                        <span className="text-3xl md:text-4xl font-bold text-gray-900">
+                          {value}
+                          {stat.suffix}
+                        </span>
+                        <h4 className="font-bold text-gray-800 text-lg mt-2">
+                          {stat.label}
+                        </h4>
+                        <p className="text-gray-600 text-sm font-medium">
+                          {stat.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.div>
+
+            {/* --- MOBILE IMAGE (below everything) --- */}
+            <div className="absolute -bottom-[52px] flex justify-center sm:hidden">
+              <Image
+                src="/images/cat-dog-2.png"
+                alt="Happy Cat & Dog"
+                width={400}
+                height={400}
+                className="object-contain drop-shadow-2xl"
+              />
             </div>
-            <span className="text-3xl md:text-4xl font-bold text-gray-900">
-              {value}{stat.suffix}
-            </span>
-            <h4 className="font-bold text-gray-800 text-lg mt-2">
-              {stat.label}
-            </h4>
-            <p className="text-gray-600 text-sm font-medium">
-              {stat.description}
-            </p>
-          </div>
-        </motion.div>
-      );
-    })}
-  </div>
-</motion.div>
-
-{/* --- MOBILE IMAGE (below everything) --- */}
-<div className="absolute -bottom-[52px] flex justify-center sm:hidden">
-  <Image
-    src="/images/cat-dog-2.png"
-    alt="Happy Cat & Dog"
-    width={400}
-    height={400}
-    className="object-contain drop-shadow-2xl"
-  />
-</div>
-
           </div>
         </div>
       </div>

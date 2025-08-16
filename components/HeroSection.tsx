@@ -55,7 +55,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden py-6">
+    <section className="relative min-h-screen flex items-center overflow-hidden py-6 sm:pb-6 pb-0">
       {/* Background Wall */}
       <div className="absolute inset-0 bg-[#53B7E9]/[0.28]" />
 
@@ -88,7 +88,7 @@ export default function HeroSection() {
 
             {/* Subheadline */}
             <motion.p
-              className="text-lg text-gray-600 leading-relaxed"
+              className="text-md sm:text-lg text-gray-600 leading-relaxed"
               variants={itemVariants}
             >
               Led by <strong>Dr. Usama Naseer</strong> with{" "}
@@ -99,7 +99,7 @@ export default function HeroSection() {
 
             {/* Trust Indicators */}
             <motion.div
-              className="grid grid-cols-3 gap-4 sm:py-3 py-2"
+              className="grid grid-cols-3 gap-4 sm:py-3 py-6"
               variants={itemVariants}
             >
               <motion.div className="text-center" whileHover={{ scale: 1.05 }}>
@@ -143,7 +143,7 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 items-center justify-centerw-full"
+              className="flex sm:flex-row flex-col gap-4 items-center justify-center w-full"
               variants={itemVariants}
             >
               <AnimatedButton
@@ -170,11 +170,11 @@ export default function HeroSection() {
 
             {/* Quick Info */}
             <motion.div
-              className="grid grid-cols-2 gap-4 pt-4"
+              className="flex flex-col sm:flex-row sm:gap-32 gap-4 pt-4 w-full items-center justify-start sm:justify-center"
               variants={itemVariants}
             >
               <motion.div
-                className="flex items-center gap-3 text-gray-600"
+                className="flex w-full items-center gap-3 text-gray-600"
                 whileHover={{ x: 10 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -185,7 +185,7 @@ export default function HeroSection() {
                 </div>
               </motion.div>
               <motion.div
-                className="flex items-center gap-3 text-gray-600"
+                className="flex w-full items-center gap-3 text-gray-600"
                 whileHover={{ x: 10 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -208,7 +208,7 @@ export default function HeroSection() {
               alt="Character"
               width={900}
               height={900}
-              className="object-contain md:w-[1000px] h-auto w-[400px]"
+              className="object-contain md:w-[1000px] h-auto w-[500px]"
             />
           </div>
     </section>

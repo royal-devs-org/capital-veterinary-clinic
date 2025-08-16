@@ -43,7 +43,7 @@ export default function Navigation() {
       <div className="bg-vet-purple text-white py-2 text-sm">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-between items-center gap-2">
-            <div className="flex items-center gap-4">
+            <div className="flex flex-row gap-4 items-center justify-between sm:justify-start w-full sm:w-auto gap-auto">
               <div className="flex items-center gap-1">
                 <Clock className="w-4 h-4" />
                 <span>OPD: 11 AM - 11 PM</span>

@@ -7,9 +7,9 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between w-full gap-6 md:gap-12">
           {/* left Content - Images */}
-          <div className="space-y-6">
+          <div className="flex-1 space-y-6">
             {/* Main Image */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <Image
@@ -23,7 +23,7 @@ export default function AboutSection() {
           </div>
 
           {/* Right Content */}
-          <div className="space-y-8">
+          <div className="flex-1 space-y-8">
             <div className="space-y-4">
               <Badge className="bg-vet-purple text-white">
                 About Our Clinic

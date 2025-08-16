@@ -22,7 +22,6 @@ export default function Footer() {
   const quickLinks = [
     { name: "About Dr. Usama", href: "#about" },
     { name: "Our Services", href: "#services" },
-    { name: "Service Areas", href: "#service-areas" },
     { name: "Gallery", href: "#gallery" },
     { name: "Client Reviews", href: "#testimonials" },
     { name: "Contact Us", href: "#contact" },
@@ -35,14 +34,13 @@ export default function Footer() {
     "Surgical Procedures",
     "Home Visits",
     "Pet Grooming",
-    "Dental Care",
     "Diagnostic Services",
   ];
 
   return (
-    <footer className="bg-vet-purple text-white">
+    <footer className="bg-vet-purple text-white ">
       {/* Main Footer */}
-      <div className="container mx-auto pt-16">
+      <div className="container mx-auto pt-16 sm:px-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-7 sm:px-0">
           {/* Clinic Information */}
           <div className="space-y-6">
@@ -63,7 +61,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed text-sm">
               Led by Dr. Usama Naseer with 4+ years of experience, we provide
               comprehensive veterinary care across Rawalpindi, Islamabad, and
               Lahore. Your pet&apos;s health is our priority.
@@ -95,7 +93,7 @@ export default function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-vet-green transition-colors duration-200 flex items-center gap-2"
+                    className="text-sm text-gray-300 hover:text-vet-green transition-colors duration-200 flex items-center gap-2"
                   >
                     <div className="w-1 h-1 bg-vet-green rounded-full"></div>
                     {link.name}
@@ -122,7 +120,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Information */}
-          <div>
+          <div >
             <h3 className="text-lg font-bold mb-6">Contact Info</h3>
             <div className="space-y-4">
               {/* Address */}
@@ -134,19 +132,6 @@ export default function Footer() {
                     Westridge 1, opposite Punjab Cash & Carry
                     <br />
                     Rawalpindi Cantt, Pakistan
-                  </p>
-                </div>
-              </div>
-
-              {/* Hours */}
-              <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-vet-blue flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-semibold">Operating Hours</p>
-                  <p className="text-gray-300 text-sm">
-                    OPD: 11:00 AM - 11:00 PM
-                    <br />
-                    Emergency: 24/7 Available
                   </p>
                 </div>
               </div>
@@ -164,15 +149,16 @@ export default function Footer() {
                   </a>
                 </div>
               </div>
+              </div>
               {/* Social Media */}
-              <div>
-                <h3 className="text-lg font-bold mb-4">Follow Us</h3>
-                <div className="flex gap-4">
+              <div className="mt-7">
+                <h3 className="text-lg font-bold mb-2">Follow Us</h3>
+                <div className="flex">
                   <motion.a
                     href="https://www.instagram.com/capital_veterinary_clinic/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-gradient-to-r from-pink-500 to-yellow-500 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
+                    className="w-12 h-12 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -183,7 +169,7 @@ export default function Footer() {
                     href="https://www.facebook.com/p/Capital-Veterinary-Clinic-100063850278921/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-blue-600 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
+                    className="w-12 h-12 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -194,7 +180,7 @@ export default function Footer() {
                     href="https://pk.linkedin.com/in/dr-usama-naseer-3b5541245"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-blue-700 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
+                    className="w-12 h-12 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -205,14 +191,13 @@ export default function Footer() {
                     href="https://share.google/SyksRwKyMUEHegTTO"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-red-600 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
+                    className="w-12 h-12 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <ExternalLink className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   </motion.a>
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -264,7 +249,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-blue-800 bg-blue-950">
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto sm:px-10 px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2 text-gray-300">
               <span>
