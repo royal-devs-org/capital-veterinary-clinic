@@ -263,9 +263,9 @@ const featuredReviews: Review[] = [
                           whileHover={{ y: -10 }}
                           transition={{ type: "spring", stiffness: 300 }}
                         >
-                          <Card className="h-full relative overflow-hidden bg-gradient-to-br from-[#53B7E9]/10 via-white to-[#412F85]/10 border border-[#53B7E9]/20 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                          <Card className="h-full relative overflow-hidden bg-gradient-to-br from-[#53B7E9]/10 to-[#53B7E9]/40 border border-[#53B7E9]/20 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group">
                             {/* Gradient Glow Border */}
-                            <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-br from-[#53B7E9]/20 to-[#412F85]/30 opacity-60 group-hover:opacity-100 blur-[3px] transition" />
+                            {/* <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-br from-[#53B7E9]/20 to-[#412F85]/30 opacity-60 group-hover:opacity-100 blur-[3px] transition" /> */}
 
                             <CardContent className="relative z-10 py-4 px-8 h-full flex flex-col">
                               {/* Top Icons Row */}
@@ -355,7 +355,7 @@ const featuredReviews: Review[] = [
               {/* Navigation Buttons */}
               <motion.button
                 onClick={prevReview}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white shadow-xl rounded-full flex items-center justify-center text-gray-600 hover:text-vet-blue hover:bg-blue-50 transition-all duration-300 z-10"
+                className="absolute left-4 sm:left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white shadow-xl rounded-full flex items-center justify-center text-gray-600 hover:text-vet-blue hover:bg-blue-50 transition-all duration-300 z-10"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -363,7 +363,7 @@ const featuredReviews: Review[] = [
               </motion.button>
               <motion.button
                 onClick={nextReview}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white shadow-xl rounded-full flex items-center justify-center text-gray-600 hover:text-vet-blue hover:bg-blue-50 transition-all duration-300 z-10"
+                className="absolute right-4 sm:right-0  top-1/2 -translate-y-1/2 w-12 h-12 bg-white shadow-xl rounded-full flex items-center justify-center text-gray-600 hover:text-vet-blue hover:bg-blue-50 transition-all duration-300 z-10"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >

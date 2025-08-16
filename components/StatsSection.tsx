@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Users, Star, Calendar, Stethoscope } from "lucide-react";
+import { Users, Star, Calendar, Stethoscope, PawPrint } from "lucide-react";
 import { Badge } from "./ui/badge";
 
 export default function StatsSection() {
@@ -105,7 +105,7 @@ export default function StatsSection() {
     <section className="relative">
       <div className="relative sm:pt-20 sm:pb-20 pb-0 pt-20 bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100">
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+          <div className="grid lg:grid-cols-2 gap-4 sm:gap-12 items-stretch">
             {/* LEFT COLUMN */}
             <div className="flex flex-col justify-between relative">
               {/* Heading + Text */}
@@ -120,8 +120,9 @@ export default function StatsSection() {
                 </Badge>
                 <h2 className="text-4xl md:text-5xl font-bold text-vet-purple mb-6">
                   Our Track Record
+                  <PawPrint className="inline-block w-8 h-8 text-vet-purple ml-4 mb-2" />
                 </h2>
-                <p className="text-xl text-gray-700 leading-relaxed max-w-lg">
+                <p className="text-md sm:text-xl text-gray-700 leading-relaxed max-w-lg">
                   Numbers that speak volumes about our commitment to exceptional
                   veterinary care and the trust we&apos;ve built in the
                   Rawalpindi community.
@@ -130,7 +131,7 @@ export default function StatsSection() {
 
               {/* Image pinned to bottom */}
               <div className="relative sm:mt-12 flex justify-center lg:justify-start">
-                <div className="absolute sm:-bottom-[195px] left-0 w-full md:w-[650px] lg:w-[980px]">
+                <div className="absolute bottom-0 sm:-bottom-[195px] left-0 w-full md:w-[650px] lg:w-[980px]">
                   <Image
                     src="/images/cat-dog-2.png"
                     alt="Happy Cat & Dog"
@@ -188,7 +189,7 @@ export default function StatsSection() {
             </motion.div>
 
             {/* --- MOBILE IMAGE (below everything) --- */}
-            <div className="absolute -bottom-[52px] flex justify-center sm:hidden">
+            <div className="absolute -bottom-[60px] flex justify-center sm:hidden">
               <Image
                 src="/images/cat-dog-2.png"
                 alt="Happy Cat & Dog"
