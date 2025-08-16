@@ -29,7 +29,6 @@ export default function Home() {
         <AboutSection />
       </AnimatedSection>
       
-      
       <ClientOnly>
         <AnimatedSection delay={0.6}>
           <GallerySection />

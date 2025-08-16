@@ -3,9 +3,8 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import AnimatedButton from "@/components/ui/animated-button";
-import { Star, Quote, Heart, ExternalLink, ChevronLeft, ChevronRight, Users, MapPin, Calendar } from "lucide-react";
+import { Star, ExternalLink, ChevronLeft, ChevronRight, Users, Calendar, Quote, Heart } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
@@ -17,7 +16,7 @@ interface Review {
 }
 
 export default function TestimonialsSection() {
-  // Featured reviews (first 6 from the reviews data)
+  // Featured reviews
   const featuredReviews: Review[] = [
     {
       name: "Hayat Ullah",
@@ -365,8 +364,7 @@ export default function TestimonialsSection() {
         <p className="text-gray-800 leading-relaxed text-center font-medium italic text-lg">
           "{review.review}"
         </p>
-        {/* Decorative subtle pattern */}
-        <div className="absolute inset-0 bg-[url('/images/paw-pattern.svg')] bg-center bg-cover opacity-5 pointer-events-none"></div>
+        
       </div>
 
       {/* Rating */}
@@ -487,3 +485,4 @@ export default function TestimonialsSection() {
     </motion.section>
   );
 }
+

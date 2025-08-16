@@ -1,227 +1,269 @@
-import { Card, CardContent } from "@/components/ui/card";
+"use client";
+
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-import { MovingBorder } from "@/components/ui/moving-border";
-import AnimatedButton from "@/components/ui/animated-button";
-import { 
-  Shield, 
-  Heart, 
-  Scissors, 
-  Syringe, 
-  Home, 
+import { motion, easeOut } from "framer-motion";
+import {
+  Shield,
+  Heart,
+  Scissors,
+  Syringe,
+  Home,
   Stethoscope,
-  Clock,
-  Phone,
+  Sparkles,
   Activity,
-  PlusCircle
 } from "lucide-react";
 
 export default function ServicesSection() {
   const services = [
     {
+      icon: Sparkles,
+      title: "Pet Grooming",
+      description: "Professional grooming and hygiene services",
+      color: "text-indigo-600",
+      bgColor: "bg-indigo-50",
+      borderColor: "border-indigo-200",
+      position: "top-center",
+    },
+    {
       icon: Shield,
       title: "24/7 Emergency Care",
-      description: "Round-the-clock emergency services for critical situations. Our team is always ready to provide immediate care when your pet needs it most.",
+      description: "Round-the-clock emergency services for critical situations",
       color: "text-red-600",
       bgColor: "bg-red-50",
       borderColor: "border-red-200",
-      badge: "Emergency",
-      badgeColor: "bg-red-600"
+      position: "top-left",
     },
     {
       icon: Stethoscope,
       title: "Routine Checkups",
-      description: "Comprehensive health examinations, preventive care, and early disease detection to keep your pets healthy and happy.",
+      description: "Comprehensive health examinations and preventive care",
       color: "text-vet-blue",
       bgColor: "bg-blue-50",
       borderColor: "border-blue-200",
-      badge: "Regular Care",
-      badgeColor: "bg-vet-blue"
+      position: "top-right",
     },
     {
       icon: Scissors,
       title: "Surgical Procedures",
-      description: "Advanced surgical services in our modern operating theater, from routine spaying/neutering to complex procedures.",
+      description: "Advanced surgical services in our modern operating theater",
       color: "text-vet-purple",
       bgColor: "bg-purple-50",
       borderColor: "border-purple-200",
-      badge: "Surgical",
-      badgeColor: "bg-vet-purple"
+      position: "middle-left",
     },
     {
       icon: Syringe,
       title: "Pet Vaccinations",
-      description: "Complete vaccination programs for puppies, kittens, and adult pets. Protecting your pets from preventable diseases.",
+      description: "Complete vaccination programs for all pets",
       color: "text-vet-green",
       bgColor: "bg-green-50",
       borderColor: "border-green-200",
-      badge: "Prevention",
-      badgeColor: "bg-vet-green"
+      position: "middle-right",
     },
     {
       icon: Heart,
       title: "Multi-Species Care",
-      description: "Expert care for cats, dogs, birds, and reptiles. Specialized knowledge for different animal species and their unique needs.",
+      description: "Expert care for cats, dogs, birds, and reptiles",
       color: "text-pink-600",
       bgColor: "bg-pink-50",
       borderColor: "border-pink-200",
-      badge: "Specialized",
-      badgeColor: "bg-pink-600"
+      position: "bottom-left",
     },
     {
       icon: Home,
-      title: "Home Visit Services",
-      description: "Convenient at-home veterinary care available across Rawalpindi, Islamabad, and Lahore for stressed or immobile pets.",
+      title: "Home Visits",
+      description: "Convenient at-home veterinary care services",
       color: "text-amber-600",
       bgColor: "bg-amber-50",
       borderColor: "border-amber-200",
-      badge: "Convenience",
-      badgeColor: "bg-amber-600"
+      position: "bottom-right",
     }
   ];
 
-  const additionalServices = [
-    "Pet Grooming & Hygiene",
-    "Deworming Treatment",
-    "Diagnostic Services",
-    "Dental Care",
-    "Behavioral Consultation",
-    "Nutritional Guidance",
-    "Pet Health Certificates",
-    "Microchip Services"
-  ];
+  const getServicePosition = (position: string) => {
+    const positions = {
+      "top-left": "absolute top-8 left-8 md:top-10 md:left-42",
+    "top-center": "absolute top-0 left-1/2 transform -translate-x-1/2 md:-top-10",
+      "top-right": "absolute top-8 right-8 md:top-10 md:right-36",
+      "middle-left":
+        "absolute top-78 left-8 md:left-4 transform -translate-y-1/2",
+      "middle-right":
+        "absolute top-78 right-8 md:right-4 transform -translate-y-1/2",
+      "bottom-left": "absolute bottom-8 left-8 md:bottom-24 md:left-8",
+      "bottom-right": "absolute bottom-8 right-8 md:bottom-24 md:right-8",
+    };
+    return positions[position as keyof typeof positions];
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: easeOut,
+      },
+    },
+  };
+
+  const centerVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: easeOut,
+        delay: 0.5,
+      },
+    },
+  };
 
   return (
     <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <Badge className="bg-vet-green text-white mb-4">Our Services</Badge>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 font-heading">
-            Comprehensive Veterinary Care
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From emergency care to routine checkups, we provide complete veterinary services 
-            tailored to your pet's unique needs
-          </p>
-        </div>
-
-        {/* Main Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
-            return (
-              <Card 
-                key={index} 
-                className={`${service.borderColor} border-2 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group`}
-              >
-                <CardContent className="p-6 space-y-4">
-                  {/* Service Badge */}
-                  <div className="flex items-center justify-between">
-                    <Badge className={`${service.badgeColor} text-white`}>
-                      {service.badge}
-                    </Badge>
-                    {index === 0 && (
-                      <div className="flex items-center gap-1 text-xs text-red-600 font-medium">
-                        <Clock className="w-3 h-3" />
-                        24/7
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Icon */}
-                  <div className={`${service.bgColor} w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <IconComponent className={`w-8 h-8 ${service.color}`} />
-                  </div>
-
-                  {/* Content */}
-                  <div className="space-y-3">
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  {/* CTA */}
-                  {index === 0 && (
-                    <div className="pt-2">
-                      <div className="flex items-center gap-2 text-red-600 font-medium text-sm">
-                        <Phone className="w-4 h-4" />
-                        Emergency: 0348-9032106
-                      </div>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
-
-        {/* Additional Services */}
-        <MovingBorder 
-          duration={6}
-          borderColors={[
-            "#412F85", // purple
-            "#53B7E9", // blue
-            "#4CB735", // green
-            "#412F85", // back to purple
-          ]}
-          className="relative"
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
-          <Card className="bg-white border-0 shadow-none">
-            <CardContent className="p-8">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-2 mb-4">
-                  <PlusCircle className="w-6 h-6 text-vet-purple" />
-                  <h3 className="text-2xl font-bold text-vet-purple font-heading">
-                    Additional Services
-                  </h3>
-                </div>
-                <p className="text-gray-600">
-                  Complete care solutions for all your pet's health and wellness needs
-                </p>
-              </div>
+          <Badge className="bg-vet-green text-white mb-4">Our Services</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-heading">
+            Comprehensive Care for Your Furry Family Members
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            Expert Veterinary Care to Keep Tails Wagging and Hearts Happy.
+          </p>
+        </motion.div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {additionalServices.map((service, index) => (
-                <div 
+        {/* Services Layout */}
+        <motion.div
+          className="relative max-w-6xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {/* Services positioned around the center */}
+          <div className="relative h-[700px] md:h-[800px] lg:h-[700px]">
+            {services.map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <motion.div
                   key={index}
-                  className="flex items-center gap-3 p-3 rounded-lg bg-purple-50 hover:bg-purple-100 transition-colors duration-200"
+                  className={`${getServicePosition(
+                    service.position
+                  )} w-36 md:w-44 lg:w-48`}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <Activity className="w-4 h-4 text-vet-purple flex-shrink-0" />
-                  <span className="text-gray-700 font-medium">{service}</span>
-                </div>
-              ))}
-            </div>
-            </CardContent>
-          </Card>
-        </MovingBorder>
+                  {/* Service Circle */}
+                  <div className="relative">
+                    {/* Circle Background */}
+                    <div
+                      className={`w-20 h-20 md:w-18 md:h-18 ${service.bgColor} ${service.borderColor} border-2 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300`}
+                    >
+                      <IconComponent
+                        className={`w-8 h-8 md:w-8 md:h-8 ${service.color}`}
+                      />
+                    </div>
+
+                    {/* Service Content */}
+                    <div className="text-center">
+                      <h3 className="text-sm md:text-base lg:text-lg font-bold text-gray-900 mb-1 leading-tight">
+                        {service.title}
+                      </h3>
+                      <p className="text-xs md:text-sm text-gray-600 leading-tight">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+
+            {/* Center Image */}
+            <motion.div 
+  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+  variants={centerVariants}
+>
+  <div className="relative flex items-center justify-center">
+    Background Circle
+    <motion.div 
+      className="w-48 h-48 md:w-60 md:h-60 lg:w-80 lg:h-80 bg-vet-blue/60 rounded-full"
+      animate={{ scale: [1, 1.02, 1] }}
+      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+    />
+    
+    {/* Pet Image outside the circle */}
+<div className="absolute top-1/2 left-1/2 w-56 md:w-80 lg:w-[750px] transform -translate-x-1/2 -translate-y-1/2">
+  <Image
+    src="/images/pets-sitting.png"
+    alt="Happy pets receiving veterinary care"
+    width={800}
+    height={800}
+    className="object-contain"
+    priority
+  />
+</div>
+
+  </div>
+</motion.div>
+
+          </div>
+        </motion.div>
 
         {/* Call to Action */}
-        <div className="text-center mt-12">
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
           <div className="inline-flex flex-col sm:flex-row gap-4 items-center justify-center bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
             <div className="text-center sm:text-left">
-              <p className="text-lg font-semibold text-gray-900">Need immediate care?</p>
-              <p className="text-gray-600">Our emergency team is standing by 24/7</p>
+              <p className="text-lg font-semibold text-gray-900">
+                Ready to give your pet the best care?
+              </p>
+              <p className="text-gray-600">
+                Contact us today to schedule an appointment
+              </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a 
+              <a
                 href="tel:03489032106"
-                className="bg-vet-green hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center gap-2"
+                className="bg-vet-green hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl"
               >
-                <Phone className="w-4 h-4" />
+                <Shield className="w-4 h-4" />
                 Emergency Call
               </a>
-              <a 
+              <a
                 href="#contact"
-                className="border border-vet-blue text-vet-blue hover:bg-vet-blue hover:text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+                className="border border-vet-blue text-vet-blue hover:bg-vet-blue hover:text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl"
               >
                 Schedule Appointment
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
