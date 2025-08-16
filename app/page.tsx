@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import GallerySection from "@/components/GallerySection";
+import StatsSection from "@/components/StatsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import HappyFamiliesSection from "@/components/HappyFamiliesSection";
 import ContactSection from "@/components/ContactSection";
@@ -32,6 +33,12 @@ export default function Home() {
       <ClientOnly>
         <AnimatedSection delay={0.6}>
           <GallerySection />
+        </AnimatedSection>
+      </ClientOnly>
+      
+      <ClientOnly>
+        <AnimatedSection delay={0.7}>
+          <StatsSection />
         </AnimatedSection>
       </ClientOnly>
       

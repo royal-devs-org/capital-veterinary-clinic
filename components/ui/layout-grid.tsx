@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type Card = {
   id: number;
@@ -27,14 +28,14 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div className="w-full h-full py-10 px-0 md:p-10 grid grid-cols-1 md:grid-cols-4 max-w-7xl mx-auto gap-4">
+    <div className="w-full h-full py-10 px-0 md:p-10 grid grid-cols-2 md:grid-cols-4 max-w-7xl mx-auto gap-4">
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
             onClick={() => handleClick(card)}
             className={cn(
               card.className,
-              "relative overflow-hidden min-h-[400px] group cursor-pointer",
+              "relative overflow-hidden min-h-[200px] sm:min-h-[400px] group cursor-pointer",
               selected?.id === card.id
                 ? "rounded-lg cursor-pointer absolute inset-0 h-1/2 w-full md:w-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
                 : lastSelected?.id === card.id
@@ -132,7 +133,7 @@ const BlurImage = ({ card }: { card: Card }) => {
   
   return (
     <div ref={elementRef} className="relative w-full h-full">
-      <img
+      <Image
         src={card.thumbnail}
         height="500"
         width="500"

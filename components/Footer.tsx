@@ -43,7 +43,7 @@ export default function Footer() {
     <footer className="bg-vet-purple text-white">
       {/* Main Footer */}
       <div className="container mx-auto pt-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-7 sm:px-0">
           {/* Clinic Information */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
@@ -66,7 +66,7 @@ export default function Footer() {
             <p className="text-gray-300 leading-relaxed">
               Led by Dr. Usama Naseer with 4+ years of experience, we provide
               comprehensive veterinary care across Rawalpindi, Islamabad, and
-              Lahore. Your pet's health is our priority.
+              Lahore. Your pet&apos;s health is our priority.
             </p>
 
             {/* Trust Indicators */}
@@ -218,10 +218,10 @@ export default function Footer() {
         </div>
 
         {/* CTA & Image */}
-        <div className="relative border-t border-blue-800 mt-8 py-8">
+        <div className="relative border-t border-blue-800 mb-52 sm:mb-0 sm:mt-8 py-8">
           <div className="w-full flex items-center justify-end">
             {/* Animals Image Section */}
-            <div className="absolute -bottom-12 md:-left-8 flex justify-center">
+            <div className="absolute -bottom-56 sm:-bottom-12 md:-left-8 flex justify-center">
               <motion.div
                 className="h-50 sm:h-auto w-[90%] sm:w-[800px]"
                 initial={{ opacity: 0, y: 50 }}
@@ -242,11 +242,11 @@ export default function Footer() {
               </motion.div>
             </div>
             {/* Emergency CTA */}
-            <div className="text-center md:text-right">
+            <div className="text-center md:text-right px-7 sm:px-0">
               <div className="inline-block bg-vet-green rounded-2xl p-6">
                 <h3 className="text-xl font-bold mb-3">Need Emergency Care?</h3>
                 <p className="text-green-100 mb-4">
-                  We're available 24/7 for your pet's urgent needs
+                  We&apos;re available 24/7 for your pet&apos;s urgent needs
                 </p>
                 <AnimatedButton
                   className="bg-white text-vet-green hover:bg-gray-100 font-semibold"

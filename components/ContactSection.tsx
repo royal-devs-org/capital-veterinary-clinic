@@ -65,7 +65,7 @@ export default function ContactSection() {
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitMessage(
-        "Thank you! We'll contact you within 30 minutes to confirm your appointment."
+        "Thank you! We&apos;ll contact you within 30 minutes to confirm your appointment."
       );
       setFormData({
         name: "",
@@ -103,15 +103,15 @@ export default function ContactSection() {
         >
           <Badge className="bg-vet-blue text-white mb-4">Get In Touch</Badge>
           <h2 className="text-4xl font-bold text-gray-900 mb-4 font-heading">
-            Book Your Pet's Appointment
+            Book Your Pet&apos;s Appointment
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Ready to give your pet the care they deserve? Contact us today for
-            an appointment or emergency consultation. We're here for you 24/7.
+            an appointment or emergency consultation. We&apos;re here for you 24/7.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 z-10">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 z-10">
           {/* Contact Information */}
           <motion.div
             className="space-y-8"
@@ -139,7 +139,7 @@ export default function ContactSection() {
                     </h3>
                   </div>
                   <p className="text-red-800 mb-4">
-                    If your pet needs immediate medical attention, don't wait!
+                    If your pet needs immediate medical attention, don&apos;t wait!
                     Call us right now.
                   </p>
                   <a href="tel:03489032106">
@@ -386,7 +386,7 @@ export default function ContactSection() {
                       onChange={handleInputChange}
                       rows={4}
                       className="mt-1"
-                      placeholder="Please describe your pet's condition, symptoms, or any specific concerns..."
+                      placeholder="Please describe your pet&apos;s condition, symptoms, or any specific concerns..."
                     />
                   </div>
 
@@ -412,7 +412,7 @@ export default function ContactSection() {
                   </AnimatedButton>
 
                   <p className="text-sm text-gray-600 text-center">
-                    We'll contact you within 30 minutes to confirm your
+                    We&apos;ll contact you within 30 minutes to confirm your
                     appointment
                   </p>
                 </form>

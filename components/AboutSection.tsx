@@ -59,7 +59,7 @@ export default function AboutSection() {
               <p>
                 Our clinic philosophy centers on treating every pet as family,
                 providing personalized care plans, and ensuring pet parents are
-                fully informed about their beloved companion's health journey.
+                fully informed about their beloved companion&apos;s health journey.
               </p>
             </div>
 
