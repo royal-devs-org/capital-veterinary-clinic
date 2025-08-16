@@ -5,7 +5,7 @@ import { Stethoscope, Award, MapPin, Clock } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="pt-0 pb-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between w-full gap-6 md:gap-12">
           {/* left Content - Images */}
@@ -42,30 +42,28 @@ export default function AboutSection() {
                 <strong className="text-vet-purple">
                   4 years of dedicated experience
                 </strong>{" "}
-                in veterinary medicine, Dr. Usama Naseer brings expertise,
-                compassion, and round-the-clock care to pet families across
-                Rawalpindi, Islamabad, and Lahore.
+                in veterinary medicine, Dr. Usama Naseer brings expertise and
+                compassionate care to families across Rawalpindi, Islamabad, and
+                Lahore.
               </p>
 
               <p>
                 As a certified{" "}
                 <strong className="text-vet-purple">DVM, RVMP, and PVMC</strong>{" "}
-                professional, Dr. Usama specializes in comprehensive animal
-                care, from routine check-ups to complex surgical procedures. His
-                commitment to animal welfare and pet owner education has made
-                Capital Veterinary Clinic a trusted name in the region.
+                professional, he specializes in routine check-ups and surgical
+                procedures, making Capital Veterinary Clinic a trusted name in
+                the region.
               </p>
 
               <p>
-                Our clinic philosophy centers on treating every pet as family,
-                providing personalized care plans, and ensuring pet parents are
-                fully informed about their beloved companion&apos;s health journey.
+                Our philosophy is simple: treat every pet like family, provide
+                personalized care, and keep pet parents informed at every step.
               </p>
             </div>
 
             {/* Credentials */}
             <div className="grid grid-cols-2 gap-4">
-              <Card className="border-vet-green border-2">
+              <Card className="border-vet-green border-2 py-2 sm:py-6">
                 <CardContent className="p-4 text-center">
                   <Award className="w-8 h-8 text-vet-green mx-auto mb-2" />
                   <p className="font-semibold text-gray-900">DVM Certified</p>
@@ -75,7 +73,7 @@ export default function AboutSection() {
                 </CardContent>
               </Card>
 
-              <Card className="border-vet-blue border-2">
+              <Card className="border-vet-blue border-2 py-2 sm:py-6">
                 <CardContent className="p-4 text-center">
                   <Stethoscope className="w-8 h-8 text-vet-blue mx-auto mb-2" />
                   <p className="font-semibold text-gray-900">RVMP & PVMC</p>
