@@ -151,22 +151,22 @@ export default function Footer() {
                   </div>
                   <div className="text-center md:text-left">
                     <p className="font-semibold text-white">Email</p>
-                  </div>
-                </div>
-                <div className="text-center md:text-left md:ml-8">
                   <a
                     href="mailto:info@capitalvetclinic.com"
                     className="text-gray-300 text-sm hover:text-vet-green transition-colors duration-200 block"
                   >
                     info@capitalvetclinic.com
                   </a>
+                  </div>
+                </div>
+                <div className="text-center md:text-left md:ml-8">
                 </div>
               </div>
             </div>
               {/* Social Media */}
-              <div className="mt-7">
-                <h3 className="text-lg font-bold mb-2">Follow Us</h3>
-                <div className="flex">
+              <div className="mt-7 w-full text-center items-center sm:items-start justify-center flex flex-col">
+                <h3 className="text-lg font-bold mb-1">Follow Us</h3>
+                <div className="flex justify-center">
                   <motion.a
                     href="https://www.instagram.com/capital_veterinary_clinic/"
                     target="_blank"
