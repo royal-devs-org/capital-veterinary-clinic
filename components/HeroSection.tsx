@@ -143,7 +143,7 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex sm:flex-row flex-col gap-4 items-center justify-center w-full"
+              className="flex flex-row gap-4 items-center justify-center w-full"
               variants={itemVariants}
             >
               <AnimatedButton
@@ -153,7 +153,8 @@ export default function HeroSection() {
                 tapScale={0.95}
               >
                 <Send className="w-5 h-5 mr-2" />
-                Book an Appointment
+                 <span className="hidden sm:inline">Book an Appointment</span>
+  <span className="inline sm:hidden">Book Appointment</span>
               </AnimatedButton>
 
               <AnimatedButton
@@ -164,7 +165,8 @@ export default function HeroSection() {
                 tapScale={0.95}
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now: 0348-9032106
+                <span className="hidden sm:inline">Call Now: 0348-9032106</span>
+  <span className="inline sm:hidden">Call Now</span>
               </AnimatedButton>
             </motion.div>
 

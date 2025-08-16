@@ -487,41 +487,6 @@ export default function ServicesSection() {
             </motion.div>
           </div>
         </motion.div>
-
-        {/* Call to Action */}
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <div className="inline-flex flex-col sm:flex-row gap-4 items-center justify-center bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-semibold text-gray-900">
-                Ready to give your pet the best care?
-              </p>
-              <p className="text-gray-600">
-                Contact us today to schedule an appointment
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="tel:03489032106"
-                className="bg-vet-green hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl"
-              >
-                <Shield className="w-4 h-4" />
-                Emergency Call
-              </a>
-              <a
-                href="#contact"
-                className="border border-vet-blue text-vet-blue hover:bg-vet-blue hover:text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl"
-              >
-                Schedule Appointment
-              </a>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
