@@ -20,11 +20,12 @@ import {
 
 export default function Footer() {
   const quickLinks = [
-    { name: "About Dr. Usama", href: "#about" },
-    { name: "Our Services", href: "#services" },
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
     { name: "Gallery", href: "#gallery" },
-    { name: "Client Reviews", href: "#testimonials" },
-    { name: "Contact Us", href: "#contact" },
+    { name: "Reviews", href: "#testimonials" },
+    { name: "Contact", href: "#contact" },
   ];
 
   const services = [
@@ -86,16 +87,16 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-lg font-bold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 list-none">
               {quickLinks.map((link, index) => (
-                <li key={index}>
+                <li key={index} className="list-none">
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-300 hover:text-vet-green transition-colors duration-200 flex items-center gap-2"
+                    className="text-sm text-gray-300 hover:text-vet-green transition-colors duration-200 flex items-center gap-2 justify-center md:justify-start"
                   >
-                    <div className="w-1 h-1 bg-vet-green rounded-full"></div>
+                    <div className="w-1 h-1 bg-vet-green rounded-full hidden md:block"></div>
                     {link.name}
                   </Link>
                 </li>
@@ -104,15 +105,15 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-lg font-bold mb-6">Our Services</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 list-none">
               {services.map((service, index) => (
                 <li
                   key={index}
-                  className="text-gray-300 flex items-center gap-2"
+                  className="text-gray-300 flex items-center gap-2 justify-center md:justify-start list-none"
                 >
-                  <div className="w-1 h-1 bg-vet-blue rounded-full"></div>
+                  <div className="w-1 h-1 bg-vet-blue rounded-full hidden md:block"></div>
                   <span className="text-sm">{service}</span>
                 </li>
               ))}
@@ -120,15 +121,21 @@ export default function Footer() {
           </div>
 
           {/* Contact Information */}
-          <div >
+          <div className="text-center md:text-left">
             <h3 className="text-lg font-bold mb-6">Contact Info</h3>
-            <div className="space-y-4">
+            <div className="space-y-6">
               {/* Address */}
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-vet-green flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-semibold">Clinic Address</p>
-                  <p className="text-gray-300 text-sm">
+              <div className="flex flex-col items-center md:items-start gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-vet-green/20 rounded-full flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-vet-green" />
+                  </div>
+                  <div className="text-center md:text-left">
+                    <p className="font-semibold text-white">Clinic Address</p>
+                  </div>
+                </div>
+                <div className="text-center md:text-left md:ml-13">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     Westridge 1, opposite Punjab Cash & Carry
                     <br />
                     Rawalpindi Cantt, Pakistan
@@ -137,19 +144,25 @@ export default function Footer() {
               </div>
 
               {/* Email */}
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-vet-green" />
-                <div>
-                  <p className="font-semibold">Email</p>
+              <div className="flex flex-col items-center md:items-start gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-vet-green/20 rounded-full flex items-center justify-center">
+                    <Mail className="w-5 h-5 text-vet-green" />
+                  </div>
+                  <div className="text-center md:text-left">
+                    <p className="font-semibold text-white">Email</p>
+                  </div>
+                </div>
+                <div className="text-center md:text-left md:ml-8">
                   <a
                     href="mailto:info@capitalvetclinic.com"
-                    className="text-gray-300 text-sm hover:text-vet-green transition-colors"
+                    className="text-gray-300 text-sm hover:text-vet-green transition-colors duration-200 block"
                   >
                     info@capitalvetclinic.com
                   </a>
                 </div>
               </div>
-              </div>
+            </div>
               {/* Social Media */}
               <div className="mt-7">
                 <h3 className="text-lg font-bold mb-2">Follow Us</h3>

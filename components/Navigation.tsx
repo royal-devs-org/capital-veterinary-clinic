@@ -104,7 +104,7 @@ export default function Navigation() {
               <a href="tel:03489032106">
                 <AnimatedButton 
                   variant="outline" 
-                  className="border-vet-blue text-vet-blue hover:bg-vet-blue hover:text-white"
+                  className="border-vet-blue text-vet-blue hover:bg-vet-blue hover:!text-white"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
@@ -114,7 +114,7 @@ export default function Navigation() {
               </a>
               <Link href="#contact">
                 <AnimatedButton 
-                  className="bg-vet-green hover:bg-green-600 text-white"
+                  className="bg-vet-green hover:bg-green-600 !text-white"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
@@ -153,7 +153,7 @@ export default function Navigation() {
                   <a href="tel:03489032106">
                     <AnimatedButton 
                       variant="outline" 
-                      className="w-full border-vet-blue text-vet-blue hover:bg-vet-blue hover:text-white"
+                      className="w-full border-vet-blue text-vet-blue hover:bg-vet-blue hover:!text-white"
                       hoverScale={1.02}
                       tapScale={0.98}
                     >
@@ -163,7 +163,7 @@ export default function Navigation() {
                   </a>
                   <Link href="#contact">
                     <AnimatedButton 
-                      className="w-full bg-vet-green hover:bg-green-600 text-white"
+                      className="w-full bg-vet-green hover:bg-green-600 !text-white"
                       hoverScale={1.02}
                       tapScale={0.98}
                     >

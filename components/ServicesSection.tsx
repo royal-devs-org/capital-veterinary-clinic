@@ -258,7 +258,7 @@ export default function ServicesSection() {
               </a>
               <a
                 href="#contact"
-                className="border border-vet-blue text-vet-blue hover:bg-vet-blue hover:text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl"
+                className="border border-vet-blue text-vet-blue hover:bg-vet-blue hover:!text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl"
               >
                 Schedule Appointment
               </a>
