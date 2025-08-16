@@ -131,7 +131,7 @@ export default function StatsSection() {
 
               {/* Image pinned to bottom */}
               <div className="relative sm:mt-12 flex justify-center lg:justify-start">
-                <div className="absolute bottom-0 sm:-bottom-[195px] left-0 w-full md:w-[650px] lg:w-[980px]">
+                <div className="absolute bottom-0 sm:-bottom-[195px] sm:-left-10 w-full md:w-[650px] lg:w-[980px]">
                   <Image
                     src="/images/cat-dog-2.png"
                     alt="Happy Cat & Dog"
