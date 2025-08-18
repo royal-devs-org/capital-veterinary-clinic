@@ -55,7 +55,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden py-6 sm:pb-6 pb-0">
+    <section className="relative min-h-screen 2xl:min-h-[85vh] flex items-center overflow-hidden py-6 sm:pb-6 pb-0">
       {/* Background Wall */}
       <div className="absolute inset-0 bg-[#53B7E9]/[0.28]" />
 
@@ -63,32 +63,24 @@ export default function HeroSection() {
       <div className="absolute bottom-0 w-full h-[25%] bg-[#53B7E9]/[0.10]" />
 
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 2xl:grid-cols-8 gap-2 items-center">
           {/* Left Content */}
           <motion.div
-            className="space-y-4"
+            className="space-y-4 2xl:space-y-7 2xl:col-span-5"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-
             {/* Main Headline with Typewriter Effect */}
             <motion.div className="space-y-2" variants={itemVariants}>
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight font-heading">
+              <h1 className="text-4xl md:text-6xl 2xl:text-7xl font-bold text-gray-900 leading-tight font-heading">
                 {displayText}
-                <motion.span
-                  animate={{ opacity: [1, 0, 1] }}
-                  transition={{ duration: 1, repeat: Infinity }}
-                  className="inline-block"
-                >
-                  |
-                </motion.span>
               </h1>
             </motion.div>
 
             {/* Subheadline */}
             <motion.p
-              className="text-md sm:text-lg text-gray-600 leading-relaxed"
+              className="text-md sm:text-lg 2xl:text-xl text-gray-600 leading-relaxed"
               variants={itemVariants}
             >
               Led by <strong>Dr. Usama Naseer</strong> with{" "}
@@ -99,7 +91,7 @@ export default function HeroSection() {
 
             {/* Trust Indicators */}
             <motion.div
-              className="grid grid-cols-3 gap-4 sm:py-3 py-6"
+              className="grid grid-cols-3 gap-4 sm:py-3 py-6 place-items-center"
               variants={itemVariants}
             >
               <motion.div className="text-center" whileHover={{ scale: 1.05 }}>
@@ -111,33 +103,33 @@ export default function HeroSection() {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 3 + i * 0.1, duration: 0.3 }}
                     >
-                      <Star className="w-5 h-5 text-yellow-500 fill-current" />
+                      <Star className="w-5 h-5 2xl:w-7 2xl:h-7 text-yellow-500 fill-current" />
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-sm text-gray-600">200+ Reviews</p>
+                <p className="text-sm 2xl:text-lg text-gray-600">200+ Reviews</p>
               </motion.div>
               <motion.div className="text-center" whileHover={{ scale: 1.05 }}>
                 <motion.div
-                  className="text-2xl font-bold text-vet-purple mb-1"
+                  className="text-2xl 2xl:text-3xl font-bold text-vet-purple mb-1"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 3.5, type: "spring", stiffness: 500 }}
                 >
                   4+
                 </motion.div>
-                <p className="text-sm text-gray-600">Years Experience</p>
+                <p className="text-sm 2xl:text-lg text-gray-600">Years Experience</p>
               </motion.div>
               <motion.div className="text-center" whileHover={{ scale: 1.05 }}>
                 <motion.div
-                  className="text-2xl font-bold text-vet-purple mb-1"
+                  className="text-2xl 2xl:text-3xl font-bold text-vet-purple mb-1"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 4, type: "spring", stiffness: 500 }}
                 >
                   24/7
                 </motion.div>
-                <p className="text-sm text-gray-600">Emergency Care</p>
+                <p className="text-sm 2xl:text-lg  text-gray-600">Emergency Care</p>
               </motion.div>
             </motion.div>
 
@@ -148,31 +140,31 @@ export default function HeroSection() {
             >
               <AnimatedButton
                 size="lg"
-                className="w-full bg-vet-green hover:bg-green-600 text-white font-semibold px-8 py-4 text-lg shadow-lg"
+                className="w-full bg-vet-green hover:bg-green-600 text-white font-semibold px-8 py-4 text-lg 2xl:text-xl 2xl:py-6 shadow-lg"
                 hoverScale={1.05}
                 tapScale={0.95}
               >
                 <Send className="w-5 h-5 mr-2" />
-                 <span className="hidden sm:inline">Book an Appointment</span>
-  <span className="inline sm:hidden">Book Appointment</span>
+                <span className="hidden sm:inline">Book an Appointment</span>
+                <span className="inline sm:hidden">Book Appointment</span>
               </AnimatedButton>
 
               <AnimatedButton
                 variant="outline"
                 size="lg"
-                className="w-full border-vet-purple text-vet-purple hover:bg-vet-purple hover:text-white font-semibold px-8 py-4 text-lg shadow-lg"
+                className="w-full border-vet-purple text-vet-purple hover:bg-vet-purple hover:text-white font-semibold px-8 py-4 text-lg 2xl:text-xl 2xl:py-6 shadow-lg"
                 hoverScale={1.05}
                 tapScale={0.95}
               >
                 <Phone className="w-5 h-5 mr-2" />
                 <span className="hidden sm:inline">Call Now: 0348-9032106</span>
-  <span className="inline sm:hidden">Call Now</span>
+                <span className="inline sm:hidden">Call Now</span>
               </AnimatedButton>
             </motion.div>
 
             {/* Quick Info */}
             <motion.div
-              className="flex flex-col sm:flex-row sm:gap-32 gap-4 pt-4 w-full items-center justify-start sm:justify-center"
+              className="flex flex-col sm:flex-row sm:gap-32 2xl:gap-20 gap-4 pt-4 w-full items-center justify-start sm:justify-center"
               variants={itemVariants}
             >
               <motion.div
@@ -182,8 +174,8 @@ export default function HeroSection() {
               >
                 <Clock className="w-5 h-5 text-vet-purple" />
                 <div>
-                  <p className="font-medium">OPD Hours</p>
-                  <p className="text-sm">11:00 AM - 11:00 PM</p>
+                  <p className="font-medium 2xl:text-lg">OPD Hours</p>
+                  <p className="text-sm 2xl:text-md">11:00 AM - 11:00 PM</p>
                 </div>
               </motion.div>
               <motion.div
@@ -193,26 +185,25 @@ export default function HeroSection() {
               >
                 <MapPin className="w-5 h-5 text-vet-purple" />
                 <div>
-                  <p className="font-medium">Location</p>
-                  <p className="text-sm">Westridge 1, Rawalpindi</p>
+                  <p className="font-medium 2xl:text-lg">Location</p>
+                  <p className="text-sm 2xl:text-md">Westridge 1, Rawalpindi</p>
                 </div>
               </motion.div>
             </motion.div>
           </motion.div>
-
         </div>
       </div>
-          {/* Right Image */}
-          {/* Image fixed bottom-right */}
-          <div className="absolute bottom-0 right-0 z-20">
-            <Image
-              src="/images/hero-dog.webp"
-              alt="Character"
-              width={900}
-              height={900}
-              className="object-contain md:w-[1000px] h-auto w-[500px]"
-            />
-          </div>
+      {/* Right Image */}
+      {/* Image fixed bottom-right */}
+      <div className="absolute bottom-0 right-0 z-20">
+        <Image
+          src="/images/hero-dog.webp"
+          alt="Character"
+          width={900}
+          height={900}
+          className="object-contain md:w-[1000px] 2xl:w-[1250px] h-auto w-[500px]"
+        />
+      </div>
     </section>
   );
 }

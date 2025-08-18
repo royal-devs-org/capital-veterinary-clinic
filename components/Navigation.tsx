@@ -40,7 +40,7 @@ export default function Navigation() {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-vet-purple text-white py-2 text-sm">
+      <div className="bg-vet-purple text-white py-2 text-sm sm:block hidden">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-between items-center gap-2">
             <div className="flex flex-row gap-4 items-center justify-between sm:justify-start w-full sm:w-auto gap-auto">
