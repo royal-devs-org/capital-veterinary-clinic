@@ -55,7 +55,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen 2xl:min-h-[85vh] flex items-center overflow-hidden py-6 sm:pb-6 pb-0">
+    <section className="relative min-h-screen 2xl:min-h-[85vh] flex items-center overflow-hidden sm:pb-6 pb-0">
       {/* Background Wall */}
       <div className="absolute inset-0 bg-[#53B7E9]/[0.28]" />
 
@@ -66,7 +66,7 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 2xl:grid-cols-8 gap-2 items-center">
           {/* Left Content */}
           <motion.div
-            className="space-y-4 2xl:space-y-7 2xl:col-span-5"
+            className="space-y-5 sm:space-y-4 2xl:space-y-7 2xl:col-span-5"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
