@@ -263,10 +263,7 @@ const featuredReviews: Review[] = [
                           whileHover={{ y: -10 }}
                           transition={{ type: "spring", stiffness: 300 }}
                         >
-                          <Card className="h-full relative overflow-hidden bg-gradient-to-br from-[#53B7E9]/10 to-[#53B7E9]/40 border border-[#53B7E9]/20 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group">
-                            {/* Gradient Glow Border */}
-                            {/* <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-br from-[#53B7E9]/20 to-[#412F85]/30 opacity-60 group-hover:opacity-100 blur-[3px] transition" /> */}
-
+                          <Card className="h-full relative overflow-hidden border-0 bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group">
                             <CardContent className="relative z-10 py-4 px-8 h-full flex flex-col">
                               {/* Top Icons Row */}
                               <div className="flex justify-between items-start mb-6">
@@ -405,10 +402,7 @@ const featuredReviews: Review[] = [
                     whileHover={{ y: -5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <Card className="h-full relative overflow-hidden bg-gradient-to-br from-[#53B7E9]/10 via-white to-[#412F85]/10 border border-[#53B7E9]/20 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group">
-                      {/* Gradient Glow Border */}
-                      <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-br from-[#53B7E9]/20 to-[#412F85]/30 opacity-60 group-hover:opacity-100 blur-[3px] transition" />
-
+                    <Card className="h-full relative overflow-hidden border-0 bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100 rounded-2xl shadow-lg hover:shadow-2xl group">
                       <CardContent className="relative z-10 py-4 px-6 h-full flex flex-col">
                         {/* Top Icons Row */}
                         <div className="flex justify-between items-start mb-4">
