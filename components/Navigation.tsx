@@ -41,7 +41,7 @@ export default function Navigation() {
     <>
       {/* Top Bar */}
       <div className="bg-vet-purple text-white py-2 text-sm sm:block hidden">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-10 2xl:px-4">
           <div className="flex flex-wrap justify-between items-center gap-2">
             <div className="flex flex-row gap-4 items-center justify-between sm:justify-start w-full sm:w-auto gap-auto">
               <div className="flex items-center gap-1">
@@ -64,7 +64,7 @@ export default function Navigation() {
       </div>
 
       {/* Main Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${
+      <nav className={`fixed w-full z-50 transition-all duration-300 overflow-hidden ${
         mounted && isScrolled ? 'bg-white shadow-lg py-2 top-0 ' : 'bg-white/95 backdrop-blur-sm py-4'
       }`}>
         <div className="container mx-auto px-4">

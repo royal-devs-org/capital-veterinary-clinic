@@ -45,28 +45,20 @@ export default function HeroSection() {
     },
   };
 
-  const floatingAnimation = {
-    y: [-10, 10, -10],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut" as const,
-    },
-  };
 
   return (
-    <section className="relative min-h-screen 2xl:min-h-[85vh] flex items-center overflow-hidden sm:pb-6 pb-0">
+    <section className="relative min-h-screen 2xl:min-h-[85vh] flex items-center overflow-hidden 2xl:pt-20">
       {/* Background Wall */}
       <div className="absolute inset-0 bg-[#53B7E9]/[0.28]" />
 
       {/* Background Floor */}
       <div className="absolute bottom-0 w-full h-[25%] bg-[#53B7E9]/[0.10]" />
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 2xl:grid-cols-8 gap-2 items-center">
+      <div className="container mx-auto px-4 sm:px-10 2xl:px-4 py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 2xl:grid-cols-8 gap-2 items-center pb-40 sm:pb-0 2xl:pb-20">
           {/* Left Content */}
           <motion.div
-            className="space-y-5 sm:space-y-4 2xl:space-y-7 2xl:col-span-5"
+            className="space-y-5 sm:space-y-4 2xl:space-y-7 2xl:col-span-4"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -107,7 +99,9 @@ export default function HeroSection() {
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-sm 2xl:text-lg text-gray-600">200+ Reviews</p>
+                <p className="text-sm 2xl:text-lg text-gray-600">
+                  200+ Reviews
+                </p>
               </motion.div>
               <motion.div className="text-center" whileHover={{ scale: 1.05 }}>
                 <motion.div
@@ -118,7 +112,9 @@ export default function HeroSection() {
                 >
                   4+
                 </motion.div>
-                <p className="text-sm 2xl:text-lg text-gray-600">Years Experience</p>
+                <p className="text-sm 2xl:text-lg text-gray-600">
+                  Years Experience
+                </p>
               </motion.div>
               <motion.div className="text-center" whileHover={{ scale: 1.05 }}>
                 <motion.div
@@ -129,7 +125,9 @@ export default function HeroSection() {
                 >
                   24/7
                 </motion.div>
-                <p className="text-sm 2xl:text-lg  text-gray-600">Emergency Care</p>
+                <p className="text-sm 2xl:text-lg  text-gray-600">
+                  Emergency Care
+                </p>
               </motion.div>
             </motion.div>
 
@@ -164,7 +162,7 @@ export default function HeroSection() {
 
             {/* Quick Info */}
             <motion.div
-              className="flex flex-col sm:flex-row sm:gap-32 2xl:gap-20 gap-4 pt-4 w-full items-center justify-start sm:justify-center"
+              className="flex flex-row sm:gap-32 2xl:gap-20 gap-4 pt-4 w-full items-center justify-start sm:justify-center"
               variants={itemVariants}
             >
               <motion.div
@@ -195,15 +193,16 @@ export default function HeroSection() {
       </div>
       {/* Right Image */}
       {/* Image fixed bottom-right */}
-      <div className="absolute bottom-0 right-0 z-20">
-        <Image
-          src="/images/hero-dog.webp"
-          alt="Character"
-          width={900}
-          height={900}
-          className="object-contain md:w-[1000px] 2xl:w-[1250px] h-auto w-[500px]"
-        />
-      </div>
+      <div className="absolute bottom-0 w-full flex justify-center sm:justify-end z-20">
+  <Image
+    src="/images/hero-dog.webp"
+    alt="Character"
+    width={900}
+    height={900}
+    className="w-[450px] md:w-[600px] lg:w-[800px] 2xl:w-[1000px] h-auto object-contain"
+  />
+</div>
+
     </section>
   );
 }
