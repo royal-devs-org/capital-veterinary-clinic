@@ -30,7 +30,6 @@ export default function StatsSection() {
       icon: Star,
       label: "Google Rating",
       value: 4.9,
-      suffix: "★",
       color: "from-yellow-400 to-yellow-500",
       bgColor: "bg-yellow-50",
       description: "Average review score",
@@ -120,7 +119,7 @@ export default function StatsSection() {
                 </Badge>
                 <h2 className="text-4xl md:text-5xl font-bold text-vet-purple mb-6">
                   Our Track Record
-                  <PawPrint className="inline-block w-8 h-8 text-vet-purple ml-4 mb-2" />
+                  <PawPrint className="inline-block w-8 h-8 sm:w-10 sm:h-10 text-vet-purple ml-1 sm:ml-4 mb-2" />
                 </h2>
                 <p className="text-md sm:text-xl text-gray-700 leading-relaxed max-w-lg">
                   Numbers that speak volumes about our commitment to exceptional

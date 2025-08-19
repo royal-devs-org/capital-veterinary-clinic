@@ -41,7 +41,7 @@ export default function Footer() {
   return (
     <footer className="bg-vet-purple text-white ">
       {/* Main Footer */}
-      <div className="container mx-auto pt-16 sm:px-10">
+      <div className="container mx-auto pt-16 sm:px-10 2xl:px-0">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-7 sm:px-0">
           {/* Clinic Information */}
           <div className="space-y-6 text-center">
@@ -125,7 +125,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-6">Contact Info</h3>
             <div className="space-y-6">
               {/* Address */}
-              <div className="flex flex-col items-center md:items-start gap-3">
+              <div className="flex flex-col items-center md:items-start gap-0">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-vet-green/20 rounded-full flex items-center justify-center">
                     <MapPin className="w-5 h-5 text-vet-green" />
