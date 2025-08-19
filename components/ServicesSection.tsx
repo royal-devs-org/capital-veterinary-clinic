@@ -268,7 +268,7 @@ export default function ServicesSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-heading">
             Comprehensive Care for Your Furry Family Members
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-md sm:text-lg 2xl:text-xl text-gray-600 max-w-2xl mx-auto">
             Expert Veterinary Care to Keep Tails Wagging and Hearts Happy.
           </p>
         </motion.div>

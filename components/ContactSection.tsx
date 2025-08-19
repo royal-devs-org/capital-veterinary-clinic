@@ -105,7 +105,7 @@ export default function ContactSection() {
           <h2 className="text-4xl font-bold text-gray-900 mb-4 font-heading">
             Book Your Pet&apos;s Appointment
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-md sm:text-lg 2xl:text-xl text-gray-600 max-w-3xl mx-auto">
             Ready to give your pet the care they deserve? Contact us today for
             an appointment or emergency consultation. We&apos;re here for you 24/7.
           </p>
@@ -405,7 +405,7 @@ export default function ContactSection() {
                       </>
                     ) : (
                       <>
-                        <Send className="w-5 h-5 mr-2" />
+                        <Calendar className="w-5 h-5 mr-2" />
                         Book Appointment
                       </>
                     )}

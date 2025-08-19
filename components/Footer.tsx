@@ -42,9 +42,9 @@ export default function Footer() {
     <footer className="bg-vet-purple text-white ">
       {/* Main Footer */}
       <div className="container mx-auto pt-16 sm:px-10 2xl:px-0">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-7 sm:px-0">
+        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12 px-7 sm:px-0">
           {/* Clinic Information */}
-          <div className="space-y-6 text-center">
+          <div className="space-y-6 text-center lg:col-span-2 lg:mr-10">
             <div className="flex items-center justify-center gap-3">
               <div className="w-12 h-12 relative bg-white rounded-lg p-2">
                 <Image
@@ -121,12 +121,12 @@ export default function Footer() {
           </div>
 
           {/* Contact Information */}
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left lg:col-span-2 lg:ml-8">
             <h3 className="text-lg font-bold mb-6">Contact Info</h3>
             <div className="space-y-6">
               {/* Address */}
-              <div className="flex flex-col items-center md:items-start gap-0">
-                <div className="flex items-center gap-3">
+              <div className="flex flex-col items-center md:items-start">
+                <div className="flex items-center gap-1 sm:gap-3">
                   <div className="w-10 h-10 bg-vet-green/20 rounded-full flex items-center justify-center">
                     <MapPin className="w-5 h-5 text-vet-green" />
                   </div>
@@ -144,20 +144,23 @@ export default function Footer() {
               </div>
 
               {/* Email */}
-              <div className="flex flex-col items-center md:items-start gap-3">
-                <div className="flex items-center gap-3">
+              <div className="flex flex-col items-center md:items-start">
+                <div className="flex items-center gap-1 sm:gap-3">
                   <div className="w-10 h-10 bg-vet-green/20 rounded-full flex items-center justify-center">
                     <Mail className="w-5 h-5 text-vet-green" />
                   </div>
                   <div className="text-center md:text-left">
                     <p className="font-semibold text-white">Email</p>
+                  
+                  </div>
+                </div>
+                <div className="text-center md:text-left md:ml-13">
                   <a
                     href="mailto:info@capitalvetclinic.com"
                     className="text-gray-300 text-sm hover:text-vet-green transition-colors duration-200 block"
                   >
                     info@capitalvetclinic.com
                   </a>
-                  </div>
                 </div>
                 <div className="text-center md:text-left md:ml-8">
                 </div>
@@ -264,7 +267,7 @@ export default function Footer() {
       <div className="border-t border-blue-800 bg-blue-950">
         <div className="container mx-auto sm:px-10 px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2 text-gray-300">
+            <div className="flex text-center gap-2 text-gray-300">
               <span>
                 © 2025 Capital Veterinary Clinic. Made with care for pets and
                 their families.

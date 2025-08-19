@@ -217,7 +217,7 @@ const featuredReviews: Review[] = [
           <h2 className="text-4xl font-bold text-gray-900 mb-4 font-heading">
             What Pet Parents Say
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-md sm:text-lg 2xl:text-xl text-gray-600 max-w-3xl mx-auto">
             Don&apos;t just take our word for it. Here&apos;s what our valued clients have
             to say about the care their beloved pets receive at Capital
             Veterinary Clinic
@@ -260,10 +260,9 @@ const featuredReviews: Review[] = [
                         <motion.div
                           key={`${groupIndex}-${index}`}
                           className="flex-shrink-0 w-1/3 px-4"
-                          whileHover={{ y: -10 }}
                           transition={{ type: "spring", stiffness: 300 }}
                         >
-                          <Card className="h-full relative overflow-hidden border-0 bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                          <Card className="h-full relative overflow-hidden border-0 bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100 rounded-2xl shadow-lg">
                             <CardContent className="relative z-10 py-4 px-8 h-full flex flex-col">
                               {/* Top Icons Row */}
                               <div className="flex justify-between items-start mb-6">
@@ -399,10 +398,9 @@ const featuredReviews: Review[] = [
                   <motion.div
                     key={index}
                     className="flex-shrink-0 w-full px-4"
-                    whileHover={{ y: -5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <Card className="h-full relative overflow-hidden border-0 bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100 rounded-2xl shadow-lg hover:shadow-2xl group">
+                    <Card className="h-full relative overflow-hidden border-0 bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100 rounded-2xl shadow-lg group">
                       <CardContent className="relative z-10 py-4 px-6 h-full flex flex-col">
                         {/* Top Icons Row */}
                         <div className="flex justify-between items-start mb-4">
