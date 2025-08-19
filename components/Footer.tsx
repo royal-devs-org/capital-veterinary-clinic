@@ -44,8 +44,8 @@ export default function Footer() {
       <div className="container mx-auto pt-16 sm:px-10 2xl:px-0">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-7 sm:px-0">
           {/* Clinic Information */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
+          <div className="space-y-6 text-center">
+            <div className="flex items-center justify-center gap-3">
               <div className="w-12 h-12 relative bg-white rounded-lg p-2">
                 <Image
                   src="/images/media/Clinic Logo.png"
@@ -69,7 +69,7 @@ export default function Footer() {
             </p>
 
             {/* Trust Indicators */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center gap-4">
               <div className="flex items-center gap-1">
                 <Star className="w-4 h-4 text-yellow-400 fill-current" />
                 <Star className="w-4 h-4 text-yellow-400 fill-current" />
@@ -80,7 +80,7 @@ export default function Footer() {
               <span className="text-sm text-gray-300">200+ Reviews</span>
             </div>
 
-            <div className="flex items-center gap-2 text-vet-green">
+            <div className="flex items-center justify-center gap-2 text-vet-green">
               <Shield className="w-5 h-5" />
               <span className="font-semibold">DVM, RVMP, PVMC Certified</span>
             </div>
