@@ -283,6 +283,29 @@ export default function ServicesSection() {
         >
           {/* --- MOBILE CAROUSEL --- */}
           <div className="relative h-[550px] md:hidden">
+            {/* Static Center Image - Outside carousel container */}
+            <motion.div
+              className="absolute top-80 sm:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+              variants={centerVariants}
+            >
+              <div className="relative flex items-center justify-center">
+                <div
+                  className="
+                    absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+                    w-[350px] h-[350px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px]
+                  "
+                >
+                  <Image
+                    src="/images/pets-sitting.png"
+                    alt="Happy pets receiving veterinary care"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </div>
+            </motion.div>
+
             {/* Carousel Services */}
             <motion.div
               key={currentGroup} // Force re-render on group change
@@ -337,30 +360,6 @@ export default function ServicesSection() {
                   </motion.div>
                 );
               })}
-
-
-              {/* Center Image */}
-              <motion.div
-                className="absolute top-80 sm:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                variants={centerVariants}
-              >
-                <div className="relative flex items-center justify-center">
-                  <div
-                    className="
-                      absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                      w-[350px] h-[350px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px]
-                    "
-                  >
-                    <Image
-                      src="/images/pets-sitting.png"
-                      alt="Happy pets receiving veterinary care"
-                      fill
-                      className="object-contain"
-                      priority
-                    />
-                  </div>
-                </div>
-              </motion.div>
 
               {/* Carousel Navigation */}
               <div className="absolute bottom-24 left-0 right-0 flex justify-center gap-8 z-30">

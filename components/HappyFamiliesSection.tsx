@@ -183,12 +183,7 @@ export default function HappyFamiliesSection() {
             className="text-center lg:text-left space-y-8"
             variants={itemVariants}
           >
-            <motion.div variants={itemVariants}>
-              <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm mb-4">
-                <Users className="w-4 h-4 mr-2" />
-                Community
-              </Badge>
-            </motion.div>
+
 
             <motion.div className="space-y-4" variants={itemVariants}>
               <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight font-heading">
