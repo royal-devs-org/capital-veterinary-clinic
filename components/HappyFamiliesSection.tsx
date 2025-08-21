@@ -1,10 +1,11 @@
 "use client";
 
 import { motion, easeOut } from "framer-motion";
-import { Star, Users, Heart, PawPrint } from "lucide-react";
+import { Star, Users, Heart, PawPrint, Calendar} from "lucide-react";
 import AnimatedButton from "@/components/ui/animated-button";
 import { Badge } from "@/components/ui/badge";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 export default function HappyFamiliesSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -199,7 +200,7 @@ export default function HappyFamiliesSection() {
                 Happy Pet Families
               </h2>
               
-              <p className="text-xl text-green-100 leading-relaxed">
+              <p className="text-md sm:text-lg 2xl:text-xl text-green-100 leading-relaxed">
                 Experience the same level of care and compassion that has earned us 
                 consistently 5-star reviews from pet owners across Rawalpindi, Islamabad, and Lahore.
               </p>
@@ -217,7 +218,7 @@ export default function HappyFamiliesSection() {
                   animate={isVisible ? { scale: 1 } : { scale: 0 }}
                   transition={{ delay: 1.2, type: "spring", stiffness: 500 }}
                 >
-                  4.9★
+                  4.9
                 </motion.div>
                 <div className="text-green-100 text-sm">Google Rating</div>
               </div>
@@ -247,29 +248,33 @@ export default function HappyFamiliesSection() {
 
             {/* CTA Buttons */}
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex flex-col gap-4 sm:gap-7 sm:flex-row justify-center lg:justify-center"
               variants={itemVariants}
             >
+              <Link href="#contact" className="block w-full">
               <AnimatedButton 
                 size="lg"
-                className="bg-white text-green-600 hover:bg-green-50 font-semibold shadow-lg border-2 border-white"
+                className="w-full bg-white text-green-600 hover:bg-green-50 font-semibold shadow-lg border-2 border-white"
                 hoverScale={1.05}
                 tapScale={0.95}
               >
-                <Heart className="w-5 h-5 mr-2" />
+                <Calendar className="w-5 h-5 mr-2" />
                 Book Your Appointment
               </AnimatedButton>
+              </Link>
               
+              <Link href="#testimonials" className="block w-full">
               <AnimatedButton 
                 variant="outline" 
                 size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-green-600 font-semibold shadow-lg backdrop-blur-sm"
+                className="w-full border-2 border-white text-white hover:bg-white hover:text-green-600 font-semibold shadow-lg backdrop-blur-sm"
                 hoverScale={1.05}
                 tapScale={0.95}
               >
                 <Star className="w-5 h-5 mr-2" />
                 Read Success Stories
               </AnimatedButton>
+              </Link>
             </motion.div>
           </motion.div>
 
@@ -305,7 +310,7 @@ export default function HappyFamiliesSection() {
               
               {/* Decorative Elements */}
               <motion.div 
-                className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full"
+                className="absolute -top-4 -right-4 w-8 h-8 bg-white rounded-full"
                 animate={{ 
                   scale: [1, 1.2, 1],
                   y: [-5, 5, -5]

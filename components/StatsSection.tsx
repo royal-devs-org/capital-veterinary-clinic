@@ -121,7 +121,7 @@ export default function StatsSection() {
                   Our Track Record
                   <PawPrint className="inline-block w-8 h-8 sm:w-10 sm:h-10 text-vet-purple ml-1 sm:ml-4 mb-2" />
                 </h2>
-                <p className="text-md sm:text-xl text-gray-700 leading-relaxed max-w-lg">
+                <p className="text-md sm:text-lg 2xl:text-xl text-gray-700 leading-relaxed max-w-lg">
                   Numbers that speak volumes about our commitment to exceptional
                   veterinary care and the trust we&apos;ve built in the
                   Rawalpindi community.

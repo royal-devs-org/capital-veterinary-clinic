@@ -20,6 +20,7 @@ import {
   AlertCircle,
   CheckCircle,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -105,7 +106,7 @@ export default function ContactSection() {
           <h2 className="text-4xl font-bold text-gray-900 mb-4 font-heading">
             Book Your Pet&apos;s Appointment
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-md sm:text-lg 2xl:text-xl text-gray-600 max-w-3xl mx-auto">
             Ready to give your pet the care they deserve? Contact us today for
             an appointment or emergency consultation. We&apos;re here for you 24/7.
           </p>
@@ -142,7 +143,7 @@ export default function ContactSection() {
                     If your pet needs immediate medical attention, don&apos;t wait!
                     Call us right now.
                   </p>
-                  <a href="tel:03489032106">
+                  <Link href="tel:03489032106">
                     <AnimatedButton
                       className="bg-red-600 hover:bg-red-700 text-white font-semibold w-full shadow-lg"
                       hoverScale={1.05}
@@ -151,7 +152,7 @@ export default function ContactSection() {
                       <Phone className="w-4 h-4 mr-2" />
                       Call Emergency: 0348-9032106
                     </AnimatedButton>
-                  </a>
+                  </Link>
                 </CardContent>
               </Card>
             </motion.div>
@@ -405,7 +406,7 @@ export default function ContactSection() {
                       </>
                     ) : (
                       <>
-                        <Send className="w-5 h-5 mr-2" />
+                        <Calendar className="w-5 h-5 mr-2" />
                         Book Appointment
                       </>
                     )}
@@ -422,7 +423,7 @@ export default function ContactSection() {
         </div>
       </div>
       {/* Background pattern */}
-      <div className="absolute inset-0 z-0 bg-[url('/images/paw-pattern.svg')] bg-cover bg-center opacity-2 mx-20" />
+      <div className="absolute inset-0 z-0 bg-[url('/images/paw-pattern.svg')] bg-cover bg-center opacity-2 " />
     </motion.section>
   );
 }

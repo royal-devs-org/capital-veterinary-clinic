@@ -236,7 +236,7 @@ export default function GallerySection() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Professional Veterinary Care
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-md sm:text-lg 2xl:text-xl text-gray-600 max-w-3xl mx-auto">
             See the professional care and advanced medical treatments we provide
             for pets of all kinds. From routine checkups to complex surgeries,
             we ensure every animal receives the best possible care.

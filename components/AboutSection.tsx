@@ -63,20 +63,20 @@ export default function AboutSection() {
 
             {/* Credentials */}
             <div className="grid grid-cols-2 gap-4">
-              <Card className="border-vet-green border-2 py-2 sm:py-6">
+              <Card className="bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100 border-0 shadow-md py-2 sm:py-6">
                 <CardContent className="p-4 text-center">
                   <Award className="w-8 h-8 text-vet-green mx-auto mb-2" />
-                  <p className="font-semibold text-gray-900">DVM Certified</p>
+                  <p className="font-semibold text-vet-purple">DVM Certified</p>
                   <p className="text-sm text-gray-600">
                     Doctor of Veterinary Medicine
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="border-vet-blue border-2 py-2 sm:py-6">
+              <Card className="bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100 border-0 shadow-md py-2 sm:py-6">
                 <CardContent className="p-4 text-center">
-                  <Stethoscope className="w-8 h-8 text-vet-blue mx-auto mb-2" />
-                  <p className="font-semibold text-gray-900">RVMP & PVMC</p>
+                  <Stethoscope className="w-8 h-8 text-vet-green mx-auto mb-2" />
+                  <p className="font-semibold text-vet-purple">RVMP & PVMC</p>
                   <p className="text-sm text-gray-600">
                     Registered Professional
                   </p>

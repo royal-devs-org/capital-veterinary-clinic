@@ -40,7 +40,7 @@ export default function Navigation() {
     <>
       {/* Top Bar */}
       <div className="bg-vet-purple text-white py-2 text-sm sm:block hidden">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-10 2xl:px-4">
           <div className="flex flex-wrap justify-between items-center gap-2">
             <div className="flex flex-row gap-4 items-center justify-between sm:justify-start w-full sm:w-auto">
               <div className="flex items-center gap-1">
@@ -66,13 +66,9 @@ export default function Navigation() {
       </div>
 
       {/* Main Navigation */}
-      <nav
-        className={`fixed w-full z-50 transition-all duration-300 ${
-          mounted && isScrolled
-            ? "bg-white shadow-lg py-2 top-0 "
-            : "bg-white/95 backdrop-blur-sm py-4"
-        }`}
-      >
+      <nav className={`fixed w-full z-50 transition-all duration-300 overflow-hidden ${
+        mounted && isScrolled ? 'bg-white shadow-lg py-2 top-0 ' : 'bg-white/95 backdrop-blur-sm py-4'
+      }`}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
@@ -111,7 +107,7 @@ export default function Navigation() {
 
             {/* Desktop CTA Buttons */}
             <div className="hidden md:flex items-center gap-3">
-              <a href="tel:03489032106">
+              <Link href="tel:03489032106">
                 <AnimatedButton
                   variant="outline"
                   className="border-vet-blue bg-vet-blue !text-white hover:bg-vet-blue/90 flex items-center"
@@ -121,7 +117,7 @@ export default function Navigation() {
                   <Phone className="w-4 h-4 mr-2" />
                   Call Now
                 </AnimatedButton>
-              </a>
+              </Link>
               <Link href="#contact">
                 <AnimatedButton
                   className="bg-vet-green hover:bg-green-600 !text-white"
@@ -220,7 +216,7 @@ export default function Navigation() {
           {/* CTA Buttons */}
           <div className="px-6 py-6">
             <div className="space-y-4">
-              <a href="tel:03489032106" className="block w-full">
+              <Link href="tel:03489032106" className="block w-full" onClick={() => setIsOpen(false)}>
                 <AnimatedButton
                   className="w-full flex justify-center items-center bg-vet-blue hover:bg-vet-blue/90 !text-white py-3 text-base font-semibold shadow-md"
                   hoverScale={1.02}
@@ -229,8 +225,8 @@ export default function Navigation() {
                   <Phone className="w-5 h-5 mr-2" />
                   Call Now
                 </AnimatedButton>
-              </a>
-              <Link href="#contact" className="block w-full">
+              </Link>
+              <Link href="#contact" className="block w-full" onClick={() => setIsOpen(false)}>
                 <AnimatedButton
                   className="w-full flex justify-center items-center bg-vet-green hover:bg-green-600 !text-white py-3 text-base font-semibold shadow-md"
                   hoverScale={1.02}
