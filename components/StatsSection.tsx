@@ -117,7 +117,7 @@ export default function StatsSection() {
                 <Badge className="bg-vet-green text-white mb-4">
                   Stats & Achievements
                 </Badge>
-                <h2 className="text-4xl md:text-5xl font-bold text-vet-purple mb-6">
+                <h2 className="text-3xl md:text-5xl font-bold text-vet-purple mb-6">
                   Our Track Record
                   <PawPrint className="inline-block w-8 h-8 sm:w-10 sm:h-10 text-vet-purple ml-1 sm:ml-4 mb-2" />
                 </h2>
@@ -158,7 +158,7 @@ export default function StatsSection() {
                   return (
                     <motion.div
                       key={i}
-                      className={`group relative rounded-3xl p-3 sm:p-5 bg-white shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500backdrop-blur-sm flex flex-col items-center text-center`}
+                      className={`group relative rounded-3xl p-3 sm:p-5 bg-white shadow-lg sm:shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500backdrop-blur-sm flex flex-col items-center text-center`}
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.15, duration: 0.6 }}
@@ -170,14 +170,14 @@ export default function StatsSection() {
                         >
                           <Icon className="w-7 h-7" />
                         </div>
-                        <span className="text-3xl md:text-4xl font-bold text-gray-900">
+                        <span className="text-2xl md:text-4xl font-bold text-gray-900">
                           {value}
                           {stat.suffix}
                         </span>
-                        <h4 className="font-bold text-gray-800 text-lg mt-2">
+                        <h4 className="font-bold text-gray-800 text-md sm:text-lg mt-2">
                           {stat.label}
                         </h4>
-                        <p className="text-gray-600 text-sm font-medium">
+                        <p className="text-gray-600 text-sm ">
                           {stat.description}
                         </p>
                       </div>

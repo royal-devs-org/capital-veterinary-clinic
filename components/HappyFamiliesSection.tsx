@@ -112,7 +112,7 @@ export default function HappyFamiliesSection() {
   return (
     <motion.section 
       ref={sectionRef}
-      className="relative py-20 overflow-hidden"
+      className="relative py-20 overflow-hidden px-6"
       style={{ backgroundColor: '#4CB735' }}
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}
@@ -187,7 +187,7 @@ export default function HappyFamiliesSection() {
 
 
             <motion.div className="space-y-4" variants={itemVariants}>
-              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight font-heading">
+              <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight font-heading">
                 Join{" "}
                 <motion.span 
                   className="inline-block bg-white text-green-600 px-4 py-2 rounded-lg"
@@ -305,7 +305,7 @@ export default function HappyFamiliesSection() {
               {/* Lottie Container */}
               <div 
                 ref={lottieRef}
-                className="relative z-10 w-full h-full flex items-center justify-center"
+                className="relative z-10 w-full h-full flex items-center justify-center scale-150"
               />
               
               {/* Decorative Elements */}
