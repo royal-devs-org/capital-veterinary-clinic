@@ -72,8 +72,8 @@ export default function Navigation() {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link href="#home" className="flex items-center gap-3">
-              <div className="w-12 h-12 relative">
+            <Link href="#home" className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 relative">
                 <Image
                   src="/images/media/Clinic Logo.png"
                   alt="Capital Veterinary Clinic Logo"
@@ -81,11 +81,11 @@ export default function Navigation() {
                   className="object-contain"
                 />
               </div>
-              <div>
-                <h1 className="text-xl font-bold text-vet-purple">
+              <div className="min-w-0 flex-1">
+                <h1 className="text-sm sm:text-xl font-bold text-vet-purple truncate">
                   Capital Veterinary Clinic
                 </h1>
-                <p className="text-xs text-gray-600">
+                <p className="text-xs text-gray-600 hidden sm:block">
                   Dr. Usama Naseer - Professional Care 24/7
                 </p>
               </div>

@@ -55,25 +55,25 @@ export default function HeroSection() {
       {/* Background Floor */}
       <div className="absolute bottom-0 w-full h-[25%] bg-[#53B7E9]/[0.10]" />
 
-      <div className="container mx-auto px-4 sm:px-10 2xl:px-4 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 2xl:grid-cols-8 gap-2 items-center pb-40 sm:pb-0 2xl:pb-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-4 py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 2xl:grid-cols-8 gap-2 items-center pb-40 sm:pb-0 2xl:pb-20 max-w-full">
           {/* Left Content */}
           <motion.div
-            className="space-y-5 sm:space-y-4 2xl:space-y-7 2xl:col-span-4"
+            className="space-y-5 sm:space-y-4 2xl:space-y-7 2xl:col-span-4 w-full max-w-full"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
             {/* Main Headline with Typewriter Effect */}
             <motion.div className="space-y-2" variants={itemVariants}>
-              <h1 className="text-4xl md:text-6xl 2xl:text-7xl font-bold text-gray-900 leading-tight font-heading">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-7xl font-bold text-gray-900 leading-tight font-heading break-words">
                 {displayText}
               </h1>
             </motion.div>
 
             {/* Subheadline */}
             <motion.p
-              className="text-md sm:text-lg 2xl:text-xl text-gray-600 leading-relaxed"
+              className="text-sm sm:text-md lg:text-lg 2xl:text-xl text-gray-600 leading-relaxed"
               variants={itemVariants}
             >
               Led by <strong>Dr. Usama Naseer</strong> with{" "}
@@ -165,29 +165,29 @@ export default function HeroSection() {
 
             {/* Quick Info */}
             <motion.div
-              className="flex flex-row sm:gap-32 2xl:gap-20 gap-4 pt-4 w-full items-center justify-start sm:justify-center"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-20 2xl:gap-20 pt-4 w-full items-start sm:items-center justify-start sm:justify-center"
               variants={itemVariants}
             >
               <motion.div
-                className="flex w-full items-center gap-3 text-gray-600"
-                whileHover={{ x: 10 }}
+                className="flex w-full sm:w-auto items-center gap-3 text-gray-600"
+                whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Clock className="w-5 h-5 text-vet-purple" />
-                <div>
-                  <p className="font-medium 2xl:text-lg">OPD Hours</p>
-                  <p className="text-sm 2xl:text-md">11:00 AM - 11:00 PM</p>
+                <Clock className="w-5 h-5 text-vet-purple flex-shrink-0" />
+                <div className="min-w-0">
+                  <p className="font-medium text-sm sm:text-base 2xl:text-lg">OPD Hours</p>
+                  <p className="text-xs sm:text-sm 2xl:text-md">11:00 AM - 11:00 PM</p>
                 </div>
               </motion.div>
               <motion.div
-                className="flex w-full items-center gap-3 text-gray-600"
-                whileHover={{ x: 10 }}
+                className="flex w-full sm:w-auto items-center gap-3 text-gray-600"
+                whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <MapPin className="w-5 h-5 text-vet-purple" />
-                <div>
-                  <p className="font-medium 2xl:text-lg">Location</p>
-                  <p className="text-sm 2xl:text-md">Westridge 1, Rawalpindi</p>
+                <MapPin className="w-5 h-5 text-vet-purple flex-shrink-0" />
+                <div className="min-w-0">
+                  <p className="font-medium text-sm sm:text-base 2xl:text-lg">Location</p>
+                  <p className="text-xs sm:text-sm 2xl:text-md">Westridge 1, Rawalpindi</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -196,16 +196,14 @@ export default function HeroSection() {
       </div>
       {/* Right Image */}
       {/* Image fixed bottom-right */}
-      <div className="absolute bottom-0 w-full flex justify-center sm:justify-end z-20">
-  <Image
-    src="/images/hero-dog-image.webp"
-    alt="Character"
-    width={900}
-    height={900}
-    className="w-[450px] md:w-[600px] lg:w-[800px] 2xl:w-[1000px] h-auto object-contain"
-  />
-</div>
-
-    </section>
+      <div className="absolute bottom-0 w-full flex justify-center sm:justify-end z-20 overflow-hidden">
+        <Image
+          src="/images/hero-dog-image.webp"
+          alt="Character"
+          width={900}
+          height={900}
+          className="w-[350px] sm:w-[450px] md:w-[600px] lg:w-[800px] 2xl:w-[1000px] h-auto object-contain max-w-full"
+        />
+      </div>    </section>
   );
 }

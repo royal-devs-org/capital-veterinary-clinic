@@ -234,8 +234,8 @@ export default function ServicesSection() {
   // Mobile positions
   const mobilePositions = [
     "absolute top-0 left-1/2 transform -translate-x-1/2", // top-center
-    "absolute top-20 left-2", // top-left
-    "absolute top-20 right-2", // top-right
+    "absolute top-35 left-2", // top-left
+    "absolute top-35 right-2", // top-right
   ];
 
   // Navigation handlers with smooth transition
@@ -285,7 +285,7 @@ export default function ServicesSection() {
           <div className="relative h-[550px] md:hidden">
             {/* Static Center Image - Outside carousel container */}
             <motion.div
-              className="absolute top-80 sm:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+              className="absolute top-96 sm:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
               variants={centerVariants}
             >
               <div className="relative flex items-center justify-center">
@@ -362,7 +362,7 @@ export default function ServicesSection() {
               })}
 
               {/* Carousel Navigation */}
-              <div className="absolute bottom-24 left-0 right-0 flex justify-center gap-8 z-30">
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-8 z-30">
                 <motion.button
                   onClick={handlePrev}
                   disabled={isTransitioning}
@@ -471,7 +471,7 @@ export default function ServicesSection() {
                     ease: "easeInOut",
                   }}
                 />
-                {/* Pet Image outside the circle */}
+                {/* Pet Image*/}
                 <div className="absolute top-1/2 left-1/2 w-56 md:w-80 lg:w-[750px] transform -translate-x-1/2 -translate-y-1/2">
                   <Image
                     src="/images/pets-sitting.png"
