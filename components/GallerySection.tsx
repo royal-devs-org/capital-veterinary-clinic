@@ -248,7 +248,7 @@ export default function GallerySection() {
         {/* Header */}
         <div className="text-center mb-4">
           <Badge className="bg-vet-blue text-white mb-4">Our Work</Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Professional Veterinary Care
           </h2>
           <p className="text-md sm:text-lg 2xl:text-xl text-gray-600 max-w-3xl mx-auto">
