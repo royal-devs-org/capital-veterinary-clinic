@@ -244,7 +244,7 @@ export default function GallerySection() {
       id="gallery"
       className="md:py-20 pt-20 sm:pt-0 bg-gradient-to-br from-gray-50 to-blue-50"
     >
-      <div className="container mx-auto px-4 pb-10">
+      <div className="container mx-auto px-4 pb-0 sm:pb-10">
         {/* Header */}
         <div className="text-center mb-4">
           <Badge className="bg-vet-blue text-white mb-4">Our Work</Badge>
