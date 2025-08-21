@@ -5,7 +5,7 @@ import { Stethoscope, Award, MapPin, Clock } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="pt-0 pb-20 bg-white">
+    <section id="about" className="py-10 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between w-full gap-6 md:gap-12">
           {/* left Content - Images */}
