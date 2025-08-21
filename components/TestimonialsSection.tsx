@@ -538,7 +538,7 @@ const featuredReviews: Review[] = [
             <AnimatedButton
               size="lg"
               variant="outline"
-              className="border-vet-blue text-vet-blue hover:bg-vet-blue hover:!text-white font-semibold shadow-lg"
+              className="w-[30%] border-vet-blue text-vet-blue hover:bg-vet-blue hover:!text-white font-semibold shadow-lg"
               hoverScale={1.05}
               tapScale={0.95}
             >

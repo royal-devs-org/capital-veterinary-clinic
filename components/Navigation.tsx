@@ -105,29 +105,29 @@ export default function Navigation() {
               ))}
             </div>
 
-            {/* Desktop CTA Buttons */}
-            <div className="hidden md:flex items-center gap-3">
-              <Link href="tel:03489032106">
-                <AnimatedButton
-                  variant="outline"
-                  className="border-vet-blue bg-vet-blue !text-white hover:bg-vet-blue/90 flex items-center"
-                  hoverScale={1.05}
-                  tapScale={0.95}
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  Call Now
-                </AnimatedButton>
-              </Link>
-              <Link href="#contact">
-                <AnimatedButton
-                  className="bg-vet-green hover:bg-green-600 !text-white"
-                  hoverScale={1.05}
-                  tapScale={0.95}
-                >
-                  Book Appointment
-                </AnimatedButton>
-              </Link>
-            </div>
+           {/* Desktop CTA Buttons */}
+<div className="hidden md:flex items-center gap-3">
+  <Link href="tel:03489032106">
+    <AnimatedButton
+      variant="outline"
+      className="border-vet-blue bg-vet-blue !text-white hover:bg-vet-blue/90 flex items-center cursor-pointer"
+      hoverScale={1.05}
+      tapScale={0.95}
+    >
+      <Phone className="w-4 h-4 mr-2" />
+      Call Now
+    </AnimatedButton>
+  </Link>
+  <Link href="#contact">
+    <AnimatedButton
+      className="bg-vet-green hover:bg-green-600 !text-white cursor-pointer"
+      hoverScale={1.05}
+      tapScale={0.95}
+    >
+      Book Appointment
+    </AnimatedButton>
+  </Link>
+</div>
 
             {/* Mobile Menu Button */}
             <motion.button

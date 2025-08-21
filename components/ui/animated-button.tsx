@@ -28,7 +28,7 @@ export function AnimatedButton({
   ...props
 }: AnimatedButtonProps) {
   return (
-    <motion.div
+    <motion.button
       whileHover={{ 
         scale: hoverScale,
         rotate: hoverRotate,
@@ -45,14 +45,14 @@ export function AnimatedButton({
         size={size}
         asChild={asChild}
         className={cn(
-          "transform transition-all duration-300 hover:shadow-xl active:shadow-lg",
+          "transform transition-all duration-300 hover:shadow-xl active:shadow-lg ",
           className
         )}
         {...props}
       >
         {children}
       </Button>
-    </motion.div>
+    </motion.button>
   );
 }
 

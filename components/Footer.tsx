@@ -174,44 +174,44 @@ export default function Footer() {
                     href="https://www.instagram.com/capital_veterinary_clinic/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
+                    className="w-12 h-12 text-white duration-300 flex items-center justify-center"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    <Instagram className="w-5 h-5 hover:scale-110 transition-transform" />
                   </motion.a>
 
                   <motion.a
                     href="https://www.facebook.com/p/Capital-Veterinary-Clinic-100063850278921/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
+                    className="w-12 h-12 text-white flex items-center justify-center"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    <Facebook className="w-5 h-5 hover:scale-110 transition-transform" />
                   </motion.a>
 
                   <motion.a
                     href="https://pk.linkedin.com/in/dr-usama-naseer-3b5541245"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
+                    className="w-12 h-12 text-white flex items-center justify-center"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    <Linkedin className="w-5 h-5 hover:scale-110 transition-transform" />
                   </motion.a>
 
                   <motion.a
                     href="https://share.google/SyksRwKyMUEHegTTO"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
+                    className="w-12 h-12 text-white flex items-center justify-center"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <ExternalLink className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    <ExternalLink className="w-5 h-5 hover:scale-110 transition-transform" />
                   </motion.a>
                 </div>
             </div>

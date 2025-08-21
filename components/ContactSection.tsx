@@ -395,9 +395,9 @@ export default function ContactSection() {
                   <AnimatedButton
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-vet-green hover:bg-green-600 text-white font-semibold py-3 text-lg"
-                    hoverScale={1.02}
-                    tapScale={0.98}
+                    className="w-full bg-vet-green cursor-pointer text-white font-semibold py-3 text-lg"
+                     hoverScale={1.05}
+                  tapScale={0.95}
                   >
                     {isSubmitting ? (
                       <>
