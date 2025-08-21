@@ -3,7 +3,16 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import AnimatedButton from "@/components/ui/animated-button";
-import { Phone, Clock, MapPin, Heart, Shield, Star, Send, Calendar } from "lucide-react";
+import {
+  Phone,
+  Clock,
+  MapPin,
+  Heart,
+  Shield,
+  Star,
+  Send,
+  Calendar,
+} from "lucide-react";
 import { motion, easeOut } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -46,15 +55,12 @@ export default function HeroSection() {
     },
   };
 
-
   return (
     <section className="relative min-h-screen 2xl:min-h-[85vh] flex items-center overflow-hidden 2xl:pt-20">
       {/* Background Wall */}
       <div className="absolute inset-0 bg-[#53B7E9]/[0.28]" />
-
       {/* Background Floor */}
       <div className="absolute bottom-0 w-full h-[25%] bg-[#53B7E9]/[0.10]" />
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-4 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 2xl:grid-cols-8 gap-2 items-center pb-40 sm:pb-0 2xl:pb-20 max-w-full">
           {/* Left Content */}
@@ -84,7 +90,7 @@ export default function HeroSection() {
 
             {/* Trust Indicators */}
             <motion.div
-              className="grid grid-cols-3 gap-4 sm:py-3 py-6 place-items-center"
+              className="grid grid-cols-3 gap-4 sm:py-3 py-3 place-items-center"
               variants={itemVariants}
             >
               <motion.div className="text-center" whileHover={{ scale: 1.05 }}>
@@ -134,32 +140,34 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex flex-row gap-4 items-center justify-center w-full"
+              className="flex flex-row gap-2 sm:gap-4 items-center justify-center w-full"
               variants={itemVariants}
             >
-              <Link href="#contact" className="w-full" >
+              <Link href="#contact" className="w-full">
                 <AnimatedButton
-                size="lg"
-                  className="shadow-lg bg-vet-green hover:bg-green-600 !text-white w-full cursor-pointer px-8 py-4 text-lg 2xl:text-xl 2xl:py-6 font-semibold"
+                  size="lg"
+                  className="shadow-lg bg-vet-green hover:bg-green-600 !text-white w-full cursor-pointer px-8 py-4 text-sm sm:text-lg 2xl:text-xl 2xl:py-6 font-semibold"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
-                  <Calendar className="w-5 h-5 mr-2" />
+                  <Calendar className="w-5 h-5 sm:mr-2" />
                   <span className="hidden sm:inline">Book an Appointment</span>
                   <span className="inline sm:hidden">Book Appointment</span>
                 </AnimatedButton>
               </Link>
 
-              <Link href="tel:03489032106"  className="w-full">
+              <Link href="tel:03489032106" className="w-full">
                 <AnimatedButton
-                variant="outline"
-                size="lg"
-                  className="w-full border-vet-purple text-vet-purple hover:!text-white hover:bg-vet-purple cursor-pointer px-8 py-4 text-lg 2xl:text-xl 2xl:py-6 font-semibold"
+                  variant="outline"
+                  size="lg"
+                  className="w-full border-vet-purple text-vet-purple hover:!text-white hover:bg-vet-purple cursor-pointer px-8 py-4 text-sm sm:text-lg 2xl:text-xl 2xl:py-6 font-semibold"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
-                  <Phone className="w-5 h-5 mr-2" />
-                  <span className="hidden sm:inline">Call Now: 0348-9032106</span>
+                  <Phone className="w-5 h-5 sm:mr-2" />
+                  <span className="hidden sm:inline">
+                    Call Now: 0348-9032106
+                  </span>
                   <span className="inline sm:hidden">Call Now</span>
                 </AnimatedButton>
               </Link>
@@ -177,8 +185,12 @@ export default function HeroSection() {
               >
                 <Clock className="w-5 h-5 text-vet-purple flex-shrink-0" />
                 <div className="min-w-0">
-                  <p className="font-medium text-sm sm:text-base 2xl:text-lg">OPD Hours</p>
-                  <p className="text-xs sm:text-sm 2xl:text-md">11:00 AM - 11:00 PM</p>
+                  <p className="font-medium text-sm sm:text-base 2xl:text-lg">
+                    OPD Hours
+                  </p>
+                  <p className="text-xs sm:text-sm 2xl:text-md">
+                    11:00 AM - 11:00 PM
+                  </p>
                 </div>
               </motion.div>
               <motion.div
@@ -188,8 +200,12 @@ export default function HeroSection() {
               >
                 <MapPin className="w-5 h-5 text-vet-purple flex-shrink-0" />
                 <div className="min-w-0">
-                  <p className="font-medium text-sm sm:text-base 2xl:text-lg">Location</p>
-                  <p className="text-xs sm:text-sm 2xl:text-md">Westridge 1, Rawalpindi</p>
+                  <p className="font-medium text-sm sm:text-base 2xl:text-lg">
+                    Location
+                  </p>
+                  <p className="text-xs sm:text-sm 2xl:text-md">
+                    Westridge 1, Rawalpindi
+                  </p>
                 </div>
               </motion.div>
             </motion.div>
@@ -204,8 +220,9 @@ export default function HeroSection() {
           alt="Character"
           width={900}
           height={900}
-                    className="w-[400px] sm:w-[450px] md:w-[600px] lg:w-[800px] 2xl:w-[1000px] h-auto object-contain max-w-full"
+          className="w-[400px] sm:w-[450px] md:w-[600px] lg:w-[800px] 2xl:w-[1000px] h-auto object-contain max-w-full"
         />
-      </div>    </section>
+      </div>{" "}
+    </section>
   );
 }
