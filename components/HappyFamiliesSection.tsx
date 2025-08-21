@@ -305,7 +305,7 @@ export default function HappyFamiliesSection() {
               {/* Lottie Container */}
               <div 
                 ref={lottieRef}
-                className="relative z-10 w-full h-full flex items-center justify-center"
+                className="relative z-10 w-full h-full flex items-center justify-center scale-150"
               />
               
               {/* Decorative Elements */}
