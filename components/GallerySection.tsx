@@ -1,11 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import { LayoutGrid } from "@/components/ui/layout-grid";
 import { Badge } from "@/components/ui/badge";
 import AnimatedButton from "@/components/ui/animated-button";
-import { Play, Heart, Shield, Star } from "lucide-react";
+import { Play, Heart, Shield, Star, ChevronDown, ChevronUp } from "lucide-react";
 
 export default function GallerySection() {
+  const [showAll, setShowAll] = useState(false);
+  const MOBILE_INITIAL_COUNT = 6;
+
   // Mixed media layout grid - images and videos with uneven sizes
   const mixedMediaGrid = [
     {
@@ -224,12 +228,23 @@ export default function GallerySection() {
     },
   ];
 
+  // Get the cards to display based on mobile state
+  const getDisplayCards = () => {
+    // On desktop, always show all cards
+    // On mobile, show limited cards unless showAll is true
+    return mixedMediaGrid;
+  };
+
+  const getMobileDisplayCards = () => {
+    return showAll ? mixedMediaGrid : mixedMediaGrid.slice(0, MOBILE_INITIAL_COUNT);
+  };
+
   return (
     <section
       id="gallery"
       className="md:py-20 bg-gradient-to-br from-gray-50 to-blue-50"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 pb-10">
         {/* Header */}
         <div className="text-center mb-4">
           <Badge className="bg-vet-blue text-white mb-4">Our Work</Badge>
@@ -243,9 +258,42 @@ export default function GallerySection() {
           </p>
         </div>
 
-        {/* Mixed Media Layout Grid */}
-        <div className="mb-20">
-          <LayoutGrid cards={mixedMediaGrid} />
+        {/* Desktop Layout Grid - Show all cards */}
+        <div className="hidden mb-20 md:block">
+          <LayoutGrid cards={getDisplayCards()} />
+        </div>
+
+        {/* Mobile Layout Grid - Show limited cards with pagination */}
+        <div className="block md:hidden mb-8">
+          <LayoutGrid cards={getMobileDisplayCards()} />
+        </div>
+
+        {/* Mobile Show More/Less Button */}
+        <div className="block md:hidden text-center">
+          {!showAll && mixedMediaGrid.length > MOBILE_INITIAL_COUNT && (
+            <AnimatedButton
+              onClick={() => setShowAll(true)}
+              className="bg-vet-blue hover:bg-vet-blue/90 text-white font-semibold px-6 py-3 cursor-pointer"
+              hoverScale={1.05}
+              tapScale={0.95}
+            >
+              <ChevronDown className="w-5 h-5 mr-2" />
+              Show More ({mixedMediaGrid.length - MOBILE_INITIAL_COUNT} more)
+            </AnimatedButton>
+          )}
+          
+          {showAll && (
+            <AnimatedButton
+              onClick={() => setShowAll(false)}
+              variant="outline"
+              className="border-vet-blue text-vet-blue hover:bg-vet-blue hover:text-white font-semibold px-6 py-3 cursor-pointer"
+              hoverScale={1.05}
+              tapScale={0.95}
+            >
+              <ChevronUp className="w-5 h-5 mr-2" />
+              Show Less
+            </AnimatedButton>
+          )}
         </div>
       </div>
     </section>

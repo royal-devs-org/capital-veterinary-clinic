@@ -93,10 +93,10 @@ export default function ContactSection() {
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
-      <div className="container mx-auto px-4 z-10">
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <motion.div
-          className="text-center mb-16 "
+          className="text-center mb-16 relative z-10"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -112,20 +112,15 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 z-10">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 relative z-10">
           {/* Contact Information */}
           <motion.div
-            className="space-y-8"
+            className="space-y-8 relative z-10"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            {/* Emergency Alert */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
               <Card className="border-red-500 border-2 bg-gradient-to-r from-red-50 to-pink-50 shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
@@ -145,7 +140,7 @@ export default function ContactSection() {
                   </p>
                   <Link href="tel:03489032106">
                     <AnimatedButton
-                      className="bg-red-600 hover:bg-red-700 text-white font-semibold w-full shadow-lg"
+                      className="bg-red-600 hover:bg-red-700 text-white font-semibold w-full shadow-lg cursor-pointer"
                       hoverScale={1.05}
                       tapScale={0.95}
                     >
@@ -155,7 +150,6 @@ export default function ContactSection() {
                   </Link>
                 </CardContent>
               </Card>
-            </motion.div>
 
             {/* Map Placeholder */}
             <Card className="border-vet-purple border-2 shadow-xl bg-white py-0">
@@ -195,7 +189,7 @@ export default function ContactSection() {
 
           {/* Elegant Appointment Form */}
           <motion.div
-            className="space-y-8"
+            className="space-y-8 relative z-10"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -232,7 +226,7 @@ export default function ContactSection() {
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="mt-1"
+                        className="mt-1 bg-blue-300/20 border-sky-700/50 focus:border-sky-700 focus:ring-0 focus:ring-sky-700/70"
                         placeholder="Enter your full name"
                       />
                     </div>
@@ -250,7 +244,7 @@ export default function ContactSection() {
                         required
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="mt-1"
+                        className="mt-1 bg-blue-300/20 border-sky-700/50 focus:border-sky-700 focus:ring-1 focus:ring-sky-700/70"
                         placeholder="03XX-XXXXXXX"
                       />
                     </div>
@@ -269,7 +263,7 @@ export default function ContactSection() {
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="mt-1"
+                      className="mt-1 bg-blue-300/20 border-sky-700/50 focus:border-sky-700 focus:ring-1 focus:ring-sky-700/70"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -289,7 +283,7 @@ export default function ContactSection() {
                         required
                         value={formData.serviceRequired}
                         onChange={handleInputChange}
-                        className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-vet-blue"
+                        className="mt-1 w-full px-3 py-2 pr-8 bg-blue-300/20 border border-sky-700/50 rounded-md focus:outline-none focus:border-sky-700 focus:ring-1 focus:ring-sky-700/70 appearance-none bg-no-repeat bg-[length:16px] bg-[position:right_8px_center] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQgNkw4IDEwTDEyIDYiIHN0cm9rZT0iIzM3NDE1MSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==')]"
                       >
                         <option value="">Select service</option>
                         <option value="routine-checkup">Routine Checkup</option>
@@ -314,7 +308,7 @@ export default function ContactSection() {
                         required
                         value={formData.urgency}
                         onChange={handleInputChange}
-                        className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-vet-blue"
+                        className="mt-1 w-full px-3 py-2 pr-8 bg-blue-300/20 border border-sky-700/50 rounded-md focus:outline-none focus:border-sky-700 focus:ring-1 focus:ring-sky-700/70 appearance-none bg-no-repeat bg-[length:16px] bg-[position:right_8px_center] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQgNkw4IDEwTDEyIDYiIHN0cm9rZT0iIzM3NDE1MSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==')]"
                       >
                         <option value="">Select urgency</option>
                         <option value="emergency">Emergency (Immediate)</option>
@@ -344,7 +338,7 @@ export default function ContactSection() {
                         type="date"
                         value={formData.preferredDate}
                         onChange={handleInputChange}
-                        className="mt-1"
+                        className="mt-1 bg-blue-300/20 border-sky-700/50 focus:border-sky-700 focus:ring-0 focus:ring-sky-700/70"
                         min={minDate}
                       />
                     </div>
@@ -360,7 +354,7 @@ export default function ContactSection() {
                         name="preferredTime"
                         value={formData.preferredTime}
                         onChange={handleInputChange}
-                        className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-vet-blue"
+                        className="mt-1 w-full px-3 py-2 pr-8 bg-blue-300/20 border border-sky-700/50 rounded-md focus:outline-none focus:border-sky-700 focus:ring-1 focus:ring-sky-700/70 appearance-none bg-no-repeat bg-[length:16px] bg-[position:right_8px_center] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQgNkw4IDEwTDEyIDYiIHN0cm9rZT0iIzM3NDE1MSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==')]"
                       >
                         <option value="">Select time</option>
                         <option value="morning">Morning (11 AM - 2 PM)</option>
@@ -386,7 +380,7 @@ export default function ContactSection() {
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={4}
-                      className="mt-1"
+                      className="mt-1 bg-blue-300/20 border-sky-700/50 focus:border-sky-700 focus:ring-1 focus:ring-sky-700/70"
                       placeholder="Please describe your pet&apos;s condition, symptoms, or any specific concerns..."
                     />
                   </div>
@@ -396,8 +390,8 @@ export default function ContactSection() {
                     type="submit"
                     disabled={isSubmitting}
                     className="w-full bg-vet-green cursor-pointer text-white font-semibold py-3 text-lg"
-                     hoverScale={1.05}
-                  tapScale={0.95}
+                    hoverScale={1.05}
+                    tapScale={0.95}
                   >
                     {isSubmitting ? (
                       <>
@@ -423,7 +417,7 @@ export default function ContactSection() {
         </div>
       </div>
       {/* Background pattern */}
-      <div className="absolute inset-0 z-0 bg-[url('/images/paw-pattern.svg')] bg-cover bg-center opacity-2 " />
+      <div className="absolute inset-0 z-0 bg-[url('/images/paw-pattern.svg')] bg-cover bg-center opacity-2 pointer-events-none" />
     </motion.section>
   );
 }
