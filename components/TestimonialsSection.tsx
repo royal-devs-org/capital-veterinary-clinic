@@ -311,7 +311,7 @@ const featuredReviews: Review[] = [
                               >
                                 {/* Avatar */}
                                 <div className="relative">
-                                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#53B7E9] to-[#412F85] p-1">
+                                  <div className="w-16 h-16 rounded-full p-1">
                                     <Image
                                       src={review.image}
                                       alt={review.name}

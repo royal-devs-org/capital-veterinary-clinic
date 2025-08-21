@@ -219,7 +219,7 @@ export default function Footer() {
         </div>
 
         {/* CTA & Image */}
-        <div className="relative border-t border-blue-800 mb-52 sm:mb-0 sm:mt-8 py-8">
+        <div className="relative border-t border-neutral-50 mb-52 sm:mb-0 sm:mt-8 py-8">
           <div className="w-full flex items-center justify-end">
             {/* Animals Image Section */}
             <div className="absolute -bottom-60 sm:-bottom-12 md:-left-8 flex justify-center">
