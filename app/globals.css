@@ -10,12 +10,31 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(56, 215, 20);
+  background: transparent;
   border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(76, 183, 53, 0.6);
+  background: transparent;
+}
+
+/* Hide scrollbar on mobile devices */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+  }
 }
 
 /* Smooth scrolling */

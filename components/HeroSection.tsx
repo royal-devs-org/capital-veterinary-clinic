@@ -137,30 +137,29 @@ export default function HeroSection() {
               className="flex flex-row gap-4 items-center justify-center w-full"
               variants={itemVariants}
             >
-              <Link href="#contact" className="block w-full">
-              <AnimatedButton
-                size="lg"
-                className="w-full bg-vet-green hover:bg-green-600 text-white font-semibold px-8 py-4 text-lg 2xl:text-xl 2xl:py-6 shadow-lg"
-                hoverScale={1.02}
-                tapScale={0.95}
-              >
-                <Calendar className="w-5 h-5 mr-2" />
-                <span className="hidden sm:inline">Book an Appointment</span>
-                <span className="inline sm:hidden">Book Appointment</span>
-              </AnimatedButton>
+              <Link href="#contact">
+                <AnimatedButton
+                  className="bg-vet-green hover:bg-green-600 !text-white cursor-pointer px-8 py-4 text-lg 2xl:text-xl 2xl:py-6 font-semibold"
+                  hoverScale={1.05}
+                  tapScale={0.95}
+                >
+                  <Calendar className="w-5 h-5 mr-2" />
+                  <span className="hidden sm:inline">Book an Appointment</span>
+                  <span className="inline sm:hidden">Book Appointment</span>
+                </AnimatedButton>
               </Link>
 
-              <AnimatedButton
-                variant="outline"
-                size="lg"
-                className="w-full border-vet-purple text-vet-purple hover:bg-vet-purple hover:text-white font-semibold px-8 py-4 text-lg 2xl:text-xl 2xl:py-6 shadow-lg"
-                hoverScale={1.05}
-                tapScale={0.95}
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                <span className="hidden sm:inline">Call Now: 0348-9032106</span>
-                <span className="inline sm:hidden">Call Now</span>
-              </AnimatedButton>
+              <Link href="tel:03489032106">
+                <AnimatedButton
+                  className="border-vet-blue bg-vet-blue !text-white hover:bg-vet-blue/90 cursor-pointer px-8 py-4 text-lg 2xl:text-xl 2xl:py-6 font-semibold"
+                  hoverScale={1.05}
+                  tapScale={0.95}
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  <span className="hidden sm:inline">Call Now: 0348-9032106</span>
+                  <span className="inline sm:hidden">Call Now</span>
+                </AnimatedButton>
+              </Link>
             </motion.div>
 
             {/* Quick Info */}
@@ -195,14 +194,14 @@ export default function HeroSection() {
         </div>
       </div>
       {/* Right Image */}
-      {/* Image fixed bottom-right */}
-      <div className="absolute bottom-0 w-full flex justify-center sm:justify-end z-20 overflow-hidden">
+      {/* Image positioned to avoid overlap */}
+      <div className="absolute bottom-0 right-0 z-10 overflow-hidden pointer-events-none">
         <Image
           src="/images/hero-dog-image.webp"
           alt="Character"
           width={900}
           height={900}
-          className="w-[350px] sm:w-[450px] md:w-[600px] lg:w-[800px] 2xl:w-[1000px] h-auto object-contain max-w-full"
+          className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] xl:w-[700px] 2xl:w-[800px] h-auto object-contain"
         />
       </div>    </section>
   );

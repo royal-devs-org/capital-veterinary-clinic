@@ -38,14 +38,14 @@ export function AnimatedButton({
         scale: tapScale,
         transition: { type: "spring", stiffness: 400, damping: 10 }
       }}
-      className="inline-block w-full"
+      className="inline-block"
     >
       <Button
         variant={variant}
         size={size}
         asChild={asChild}
         className={cn(
-          "transform transition-all duration-300 hover:shadow-xl active:shadow-lg",
+          "hover:shadow-xl active:shadow-lg",
           className
         )}
         {...props}
