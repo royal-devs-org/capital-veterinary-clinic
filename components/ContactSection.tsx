@@ -20,6 +20,7 @@ import {
   AlertCircle,
   CheckCircle,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -142,7 +143,7 @@ export default function ContactSection() {
                     If your pet needs immediate medical attention, don&apos;t wait!
                     Call us right now.
                   </p>
-                  <a href="tel:03489032106">
+                  <Link href="tel:03489032106">
                     <AnimatedButton
                       className="bg-red-600 hover:bg-red-700 text-white font-semibold w-full shadow-lg"
                       hoverScale={1.05}
@@ -151,7 +152,7 @@ export default function ContactSection() {
                       <Phone className="w-4 h-4 mr-2" />
                       Call Emergency: 0348-9032106
                     </AnimatedButton>
-                  </a>
+                  </Link>
                 </CardContent>
               </Card>
             </motion.div>
@@ -422,7 +423,7 @@ export default function ContactSection() {
         </div>
       </div>
       {/* Background pattern */}
-      <div className="absolute inset-0 z-0 bg-[url('/images/paw-pattern.svg')] bg-cover bg-center opacity-2 mx-20" />
+      <div className="absolute inset-0 z-0 bg-[url('/images/paw-pattern.svg')] bg-cover bg-center opacity-2 " />
     </motion.section>
   );
 }

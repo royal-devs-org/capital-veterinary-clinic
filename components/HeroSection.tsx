@@ -6,6 +6,7 @@ import AnimatedButton from "@/components/ui/animated-button";
 import { Phone, Clock, MapPin, Heart, Shield, Star, Send, Calendar } from "lucide-react";
 import { motion, easeOut } from "framer-motion";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function HeroSection() {
   const [displayText, setDisplayText] = useState("");
@@ -136,6 +137,7 @@ export default function HeroSection() {
               className="flex flex-row gap-4 items-center justify-center w-full"
               variants={itemVariants}
             >
+              <Link href="#contact" className="block w-full">
               <AnimatedButton
                 size="lg"
                 className="w-full bg-vet-green hover:bg-green-600 text-white font-semibold px-8 py-4 text-lg 2xl:text-xl 2xl:py-6 shadow-lg"
@@ -146,6 +148,7 @@ export default function HeroSection() {
                 <span className="hidden sm:inline">Book an Appointment</span>
                 <span className="inline sm:hidden">Book Appointment</span>
               </AnimatedButton>
+              </Link>
 
               <AnimatedButton
                 variant="outline"

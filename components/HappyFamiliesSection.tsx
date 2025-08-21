@@ -1,10 +1,11 @@
 "use client";
 
 import { motion, easeOut } from "framer-motion";
-import { Star, Users, Heart, PawPrint, Calendar } from "lucide-react";
+import { Star, Users, Heart, PawPrint, Calendar} from "lucide-react";
 import AnimatedButton from "@/components/ui/animated-button";
 import { Badge } from "@/components/ui/badge";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 export default function HappyFamiliesSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -247,9 +248,10 @@ export default function HappyFamiliesSection() {
 
             {/* CTA Buttons */}
             <motion.div 
-              className="flex flex-col gap-4 sm:gap-8 sm:flex-row justify-center lg:justify-start"
+              className="flex flex-col gap-4 sm:gap-7 sm:flex-row justify-center lg:justify-center"
               variants={itemVariants}
             >
+              <Link href="#contact" className="block w-full">
               <AnimatedButton 
                 size="lg"
                 className="w-full bg-white text-green-600 hover:bg-green-50 font-semibold shadow-lg border-2 border-white"
@@ -259,7 +261,9 @@ export default function HappyFamiliesSection() {
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Your Appointment
               </AnimatedButton>
+              </Link>
               
+              <Link href="#testimonials" className="block w-full">
               <AnimatedButton 
                 variant="outline" 
                 size="lg"
@@ -270,6 +274,7 @@ export default function HappyFamiliesSection() {
                 <Star className="w-5 h-5 mr-2" />
                 Read Success Stories
               </AnimatedButton>
+              </Link>
             </motion.div>
           </motion.div>
 
