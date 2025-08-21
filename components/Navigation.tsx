@@ -216,16 +216,16 @@ export default function Navigation() {
                      {/* CTA Buttons */}
            <div className="px-6 py-6">
              <div className="flex flex-col items-center space-y-4">
-               <Link href="tel:03489032106" className="w-full flex justify-center" onClick={() => setIsOpen(false)}>
-                 <AnimatedButton
-                   className="px-10 py-3 flex justify-center items-center bg-vet-blue hover:bg-vet-blue/90 !text-white text-base font-semibold shadow-md"
-                   hoverScale={1.02}
-                   tapScale={0.98}
-                 >
-                   <Phone className="w-5 h-5 mr-2" />
-                   Call Now
-                 </AnimatedButton>
-               </Link>
+                               <Link href="tel:03489032106" className="w-full flex justify-center" onClick={() => setIsOpen(false)}>
+                  <AnimatedButton
+                    className="px-12 py-3 flex justify-center items-center bg-vet-blue hover:bg-vet-blue/90 !text-white text-base font-semibold shadow-md"
+                    hoverScale={1.02}
+                    tapScale={0.98}
+                  >
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call Now
+                  </AnimatedButton>
+                </Link>
                <Link href="#contact" className="w-full flex justify-center" onClick={() => setIsOpen(false)}>
                  <AnimatedButton
                    className="px-10 py-3 flex justify-center items-center bg-vet-green hover:bg-green-600 !text-white text-base font-semibold shadow-md"
