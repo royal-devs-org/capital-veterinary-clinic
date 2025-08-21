@@ -137,9 +137,10 @@ export default function HeroSection() {
               className="flex flex-row gap-4 items-center justify-center w-full"
               variants={itemVariants}
             >
-              <Link href="#contact">
+              <Link href="#contact" className="w-full" >
                 <AnimatedButton
-                  className="bg-vet-green hover:bg-green-600 !text-white cursor-pointer px-8 py-4 text-lg 2xl:text-xl 2xl:py-6 font-semibold"
+                size="lg"
+                  className="shadow-lg bg-vet-green hover:bg-green-600 !text-white w-full cursor-pointer px-8 py-4 text-lg 2xl:text-xl 2xl:py-6 font-semibold"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
@@ -149,9 +150,11 @@ export default function HeroSection() {
                 </AnimatedButton>
               </Link>
 
-              <Link href="tel:03489032106">
+              <Link href="tel:03489032106"  className="w-full">
                 <AnimatedButton
-                  className="border-vet-blue bg-vet-blue !text-white hover:bg-vet-blue/90 cursor-pointer px-8 py-4 text-lg 2xl:text-xl 2xl:py-6 font-semibold"
+                variant="outline"
+                size="lg"
+                  className="w-full border-vet-purple text-vet-purple hover:!text-white hover:bg-vet-purple cursor-pointer px-8 py-4 text-lg 2xl:text-xl 2xl:py-6 font-semibold"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
@@ -164,7 +167,7 @@ export default function HeroSection() {
 
             {/* Quick Info */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-20 2xl:gap-20 pt-4 w-full items-start sm:items-center justify-start sm:justify-center"
+              className="flex flex-row gap-4 sm:gap-8 lg:gap-48 2xl:gap-20 pt-4 w-full items-center justify-start"
               variants={itemVariants}
             >
               <motion.div
@@ -195,13 +198,13 @@ export default function HeroSection() {
       </div>
       {/* Right Image */}
       {/* Image positioned to avoid overlap */}
-      <div className="absolute bottom-0 right-0 z-10 overflow-hidden pointer-events-none">
+      <div className="absolute bottom-0 w-full flex justify-center sm:justify-end z-10 pointer-events-none overflow-hidden">
         <Image
           src="/images/hero-dog-image.webp"
           alt="Character"
           width={900}
           height={900}
-          className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] xl:w-[700px] 2xl:w-[800px] h-auto object-contain"
+                    className="w-[400px] sm:w-[450px] md:w-[600px] lg:w-[800px] 2xl:w-[1000px] h-auto object-contain max-w-full"
         />
       </div>    </section>
   );

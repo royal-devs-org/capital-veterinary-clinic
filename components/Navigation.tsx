@@ -66,13 +66,20 @@ export default function Navigation() {
       </div>
 
       {/* Main Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 overflow-hidden ${
-        mounted && isScrolled ? 'bg-white shadow-lg py-2 top-0 ' : 'bg-white/95 backdrop-blur-sm py-4'
-      }`}>
+      <nav
+        className={`fixed w-full z-50 transition-all duration-300 overflow-hidden ${
+          mounted && isScrolled
+            ? "bg-white shadow-lg py-2 top-0 "
+            : "bg-white/95 backdrop-blur-sm py-4"
+        }`}
+      >
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link href="#home" className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+            <Link
+              href="#home"
+              className="flex items-center gap-2 sm:gap-3 flex-shrink-0"
+            >
               <div className="w-10 h-10 sm:w-12 sm:h-12 relative">
                 <Image
                   src="/images/media/Clinic Logo.png"
@@ -105,29 +112,29 @@ export default function Navigation() {
               ))}
             </div>
 
-           {/* Desktop CTA Buttons */}
-<div className="hidden md:flex items-center gap-3">
-  <Link href="tel:03489032106">
-    <AnimatedButton
-      variant="outline"
-      className="border-vet-blue bg-vet-blue !text-white hover:bg-vet-blue/90 flex items-center cursor-pointer"
-      hoverScale={1.05}
-      tapScale={0.95}
-    >
-      <Phone className="w-4 h-4 mr-2" />
-      Call Now
-    </AnimatedButton>
-  </Link>
-  <Link href="#contact">
-    <AnimatedButton
-      className="bg-vet-green hover:bg-green-600 !text-white cursor-pointer"
-      hoverScale={1.05}
-      tapScale={0.95}
-    >
-      Book Appointment
-    </AnimatedButton>
-  </Link>
-</div>
+            {/* Desktop CTA Buttons */}
+            <div className="hidden md:flex items-center gap-3">
+              <Link href="tel:03489032106">
+                <AnimatedButton
+                  variant="outline"
+                  className="border-vet-blue bg-vet-blue !text-white hover:bg-vet-blue/90 flex items-center cursor-pointer"
+                  hoverScale={1.05}
+                  tapScale={0.95}
+                >
+                  <Phone className="w-4 h-4 mr-2" />
+                  Call Now
+                </AnimatedButton>
+              </Link>
+              <Link href="#contact">
+                <AnimatedButton
+                  className="bg-vet-green hover:bg-green-600 !text-white cursor-pointer"
+                  hoverScale={1.05}
+                  tapScale={0.95}
+                >
+                  Book Appointment
+                </AnimatedButton>
+              </Link>
+            </div>
 
             {/* Mobile Menu Button */}
             <motion.button
@@ -137,7 +144,11 @@ export default function Navigation() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </motion.button>
           </div>
         </div>
@@ -213,30 +224,38 @@ export default function Navigation() {
           {/* Spacer pushes CTA + Contact to bottom */}
           <div className="flex-grow" />
 
-                     {/* CTA Buttons */}
-           <div className="px-6 py-6">
-             <div className="flex flex-col items-center space-y-4">
-               <Link href="tel:03489032106" className="w-full flex justify-center" onClick={() => setIsOpen(false)}>
-                 <AnimatedButton
-                   className="px-10 py-3 flex justify-center items-center bg-vet-blue hover:bg-vet-blue/90 !text-white text-base font-semibold shadow-md"
-                   hoverScale={1.02}
-                   tapScale={0.98}
-                 >
-                   <Phone className="w-5 h-5 mr-2" />
-                   Call Now
-                 </AnimatedButton>
-               </Link>
-               <Link href="#contact" className="w-full flex justify-center" onClick={() => setIsOpen(false)}>
-                 <AnimatedButton
-                   className="px-10 py-3 flex justify-center items-center bg-vet-green hover:bg-green-600 !text-white text-base font-semibold shadow-md"
-                   hoverScale={1.02}
-                   tapScale={0.98}
-                 >
-                   Book Appointment
-                 </AnimatedButton>
-               </Link>
-             </div>
-           </div>
+          {/* CTA Buttons */}
+          <div className="px-6 py-6 w-full">
+            <div className="flex flex-col items-center space-y-4 w-full">
+              <Link
+                href="tel:03489032106"
+                className="w-full flex justify-center"
+                onClick={() => setIsOpen(false)}
+              >
+                <AnimatedButton
+                  className="w-full px-10 py-3 flex justify-center items-center bg-vet-blue hover:bg-vet-blue/90 !text-white text-base font-semibold shadow-md"
+                  hoverScale={1.02}
+                  tapScale={0.98}
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call Now
+                </AnimatedButton>
+              </Link>
+              <Link
+                href="#contact"
+                className="w-full flex justify-center"
+                onClick={() => setIsOpen(false)}
+              >
+                <AnimatedButton
+                  className="w-full px-10 py-3 flex justify-center items-center bg-vet-green hover:bg-green-600 !text-white text-base font-semibold shadow-md"
+                  hoverScale={1.02}
+                  tapScale={0.98}
+                >
+                  Book Appointment
+                </AnimatedButton>
+              </Link>
+            </div>
+          </div>
 
           {/* Contact Info */}
           <div className="p-6 border-t border-gray-200 bg-gray-50">
@@ -249,7 +268,9 @@ export default function Navigation() {
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="w-4 h-4 text-vet-green" />
-                <span className="text-sm text-gray-600">OPD: 11 AM - 11 PM</span>
+                <span className="text-sm text-gray-600">
+                  OPD: 11 AM - 11 PM
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-vet-green" />

@@ -38,7 +38,7 @@ export function AnimatedButton({
         scale: tapScale,
         transition: { type: "spring", stiffness: 400, damping: 10 }
       }}
-      className="inline-block"
+      className="inline-block w-full"
     >
       <Button
         variant={variant}
