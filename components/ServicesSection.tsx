@@ -98,41 +98,46 @@ export default function ServicesSection() {
     return positions[position as keyof typeof positions];
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
+// Container fade + stagger
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.1,
+      staggerChildren: 0.05,
+      ease: easeInOut,
     },
-  };
+  },
+};
 
-  const itemVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: easeOut,
-      },
+// Smooth item scaling (desktop services)
+const itemVariants = {
+  hidden: { scale: 0.8, opacity: 0 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easeOut,
     },
-  };
+  },
+};
 
-  const centerVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: easeOut,
-        delay: 0.5,
-      },
+// Center pet image
+const centerVariants = {
+  hidden: { scale: 0.9, opacity: 0 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: easeInOut,
+      delay: 0.5,
     },
-  };
+  },
+};
+
 
   // Carousel state for mobile
   const [currentGroup, setCurrentGroup] = useState(0);
@@ -140,75 +145,61 @@ export default function ServicesSection() {
   const totalGroups = Math.ceil(services.length / groupSize);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Animation variants for mobile carousel - bubble-like transitions
-  const mobileCarouselVariants = {
-    initial: { 
-      opacity: 0, 
-      scale: 0.3,
-      y: 60,
+// Animation variants for mobile carousel - bubble-like transitions
+const mobileCarouselVariants = {
+  initial: { opacity: 0, scale: 0.9, y: 40 },
+  animate: { 
+    opacity: 1, 
+    scale: 1, 
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: easeInOut,
+      staggerChildren: 0.15,
     },
-    animate: { 
-      opacity: 1, 
-      scale: 1,
-      y: 0,
-      transition: {
-        type: "spring" as const,
-        stiffness: 300,
-        damping: 20,
-        staggerChildren: 0.1
-      }
-    },
-    exit: { 
-      opacity: 0, 
-      scale: 0.3,
-      y: -60,
-      transition: {
-        duration: 0.3,
-        ease: easeInOut
-      }
-    },
-  };
+  },
+  exit: { 
+    opacity: 0, 
+    scale: 0.9, 
+    y: -40,
+    transition: { duration: 0.5, ease: easeInOut },
+  },
+};
 
-  // Individual service bubble animation
-  const bubbleVariants = {
-    initial: { 
-      scale: 0,
-      opacity: 0,
-      y: 50,
-      rotate: -180
+// Mobile bubbles
+const bubbleVariants = {
+  initial: { 
+    scale: 0.8,
+    opacity: 0,
+    y: 30,
+    rotate: -10,
+  },
+  animate: {
+    scale: 1,
+    opacity: 1,
+    y: 0,
+    rotate: 0,
+    transition: {
+      duration: 0.6,
+      ease: easeOut,
     },
-    animate: {
-      scale: 1,
-      opacity: 1,
-      y: 0,
-      rotate: 0,
-      transition: {
-        type: "spring" as const,
-        stiffness: 400,
-        damping: 25,
-        duration: 0.6
-      }
+  },
+  exit: {
+    scale: 0.8,
+    opacity: 0,
+    y: -30,
+    rotate: 10,
+    transition: {
+      duration: 0.4,
+      ease: easeInOut,
     },
-    exit: {
-      scale: 0,
-      opacity: 0,
-      y: -50,
-      rotate: 180,
-      transition: {
-        duration: 0.4,
-        ease: easeInOut
-      }
-    },
-    hover: {
-      scale: 1.1,
-      y: -5,
-      transition: {
-        type: "spring" as const,
-        stiffness: 400,
-        damping: 10
-      }
-    }
-  };
+  },
+  hover: {
+    scale: 1.05,
+    y: -5,
+    transition: { duration: 0.25, ease: easeOut },
+  },
+};
 
   // Get services for current group - always return exactly 3 services
   const getCurrentServices = () => {

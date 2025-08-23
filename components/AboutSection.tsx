@@ -25,13 +25,13 @@ export default function AboutSection() {
           {/* Right Content */}
           <div className="flex-1 space-y-8">
             <div className="space-y-4">
-              <Badge className="bg-vet-purple text-white">
+              <Badge className="bg-vet-blue text-white">
                 About Our Clinic
               </Badge>
               <h2 className="text-4xl font-bold text-gray-900 font-heading">
                 Meet Dr. Usama Naseer
               </h2>
-              <p className="text-xl text-vet-blue font-medium">
+              <p className="text-xl text-vet-purple font-medium">
                 Your Trusted Veterinary Partner
               </p>
             </div>
