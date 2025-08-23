@@ -387,11 +387,27 @@ const featuredReviews: Review[] = [
 
           {/* Mobile Carousel (1 card per view) */}
           <div className="block md:hidden">
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden touch-pan-y">
               <motion.div
                 className="flex transition-transform duration-500 ease-out"
                 style={{
-                  transform: `translateX(-${currentIndex * 100}%)`,
+                  transform: `translateX(-${currentIndex * 100}%) translateX(${dragOffset}px)`,
+                }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.2}
+                onTouchStart={handleDragStart}
+                onTouchMove={handleDragMove}
+                onTouchEnd={handleDragEnd}
+                onDragEnd={(e, info) => {
+                  if (Math.abs(info.offset.x) > 100) {
+                    if (info.offset.x > 0) {
+                      setCurrentIndex((prev) => Math.max(0, prev - 1));
+                    } else {
+                      setCurrentIndex((prev) => Math.min(featuredReviews.length - 1, prev + 1));
+                    }
+                  }
+                  handleDragEnd();
                 }}
               >
                 {featuredReviews.map((review, index) => (
@@ -441,42 +457,75 @@ const featuredReviews: Review[] = [
                           </p>
                         </div>
 
-                        {/* Reviewer Info */}
+                        {/* Reviewer Info with Drag Handlers */}
                         <motion.div
-                          className="flex items-center gap-3 p-4"
+                          className="flex items-center justify-between p-4"
                           whileHover={{ scale: 1.02 }}
                           transition={{ type: "spring", stiffness: 400 }}
                         >
-                          {/* Avatar */}
-                          <div className="relative">
-                            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#53B7E9] to-[#412F85] p-1">
-                              <Image
-                                src={review.image}
-                                alt={review.name}
-                                width={56}
-                                height={56}
-                                className="rounded-full object-cover w-full h-full"
-                              />
+                          {/* Left Drag Handle */}
+                          <motion.button
+                            className="w-8 h-8 bg-white/80 shadow-md rounded-full flex items-center justify-center text-gray-600 touch-none active:scale-95 transition-transform cursor-pointer select-none"
+                            whileTap={{ scale: 0.9 }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setCurrentIndex((prev) => Math.max(0, prev - 1));
+                            }}
+                            onTouchStart={() => {
+                              setCurrentIndex((prev) => Math.max(0, prev - 1));
+                            }}
+                          >
+                            <ChevronLeft className="w-4 h-4" />
+                          </motion.button>
+
+                          {/* Center Content */}
+                          <div className="flex items-center gap-3">
+                            {/* Avatar */}
+                            <div className="relative">
+                              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#53B7E9] to-[#412F85] p-1">
+                                <Image
+                                  src={review.image}
+                                  alt={review.name}
+                                  width={48}
+                                  height={48}
+                                  className="rounded-full object-cover w-full h-full"
+                                />
+                              </div>
+                              {/* Heart Badge */}
+                              <motion.div
+                                className="absolute -bottom-1 -right-1 w-5 h-5 bg-gradient-to-br from-[#4CB735] to-green-500 rounded-full flex items-center justify-center shadow-md"
+                                animate={{ scale: [1, 1.2, 1] }}
+                                transition={{ duration: 2, repeat: Infinity }}
+                              >
+                                <Heart className="w-2.5 h-2.5 text-white" />
+                              </motion.div>
                             </div>
-                            {/* Heart Badge */}
-                            <motion.div
-                              className="absolute -bottom-1 -right-1 w-5 h-5 bg-gradient-to-br from-[#4CB735] to-green-500 rounded-full flex items-center justify-center shadow-md"
-                              animate={{ scale: [1, 1.2, 1] }}
-                              transition={{ duration: 2, repeat: Infinity }}
-                            >
-                              <Heart className="w-2.5 h-2.5 text-white" />
-                            </motion.div>
+
+                            {/* Reviewer Details */}
+                            <div className="flex flex-col">
+                              <h4 className="font-bold text-gray-900 text-sm">
+                                {review.name}
+                              </h4>
+                              <p className="text-[#412F85] font-medium text-xs">
+                                Verified Client
+                              </p>
+                            </div>
                           </div>
 
-                          {/* Reviewer Details */}
-                          <div className="flex flex-col">
-                            <h4 className="font-bold text-gray-900 text-base">
-                              {review.name}
-                            </h4>
-                            <p className="text-[#412F85] font-medium text-sm">
-                              Verified Client
-                            </p>
-                          </div>
+                          {/* Right Drag Handle */}
+                          <motion.button
+                            className="w-8 h-8 bg-white/80 shadow-md rounded-full flex items-center justify-center text-gray-600 touch-none active:scale-95 transition-transform cursor-pointer select-none"
+                            whileTap={{ scale: 0.9 }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setCurrentIndex((prev) => Math.min(featuredReviews.length - 1, prev + 1));
+                            }}
+                            onTouchStart={() => {
+                              setCurrentIndex((prev) => Math.min(featuredReviews.length - 1, prev + 1));
+                            }}
+                          >
+                            <ChevronRight className="w-4 h-4" />
+                          </motion.button>
                         </motion.div>
                       </CardContent>
                     </Card>
@@ -484,23 +533,6 @@ const featuredReviews: Review[] = [
                 ))}
               </motion.div>
 
-              {/* Mobile Navigation Buttons */}
-              <motion.button
-                onClick={() => setCurrentIndex((prev) => Math.max(0, prev - 1))}
-                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center text-gray-600 hover:text-vet-blue hover:bg-blue-50 transition-all duration-300 z-10"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </motion.button>
-              <motion.button
-                onClick={() => setCurrentIndex((prev) => Math.min(featuredReviews.length - 1, prev + 1))}
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center text-gray-600 hover:text-vet-blue hover:bg-blue-50 transition-all duration-300 z-10"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <ChevronRight className="w-5 h-5" />
-              </motion.button>
             </div>
 
             {/* Mobile Dots Indicator */}
