@@ -269,7 +269,7 @@ export default function GallerySection() {
         </div>
 
         {/* Mobile Show More/Less Button */}
-        <div className="block md:hidden text-center">
+        <div className="block md:hidden text-center flex items-center justify-center">
           {!showAll && mixedMediaGrid.length > MOBILE_INITIAL_COUNT && (
             <AnimatedButton
               onClick={() => setShowAll(true)}

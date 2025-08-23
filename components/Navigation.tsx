@@ -167,7 +167,7 @@ export default function Navigation() {
 
       {/* Mobile Sidebar */}
       <motion.div
-        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 md:hidden transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-full bg-white shadow-2xl z-50 md:hidden transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         initial={{ x: "100%" }}
@@ -204,7 +204,7 @@ export default function Navigation() {
         </div>
 
         {/* Sidebar Content */}
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-[calc(100vh-84px)] overflow-y-auto">
           {/* Navigation Links */}
           <div className="p-6 pb-0">
             <div className="space-y-2">
