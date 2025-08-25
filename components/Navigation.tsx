@@ -195,7 +195,9 @@ export default function Navigation() {
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         style={{ 
           transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
-          overscrollBehavior: 'contain'
+          overscrollBehavior: 'contain',
+          height: '100vh',
+          maxHeight: '100vh'
         }}
       >
         {/* Sidebar Header */}
@@ -228,9 +230,9 @@ export default function Navigation() {
         </div>
 
         {/* Sidebar Content */}
-        <div className="flex flex-col h-screen relative">
+        <div className="flex flex-col h-[calc(100vh-84px)] overflow-hidden">
           {/* Navigation Links */}
-          <div className="flex-1 px-6 py-6 min-h-0">
+          <div className="flex-1 px-6 py-6 overflow-y-auto">
             <div className="space-y-2">
               {navigationItems.map((item) => (
                 <Link
@@ -246,7 +248,7 @@ export default function Navigation() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="px-6 py-4 flex-shrink-0">
+          <div className="px-6 py-4 flex-shrink-0 border-t border-gray-100">
             <div className="flex flex-col items-center space-y-3 w-full">
               <Link
                 href="tel:03489032106"
@@ -279,23 +281,23 @@ export default function Navigation() {
           </div>
 
           {/* Contact Info */}
-          <div className="px-6 py-4 border-t border-gray-200 bg-gray-50 flex-shrink-0">
-            <div className="space-y-3">
+          <div className="px-6 py-3 bg-gray-50 flex-shrink-0">
+            <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-vet-green" />
-                <span className="text-sm text-gray-600">
+                <span className="text-xs text-gray-600">
                   Emergency: 0348-9032106
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="w-4 h-4 text-vet-green" />
-                <span className="text-sm text-gray-600">
+                <span className="text-xs text-gray-600">
                   OPD: 11 AM - 11 PM
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-vet-green" />
-                <span className="text-sm text-gray-600">
+                <span className="text-xs text-gray-600">
                   Westridge 1, Rawalpindi
                 </span>
               </div>
