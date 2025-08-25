@@ -166,7 +166,7 @@ export default function StatsSection() {
                     >
                       {/* Paw Pattern Background */}
                       <div 
-                        className="absolute -left-24 inset-0 opacity-5 bg-repeat"
+                        className="absolute -left-24 inset-0 opacity-4 bg-repeat"
                         style={{
                           backgroundImage: `url('/images/paw-pattern.svg')`,
                           backgroundPosition: '0 0, 12px 12px'
