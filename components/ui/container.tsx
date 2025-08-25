@@ -18,7 +18,7 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(
         {...props}
         className={cn(
           "Container",
-          "mx-auto w-full max-w-[90%] 2xl:max-w-[80%] px-2 lg:px-20",
+          "mx-auto w-full 2xl:max-w-[80%] px-2 lg:px-20",
           inverted ? "bg-foreground text-background" : "bg-inherit text-inherit",
           className,
         )}

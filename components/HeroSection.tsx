@@ -214,7 +214,7 @@ export default function HeroSection() {
       </Container>
       {/* Right Image */}
       {/* Image positioned to avoid overlap */}
-      <div className="absolute bottom-0 w-full flex justify-center sm:justify-end sm:right-4 z-10 pointer-events-none overflow-hidden">
+      <div className="absolute bottom-0 w-full flex justify-center sm:justify-end sm:right-4 2xl:right-10 z-10 pointer-events-none overflow-hidden">
         <Image
           src="/images/hero-dog-image.webp"
           alt="Character"
