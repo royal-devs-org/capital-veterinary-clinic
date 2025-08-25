@@ -108,7 +108,8 @@ export default function ContactSection() {
           </h2>
           <p className="text-md sm:text-lg 2xl:text-xl text-gray-600 max-w-3xl mx-auto">
             Ready to give your pet the care they deserve? Contact us today for
-            an appointment or emergency consultation. We&apos;re here for you 24/7.
+            an appointment or emergency consultation. We&apos;re here for you
+            24/7.
           </p>
         </motion.div>
 
@@ -121,35 +122,33 @@ export default function ContactSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-              <Card className="border-red-500 border-2 bg-gradient-to-r from-red-50 to-pink-50 shadow-lg">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <motion.div
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      <AlertCircle className="w-6 h-6 text-red-600" />
-                    </motion.div>
-                    <h3 className="text-xl font-bold text-red-900">
-                      Emergency?
-                    </h3>
-                  </div>
-                  <p className="text-red-800 mb-4">
-                    If your pet needs immediate medical attention, don&apos;t wait!
-                    Call us right now.
-                  </p>
-                  <Link href="tel:03489032106">
-                    <AnimatedButton
-                      className="bg-red-600 hover:bg-red-700 text-white font-semibold w-full shadow-lg cursor-pointer"
-                      hoverScale={1.05}
-                      tapScale={0.95}
-                    >
-                      <Phone className="w-4 h-4 mr-2" />
-                      Call Emergency: 0348-9032106
-                    </AnimatedButton>
-                  </Link>
-                </CardContent>
-              </Card>
+            <Card className="border-red-500 border-2 bg-gradient-to-r from-red-50 to-pink-50 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <motion.div
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    <AlertCircle className="w-6 h-6 text-red-600" />
+                  </motion.div>
+                  <h3 className="text-xl font-bold text-red-900">Emergency?</h3>
+                </div>
+                <p className="text-red-800 mb-4">
+                  If your pet needs immediate medical attention, don&apos;t
+                  wait! Call us right now.
+                </p>
+                <Link href="tel:03489032106">
+                  <AnimatedButton
+                    className="bg-red-600 hover:bg-red-700 text-white font-semibold w-full shadow-lg cursor-pointer"
+                    hoverScale={1.05}
+                    tapScale={0.95}
+                  >
+                    <Phone className="w-4 h-4 mr-2" />
+                    Call Emergency: 0348-9032106
+                  </AnimatedButton>
+                </Link>
+              </CardContent>
+            </Card>
 
             {/* Map Placeholder */}
             <Card className="border-vet-purple border-2 shadow-xl bg-white py-0">
@@ -381,15 +380,28 @@ export default function ContactSection() {
                       onChange={handleInputChange}
                       rows={4}
                       className="mt-1 bg-blue-300/20 border-sky-700/50 focus:border-sky-700 focus:ring-1 focus:ring-sky-700/70"
-                      placeholder="Please describe your pet&apos;s condition, symptoms, or any specific concerns..."
+                      placeholder="Please describe your pet's condition, symptoms, or any specific concerns..."
                     />
                   </div>
+
+                  {/* <AnimatedButton
+                    variant="outline"
+                    size="lg"
+                    className="shadow-lg border-vet-green bg-vet-green hover:bg-green-600 !text-white w-full cursor-pointer px-8 py-4 text-sm sm:text-lg 2xl:text-xl 2xl:py-6 font-semibold"
+                    hoverScale={1.05}
+                    tapScale={0.95}
+                  >
+                    <Phone className="w-5 h-5 sm:mr-2" />
+                    <span className="hidden sm:inline">Call Now</span>
+                    <span className="inline sm:hidden">Call Now</span>
+                  </AnimatedButton> */}
 
                   {/* Submit Button */}
                   <AnimatedButton
                     type="submit"
+                    size="lg"
                     disabled={isSubmitting}
-                    className="w-full bg-vet-green cursor-pointer text-white font-semibold py-3 text-lg"
+                    className="w-full shadow-lg border-vet-green bg-vet-green hover:bg-green-600 !text-white cursor-pointer px-8 py-4 text-sm sm:text-lg 2xl:text-xl 2xl:py-6 font-semibold"
                     hoverScale={1.05}
                     tapScale={0.95}
                   >

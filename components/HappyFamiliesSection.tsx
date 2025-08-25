@@ -187,7 +187,7 @@ export default function HappyFamiliesSection() {
 
 
             <motion.div className="space-y-4" variants={itemVariants}>
-              <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight font-heading space-x-4">
+              <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight font-heading space-x-3">
                 <span>Join</span>
                 <motion.span 
                   className="inline-block bg-white text-green-600 px-4 py-2 rounded-lg mx-2"
