@@ -212,7 +212,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <Badge className="bg-vet-blue text-white mb-4">Client Reviews</Badge>
+          <Badge className="bg-vet-green text-white mb-4">Client Reviews</Badge>
           <h2 className="text-4xl font-bold text-gray-900 mb-4 font-heading">
             What Pet Parents Say
           </h2>

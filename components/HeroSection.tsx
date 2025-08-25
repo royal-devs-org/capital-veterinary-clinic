@@ -146,13 +146,12 @@ export default function HeroSection() {
               <Link href="#contact" className="w-full">
                 <AnimatedButton
                   size="lg"
-                  className="shadow-lg bg-vet-green hover:bg-green-600 !text-white w-full cursor-pointer px-8 py-4 text-sm sm:text-lg 2xl:text-xl 2xl:py-6 font-semibold"
+                  className="shadow-lg border-vet-purple bg-vet-purple hover:bg-purple-600 !text-white w-full cursor-pointer px-8 py-4 text-sm sm:text-lg 2xl:text-xl 2xl:py-6 font-semibold"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
                   <Calendar className="w-5 h-5 sm:mr-2" />
-                  <span className="hidden sm:inline">Book an Appointment</span>
-                  <span className="inline sm:hidden">Book Appointment</span>
+                  <span className="inline">Book Appointment</span>
                 </AnimatedButton>
               </Link>
 
@@ -160,13 +159,13 @@ export default function HeroSection() {
                 <AnimatedButton
                   variant="outline"
                   size="lg"
-                  className="w-full border-vet-purple text-vet-purple hover:!text-white hover:bg-vet-purple cursor-pointer px-8 py-4 text-sm sm:text-lg 2xl:text-xl 2xl:py-6 font-semibold"
+                  className="shadow-lg border-vet-green bg-vet-green hover:bg-green-600 !text-white w-full cursor-pointer px-8 py-4 text-sm sm:text-lg 2xl:text-xl 2xl:py-6 font-semibold"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
                   <Phone className="w-5 h-5 sm:mr-2" />
                   <span className="hidden sm:inline">
-                    Call Now: 0348-9032106
+                    Call Now
                   </span>
                   <span className="inline sm:hidden">Call Now</span>
                 </AnimatedButton>
@@ -214,7 +213,7 @@ export default function HeroSection() {
       </div>
       {/* Right Image */}
       {/* Image positioned to avoid overlap */}
-      <div className="absolute bottom-0 w-full flex justify-center sm:justify-end z-10 pointer-events-none overflow-hidden">
+      <div className="absolute bottom-0 w-full flex justify-center sm:justify-end sm:right-4 z-10 pointer-events-none overflow-hidden">
         <Image
           src="/images/hero-dog-image.webp"
           alt="Character"

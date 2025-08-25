@@ -102,7 +102,7 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <Badge className="bg-vet-blue text-white mb-4">Get In Touch</Badge>
+          <Badge className="bg-vet-green text-white mb-4">Get In Touch</Badge>
           <h2 className="text-4xl font-bold text-gray-900 mb-4 font-heading">
             Book Your Pet&apos;s Appointment
           </h2>
