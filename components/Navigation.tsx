@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedButton from "@/components/ui/animated-button";
 import { Container } from "@/components/ui/container";
-import { Menu, X, Phone, Clock, MapPin } from "lucide-react";
+import { Menu, X, Phone, Clock, MapPin, Calendar } from "lucide-react";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,6 +46,18 @@ export default function Navigation() {
       document.body.style.width = '';
     };
   }, [isOpen]);
+
+  // Smooth scroll function
+  const smoothScrollTo = (elementId: string) => {
+    const element = document.getElementById(elementId.replace('#', ''));
+    if (element) {
+      const offsetTop = element.offsetTop - 80; // Account for fixed header
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   const navigationItems = [
     { name: "Home", href: "#home" },
@@ -121,14 +133,14 @@ export default function Navigation() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               {navigationItems.map((item) => (
-                <Link
+                <button
                   key={item.name}
-                  href={item.href}
+                  onClick={() => smoothScrollTo(item.href)}
                   className="text-gray-700 hover:text-vet-green font-medium transition-colors duration-200 relative group"
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-vet-green transition-all duration-200 group-hover:w-full"></span>
-                </Link>
+                </button>
               ))}
             </div>
 
@@ -137,20 +149,21 @@ export default function Navigation() {
               <Link href="tel:03489032106">
                 <AnimatedButton
                   variant="outline"
-                  className="border-vet-blue bg-vet-blue !text-white hover:bg-vet-blue/90 flex items-center cursor-pointer"
+                  className="border-vet-green bg-vet-green !text-white hover:bg-vet-green/90 flex items-center cursor-pointer"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
-                  <Phone className="w-4 h-4 mr-2" />
+                  <Phone className="w-4 h-4 mr-1" />
                   Call Now
                 </AnimatedButton>
               </Link>
               <Link href="#contact">
                 <AnimatedButton
-                  className="bg-vet-green hover:bg-green-600 !text-white cursor-pointer"
+                  className="bg-vet-blue hover:bg-blue-600 !text-white cursor-pointer"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
+                  <Calendar className="w-4 h-4 mr-1" />
                   Book Appointment
                 </AnimatedButton>
               </Link>
@@ -235,14 +248,16 @@ export default function Navigation() {
           <div className="flex-1 px-6 py-6 overflow-y-auto">
             <div className="space-y-2">
               {navigationItems.map((item) => (
-                <Link
+                <button
                   key={item.name}
-                  href={item.href}
-                  className="block text-gray-700 hover:text-vet-green font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors duration-200"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    smoothScrollTo(item.href);
+                    setIsOpen(false);
+                  }}
+                  className="block w-full text-left text-gray-700 hover:text-vet-green font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors duration-200"
                 >
                   {item.name}
-                </Link>
+                </button>
               ))}
             </div>
           </div>
