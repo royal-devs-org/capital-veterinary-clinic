@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedButton from "@/components/ui/animated-button";
+import { Container } from "@/components/ui/container";
 import { Menu, X, Phone, Clock, MapPin } from "lucide-react";
 
 export default function Navigation() {
@@ -27,6 +28,25 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [mounted]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    };
+  }, [isOpen]);
+
   const navigationItems = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
@@ -40,7 +60,7 @@ export default function Navigation() {
     <>
       {/* Top Bar */}
       <div className="bg-vet-purple text-white py-2 text-sm sm:block hidden">
-        <div className="container mx-auto px-10 2xl:px-4">
+        <Container>
           <div className="flex flex-wrap justify-between items-center gap-2">
             <div className="flex flex-row gap-4 items-center justify-between sm:justify-start w-full sm:w-auto">
               <div className="flex items-center gap-1">
@@ -62,7 +82,7 @@ export default function Navigation() {
               </a>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
 
       {/* Main Navigation */}
@@ -73,7 +93,7 @@ export default function Navigation() {
             : "bg-white/95 backdrop-blur-sm py-4"
         }`}
       >
-        <div className="container mx-auto px-4">
+        <Container>
           <div className="flex justify-between items-center">
             {/* Logo */}
             <Link
@@ -151,7 +171,7 @@ export default function Navigation() {
               )}
             </motion.button>
           </div>
-        </div>
+        </Container>
       </nav>
 
       {/* Mobile Sidebar Overlay */}
@@ -167,12 +187,16 @@ export default function Navigation() {
 
       {/* Mobile Sidebar */}
       <motion.div
-        className={`fixed top-0 right-0 h-full w-full bg-white shadow-2xl z-50 md:hidden transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-screen w-full bg-white shadow-2xl z-50 md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         initial={{ x: "100%" }}
         animate={{ x: isOpen ? 0 : "100%" }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
+        style={{ 
+          transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
+          overscrollBehavior: 'contain'
+        }}
       >
         {/* Sidebar Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
@@ -204,9 +228,9 @@ export default function Navigation() {
         </div>
 
         {/* Sidebar Content */}
-        <div className="flex flex-col h-[calc(100vh-84px)] overflow-y-auto">
+        <div className="flex flex-col h-screen relative">
           {/* Navigation Links */}
-          <div className="p-6 pb-0">
+          <div className="flex-1 px-6 py-6 min-h-0">
             <div className="space-y-2">
               {navigationItems.map((item) => (
                 <Link
@@ -221,19 +245,16 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Spacer pushes CTA + Contact to bottom */}
-          <div className="flex-grow" />
-
           {/* CTA Buttons */}
-          <div className="px-6 py-6 w-full">
-            <div className="flex flex-col items-center space-y-4 w-full">
+          <div className="px-6 py-4 flex-shrink-0">
+            <div className="flex flex-col items-center space-y-3 w-full">
               <Link
                 href="tel:03489032106"
                 className="w-full flex justify-center"
                 onClick={() => setIsOpen(false)}
               >
                 <AnimatedButton
-                  className="w-full px-10 py-3 flex justify-center items-center bg-vet-blue hover:bg-vet-blue/90 !text-white text-base font-semibold shadow-md"
+                  className="w-full px-6 py-3 flex justify-center items-center bg-vet-blue hover:bg-vet-blue/90 !text-white text-base font-semibold shadow-md"
                   hoverScale={1.02}
                   tapScale={0.98}
                 >
@@ -247,7 +268,7 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
               >
                 <AnimatedButton
-                  className="w-full px-10 py-3 flex justify-center items-center bg-vet-green hover:bg-green-600 !text-white text-base font-semibold shadow-md"
+                  className="w-full px-6 py-3 flex justify-center items-center bg-vet-green hover:bg-green-600 !text-white text-base font-semibold shadow-md"
                   hoverScale={1.02}
                   tapScale={0.98}
                 >
@@ -258,7 +279,7 @@ export default function Navigation() {
           </div>
 
           {/* Contact Info */}
-          <div className="p-6 border-t border-gray-200 bg-gray-50">
+          <div className="px-6 py-4 border-t border-gray-200 bg-gray-50 flex-shrink-0">
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-vet-green" />

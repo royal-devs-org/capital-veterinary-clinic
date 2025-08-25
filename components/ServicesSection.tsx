@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
+import { Container } from "@/components/ui/container";
 import { motion, easeOut, easeInOut } from "framer-motion";
 import {
   Shield,
@@ -246,7 +247,7 @@ const bubbleVariants = {
 
   return (
     <section id="services" className="pt-20 sm:pb-20 pb-10 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <Container>
         {/* Header */}
         <motion.div
           className="text-center mb-16"
@@ -477,7 +478,7 @@ const bubbleVariants = {
             </motion.div>
           </div>
         </motion.div>
-      </div>
+      </Container>
     </section>
   );
 }

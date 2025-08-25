@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import AnimatedButton from "@/components/ui/animated-button";
+import { Container } from "@/components/ui/container";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -93,7 +94,7 @@ export default function ContactSection() {
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
-      <div className="container mx-auto px-4 relative z-10">
+      <Container className="relative z-10">
         {/* Header */}
         <motion.div
           className="text-center mb-16 relative z-10"
@@ -427,7 +428,7 @@ export default function ContactSection() {
             </Card>
           </motion.div>
         </div>
-      </div>
+      </Container>
       {/* Background pattern */}
       <div className="absolute inset-0 z-0 bg-[url('/images/paw-pattern.svg')] bg-cover bg-center opacity-2 pointer-events-none" />
     </motion.section>

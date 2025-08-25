@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { Container } from "@/components/ui/container";
 import { Stethoscope, Award, MapPin, Clock } from "lucide-react";
 
 export default function AboutSection() {
   return (
     <section id="about" className="py-10 bg-white">
-      <div className="container mx-auto px-4">
+      <Container>
         <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between w-full gap-6 md:gap-12">
           {/* left Content - Images */}
           <div className="flex-1 space-y-6">
@@ -85,7 +86,7 @@ export default function AboutSection() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

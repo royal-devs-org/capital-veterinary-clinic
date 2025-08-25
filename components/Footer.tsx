@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import AnimatedButton from "@/components/ui/animated-button";
+import { Container } from "@/components/ui/container";
 import {
   Phone,
   MapPin,
@@ -41,7 +42,7 @@ export default function Footer() {
   return (
     <footer className="bg-vet-purple text-white ">
       {/* Main Footer */}
-      <div className="container mx-auto pt-16 sm:px-10 2xl:px-0">
+      <Container className="pt-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12 px-7 sm:px-0">
           {/* Clinic Information */}
           <div className="space-y-6 text-center lg:text-left lg:col-span-2 lg:mr-10">
@@ -244,13 +245,13 @@ export default function Footer() {
             </div>
             {/* Emergency CTA */}
             <div className="text-center md:text-right px-7 sm:px-0">
-              <div className="inline-block bg-vet-green rounded-2xl p-6">
+              <div className="inline-block bg-red-700 rounded-2xl p-6">
                 <h3 className="text-xl font-bold mb-3">Need Emergency Care?</h3>
                 <p className="text-green-100 mb-4">
                   We&apos;re available 24/7 for your pet&apos;s urgent needs
                 </p>
                 <AnimatedButton
-                  className="bg-white text-vet-green hover:bg-gray-100 font-semibold"
+                  className="bg-white text-red-700 hover:bg-gray-100 font-semibold"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
@@ -261,11 +262,11 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
 
       {/* Bottom Bar */}
       <div className="border-t border-blue-800 bg-blue-950">
-        <div className="container mx-auto sm:px-10 px-4 py-6">
+        <Container className="py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex text-center gap-2 text-gray-300">
               <span>
@@ -297,7 +298,7 @@ export default function Footer() {
               Lahore
             </p>
           </div>
-        </div>
+        </Container>
       </div>
     </footer>
   );

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import AnimatedButton from "@/components/ui/animated-button";
+import { Container } from "@/components/ui/container";
 import {
   Phone,
   Clock,
@@ -61,8 +62,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[#53B7E9]/[0.28]" />
       {/* Background Floor */}
       <div className="absolute bottom-0 w-full h-[25%] bg-[#53B7E9]/[0.10]" />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-4 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 2xl:grid-cols-8 gap-2 items-center pb-40 sm:pb-0 2xl:pb-20 max-w-full">
+      <Container className="py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 2xl:grid-cols-8 gap-2 items-center pb-40 sm:pb-0 2xl:pb-16 max-w-full">
           {/* Left Content */}
           <motion.div
             className="space-y-5 sm:space-y-4 2xl:space-y-7 2xl:col-span-4 w-full max-w-full"
@@ -174,7 +175,7 @@ export default function HeroSection() {
 
             {/* Quick Info */}
             <motion.div
-              className="flex flex-row gap-4 sm:gap-8 lg:gap-48 2xl:gap-20 pt-4 w-full items-center justify-start"
+              className="flex flex-row gap-3 sm:gap-8 lg:gap-48 2xl:gap-20 pt-4 w-full items-center justify-start"
               variants={itemVariants}
             >
               <motion.div
@@ -210,7 +211,7 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
         </div>
-      </div>
+      </Container>
       {/* Right Image */}
       {/* Image positioned to avoid overlap */}
       <div className="absolute bottom-0 w-full flex justify-center sm:justify-end sm:right-4 z-10 pointer-events-none overflow-hidden">
