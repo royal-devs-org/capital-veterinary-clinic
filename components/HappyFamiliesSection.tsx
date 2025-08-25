@@ -3,6 +3,7 @@
 import { motion, easeOut } from "framer-motion";
 import { Star, Users, Heart, PawPrint, Calendar} from "lucide-react";
 import AnimatedButton from "@/components/ui/animated-button";
+import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
@@ -177,7 +178,7 @@ export default function HappyFamiliesSection() {
         <Star className="w-6 h-6" />
       </motion.div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <Container className="relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div 
@@ -187,10 +188,10 @@ export default function HappyFamiliesSection() {
 
 
             <motion.div className="space-y-4" variants={itemVariants}>
-              <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight font-heading space-x-7">
+              <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight font-heading space-x-3">
                 <span>Join</span>
                 <motion.span 
-                  className="inline-block bg-white text-green-600 px-4 py-2 rounded-lg mx-2"
+                  className="inline-block bg-white text-green-600 px-4 py-2 rounded-lg mx-2 mb-2"
                   initial={{ scale: 0 }}
                   animate={isVisible ? { scale: 1 } : { scale: 0 }}
                   transition={{ delay: 1, type: "spring", stiffness: 500 }}
@@ -338,7 +339,7 @@ export default function HappyFamiliesSection() {
             </motion.div>
           </motion.div>
         </div>
-      </div>
+      </Container>
     </motion.section>
   );
 }

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { LayoutGrid } from "@/components/ui/layout-grid";
 import { Badge } from "@/components/ui/badge";
 import AnimatedButton from "@/components/ui/animated-button";
+import { Container } from "@/components/ui/container";
 import { Play, Heart, Shield, Star, ChevronDown, ChevronUp } from "lucide-react";
 
 export default function GallerySection() {
@@ -244,10 +245,10 @@ export default function GallerySection() {
       id="gallery"
       className="md:py-20 pt-20 sm:pt-0 sm:pb-0 pb-10 bg-gradient-to-br from-gray-50 to-blue-50"
     >
-      <div className="container mx-auto px-4 pb-0 sm:pb-10">
+      <Container className="pb-0 sm:pb-10">
         {/* Header */}
         <div className="text-center mb-4">
-          <Badge className="bg-vet-blue text-white mb-4">Our Work</Badge>
+          <Badge className="bg-vet-green text-white mb-4">Our Work</Badge>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Professional Veterinary Care
           </h2>
@@ -269,7 +270,7 @@ export default function GallerySection() {
         </div>
 
         {/* Mobile Show More/Less Button */}
-        <div className="block md:hidden text-center flex items-center justify-center">
+        <div className="md:hidden text-center flex items-center justify-center">
           {!showAll && mixedMediaGrid.length > MOBILE_INITIAL_COUNT && (
             <AnimatedButton
               onClick={() => setShowAll(true)}
@@ -295,7 +296,7 @@ export default function GallerySection() {
             </AnimatedButton>
           )}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

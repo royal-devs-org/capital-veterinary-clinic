@@ -1,25 +1,6 @@
 @import "tailwindcss";
 
-/* Custom scrollbar for webkit browsers */
-::-webkit-scrollbar {
-  width: 4px;
-}
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: transparent;
-  border-radius: 2px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: transparent;
-}
-
-/* Hide scrollbar on mobile devices */
-@media (max-width: 768px) {
   ::-webkit-scrollbar {
     width: 0px;
   }
@@ -35,12 +16,12 @@
   ::-webkit-scrollbar-thumb:hover {
     background: transparent;
   }
-}
 
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-padding-top: 80px;
 }
 
 /* Prevent horizontal scroll */
@@ -49,9 +30,26 @@ body {
   max-width: 100vw;
 }
 
-/* Ensure all containers respect viewport width */
+/* Enhanced smooth scrolling for all elements */
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Smooth scrolling for links */
+a[href^="#"] {
+  scroll-behavior: smooth;
+}
+
+/* Custom scroll behavior for better performance */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  * {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Utility classes for brand colors */

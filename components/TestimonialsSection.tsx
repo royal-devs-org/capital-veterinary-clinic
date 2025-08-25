@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import AnimatedButton from "@/components/ui/animated-button";
+import { Container } from "@/components/ui/container";
 import {
   Star,
   ExternalLink,
@@ -203,7 +204,7 @@ export default function TestimonialsSection() {
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
-      <div className="container mx-auto px-4">
+      <Container>
         {/* Header */}
         <motion.div
           className="text-center mb-16"
@@ -212,7 +213,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <Badge className="bg-vet-blue text-white mb-4">Client Reviews</Badge>
+          <Badge className="bg-vet-green text-white mb-4">Client Reviews</Badge>
           <h2 className="text-4xl font-bold text-gray-900 mb-4 font-heading">
             What Pet Parents Say
           </h2>
@@ -550,7 +551,7 @@ export default function TestimonialsSection() {
             <AnimatedButton
               size="lg"
               variant="outline"
-              className="sm:w-[30%] border-vet-blue text-vet-blue hover:bg-vet-blue hover:!text-white font-semibold shadow-lg"
+              className="sm:w-[30%] bg-vet-blue hover:bg-vet-blue/80 border-vet-blue !text-white font-semibold shadow-lg"
               hoverScale={1.05}
               tapScale={0.95}
             >
@@ -559,7 +560,7 @@ export default function TestimonialsSection() {
             </AnimatedButton>
           </a>
         </motion.div>
-      </div>
+      </Container>
     </motion.section>
   );
 }

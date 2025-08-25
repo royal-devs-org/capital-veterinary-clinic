@@ -32,7 +32,7 @@ export function AnimatedButton({
       whileHover={{ 
         scale: hoverScale,
         rotate: hoverRotate,
-        transition: { type: "spring", stiffness: 400, damping: 10 }
+        transition: { type: "spring", stiffness: 300, damping: 16 }
       }}
       whileTap={{ 
         scale: tapScale,
@@ -45,7 +45,7 @@ export function AnimatedButton({
         size={size}
         asChild={asChild}
         className={cn(
-          "hover:shadow-xl active:shadow-lg",
+          "hover:shadow-md active:shadow-lg",
           className
         )}
         {...props}

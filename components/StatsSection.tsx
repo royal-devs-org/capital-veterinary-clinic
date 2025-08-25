@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Container } from "@/components/ui/container";
 import { Users, Star, Calendar, Stethoscope, PawPrint } from "lucide-react";
 import { Badge } from "./ui/badge";
 
@@ -102,8 +103,8 @@ export default function StatsSection() {
 
   return (
     <section className="relative">
-      <div className="relative sm:pt-20 sm:pb-20 pb-0 pt-20 bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100">
-        <div className="container mx-auto px-6 relative z-10">
+      <div className="relative sm:pt-20 sm:pb-28 pb-0 pt-20 bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100">
+        <Container className="relative z-10">
           <div className="grid lg:grid-cols-2 gap-4 sm:gap-12 items-stretch">
             {/* LEFT COLUMN */}
             <div className="flex flex-col justify-between relative">
@@ -128,18 +129,19 @@ export default function StatsSection() {
                 </p>
               </motion.div>
 
-              {/* Image pinned to bottom */}
-              <div className="relative sm:mt-12 flex justify-center lg:justify-start">
-                <div className="absolute bottom-0 sm:-bottom-[195px] sm:-left-10 w-full md:w-[650px] lg:w-[980px]">
-                  <Image
-                    src="/images/cat-dog-2.png"
-                    alt="Happy Cat & Dog"
-                    width={750}
-                    height={750}
-                    className="hidden sm:block object-contain drop-shadow-2xl"
-                  />
-                </div>
-              </div>
+        {/* Image pinned to bottom — reserves space so it won't overlap the text */}
+<div className="hidden sm:flex relative sm:mt-32">
+  <div className="absolute inset-x-0 -left-12 -bottom-[230px] w-full md:w-[650px] lg:w-[980px]">
+    <Image
+      src="/images/cat-dog-2.png"
+      alt="Happy Cat & Dog"
+      width={750}
+      height={750}
+      className="object-contain drop-shadow-2xl"
+    />
+  </div>
+</div>
+
             </div>
 
             {/* RIGHT COLUMN - Stats Grid */}
@@ -158,26 +160,35 @@ export default function StatsSection() {
                   return (
                     <motion.div
                       key={i}
-                      className={`group relative rounded-3xl p-3 sm:p-5 bg-white shadow-lg sm:shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500backdrop-blur-sm flex flex-col items-center text-center`}
+                      className={`group relative rounded-3xl p-3 sm:p-5 bg-white shadow-lg sm:shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 backdrop-blur-sm flex flex-col items-center text-center overflow-hidden`}
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.15, duration: 0.6 }}
                       whileHover={{ y: -8, scale: 1.02 }}
                     >
+                      {/* Paw Pattern Background */}
+                      <div 
+                        className="absolute -left-24 inset-0 opacity-4 bg-repeat"
+                        style={{
+                          backgroundImage: `url('/images/paw-pattern.svg')`,
+                          backgroundPosition: '0 0, 12px 12px'
+                        }}
+                      />
+                      
                       <div className="relative z-10 flex flex-col items-center">
                         <div
-                          className={`inline-flex p-4 rounded-2xl text-vet-green `}
+                          className={`inline-flex p-3 rounded-2xl text-vet-green `}
                         >
-                          <Icon className="w-7 h-7" />
+                          <Icon className="w-6 h-6" />
                         </div>
-                        <span className="text-2xl md:text-4xl font-bold text-gray-900">
+                        <span className="text-xl md:text-4xl font-bold text-gray-900">
                           {value}
                           {stat.suffix}
                         </span>
-                        <h4 className="font-bold text-gray-800 text-md sm:text-lg mt-2">
+                        <h4 className="font-bold text-gray-800 text-sm sm:text-lg mt-1">
                           {stat.label}
                         </h4>
-                        <p className="text-gray-600 text-sm ">
+                        <p className="text-gray-600 text-xs sm:text-sm ">
                           {stat.description}
                         </p>
                       </div>
@@ -198,7 +209,7 @@ export default function StatsSection() {
               />
             </div>
           </div>
-        </div>
+        </Container>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import AnimatedButton from "@/components/ui/animated-button";
+import { Container } from "@/components/ui/container";
 import {
   Phone,
   Clock,
@@ -61,8 +62,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[#53B7E9]/[0.28]" />
       {/* Background Floor */}
       <div className="absolute bottom-0 w-full h-[25%] bg-[#53B7E9]/[0.10]" />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-4 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 2xl:grid-cols-8 gap-2 items-center pb-40 sm:pb-0 2xl:pb-20 max-w-full">
+      <Container className="py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 2xl:grid-cols-8 gap-2 items-center pb-40 sm:pb-0 2xl:pb-16 max-w-full">
           {/* Left Content */}
           <motion.div
             className="space-y-5 sm:space-y-4 2xl:space-y-7 2xl:col-span-4 w-full max-w-full"
@@ -146,13 +147,12 @@ export default function HeroSection() {
               <Link href="#contact" className="w-full">
                 <AnimatedButton
                   size="lg"
-                  className="shadow-lg bg-vet-green hover:bg-green-600 !text-white w-full cursor-pointer px-8 py-4 text-sm sm:text-lg 2xl:text-xl 2xl:py-6 font-semibold"
+                  className="shadow-lg border-vet-purple bg-vet-purple hover:bg-purple-600 !text-white w-full cursor-pointer px-8 py-4 text-sm sm:text-lg 2xl:text-xl 2xl:py-6 font-semibold"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
                   <Calendar className="w-5 h-5 sm:mr-2" />
-                  <span className="hidden sm:inline">Book an Appointment</span>
-                  <span className="inline sm:hidden">Book Appointment</span>
+                  <span className="inline">Book Appointment</span>
                 </AnimatedButton>
               </Link>
 
@@ -160,13 +160,13 @@ export default function HeroSection() {
                 <AnimatedButton
                   variant="outline"
                   size="lg"
-                  className="w-full border-vet-purple text-vet-purple hover:!text-white hover:bg-vet-purple cursor-pointer px-8 py-4 text-sm sm:text-lg 2xl:text-xl 2xl:py-6 font-semibold"
+                  className="shadow-lg border-vet-green bg-vet-green hover:bg-green-600 !text-white w-full cursor-pointer px-8 py-4 text-sm sm:text-lg 2xl:text-xl 2xl:py-6 font-semibold"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
                   <Phone className="w-5 h-5 sm:mr-2" />
                   <span className="hidden sm:inline">
-                    Call Now: 0348-9032106
+                    Call Now
                   </span>
                   <span className="inline sm:hidden">Call Now</span>
                 </AnimatedButton>
@@ -175,7 +175,7 @@ export default function HeroSection() {
 
             {/* Quick Info */}
             <motion.div
-              className="flex flex-row gap-4 sm:gap-8 lg:gap-48 2xl:gap-20 pt-4 w-full items-center justify-start"
+              className="flex flex-row gap-3 sm:gap-8 lg:gap-48 2xl:gap-20 pt-4 w-full items-center justify-start"
               variants={itemVariants}
             >
               <motion.div
@@ -211,10 +211,10 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
         </div>
-      </div>
+      </Container>
       {/* Right Image */}
       {/* Image positioned to avoid overlap */}
-      <div className="absolute bottom-0 w-full flex justify-center sm:justify-end z-10 pointer-events-none overflow-hidden">
+      <div className="absolute bottom-0 w-full flex justify-center sm:justify-end sm:right-4 2xl:right-10 z-10 pointer-events-none overflow-hidden">
         <Image
           src="/images/hero-dog-image.webp"
           alt="Character"
