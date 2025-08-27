@@ -117,12 +117,29 @@ export default function GallerySection() {
           </p>
         </div>
       ),
-      className: "md:col-span-2", // Medium horizontal
-      thumbnail: "/images/media/Vet-With-Dog.png",
-      title: "Dog Care Experts",
+      className: "md:col-span-1", // Medium horizontal
+      thumbnail: "/images/media/Vet and Tiger.png",
+      title: "Tiger Care Specialist",
     },
     {
       id: 7,
+      type: "image",
+      content: (
+        <div>
+          <p className="font-bold md:text-2xl text-lg text-white">
+            Canine Specialists
+          </p>
+          <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+            Professional care for dogs of all breeds and sizes.
+          </p>
+        </div>
+      ),
+      className: "md:col-span-1", // Medium horizontal
+      thumbnail: "/images/media/Vet with Golden Retriever.png",
+      title: "Golden Retriever Care",
+    },
+    {
+      id: 8,
       type: "image",
       content: (
         <div>
@@ -139,7 +156,7 @@ export default function GallerySection() {
       title: "Advanced Surgery",
     },
     {
-      id: 8,
+      id: 9,
       type: "image",
       content: (
         <div>
@@ -156,7 +173,7 @@ export default function GallerySection() {
       title: "Bird Veterinary Care",
     },
     {
-      id: 9,
+      id: 10,
       type: "video",
       content: (
         <div>
@@ -177,7 +194,7 @@ export default function GallerySection() {
       title: "Multi-Species Care",
     },
     {
-      id: 10,
+      id: 11,
       type: "image",
       content: (
         <div>
@@ -194,7 +211,7 @@ export default function GallerySection() {
       title: "Large Breed Specialists",
     },
     {
-      id: 11,
+      id: 12,
       type: "image",
       content: (
         <div>
@@ -211,7 +228,7 @@ export default function GallerySection() {
       title: "Waterfowl Care",
     },
     {
-      id: 12,
+      id: 13,
       type: "image",
       content: (
         <div>
