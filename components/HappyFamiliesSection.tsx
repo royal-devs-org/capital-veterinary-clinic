@@ -191,7 +191,7 @@ export default function HappyFamiliesSection() {
               <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight font-heading space-x-3">
                 <span>Join</span>
                 <motion.span 
-                  className="inline-block bg-white text-green-600 px-4 py-2 rounded-lg mx-2 mb-2"
+                  className="inline-block bg-white text-green-600 px-4 py-2 rounded-lg mb-2 pr-[11px]"
                   initial={{ scale: 0 }}
                   animate={isVisible ? { scale: 1 } : { scale: 0 }}
                   transition={{ delay: 1, type: "spring", stiffness: 500 }}

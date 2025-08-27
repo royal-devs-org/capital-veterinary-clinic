@@ -129,19 +129,18 @@ export default function StatsSection() {
                 </p>
               </motion.div>
 
-        {/* Image pinned to bottom — reserves space so it won't overlap the text */}
-<div className="hidden sm:flex relative sm:mt-32">
-  <div className="absolute inset-x-0 -left-12 -bottom-[230px] w-full md:w-[650px] lg:w-[980px]">
-    <Image
-      src="/images/cat-dog-2.png"
-      alt="Happy Cat & Dog"
-      width={750}
-      height={750}
-      className="object-contain drop-shadow-2xl"
-    />
-  </div>
-</div>
-
+              {/* Image pinned to bottom — reserves space so it won't overlap the text */}
+              <div className="hidden sm:flex relative sm:mt-32">
+                <div className="absolute inset-x-0 -left-12 -bottom-[230px] w-full md:w-[650px] lg:w-[980px]">
+                  <Image
+                    src="/images/cat-dog-2.png"
+                    alt="Happy Cat & Dog"
+                    width={750}
+                    height={750}
+                    className="object-contain drop-shadow-2xl"
+                  />
+                </div>
+              </div>
             </div>
 
             {/* RIGHT COLUMN - Stats Grid */}
@@ -167,14 +166,14 @@ export default function StatsSection() {
                       whileHover={{ y: -8, scale: 1.02 }}
                     >
                       {/* Paw Pattern Background */}
-                      <div 
-                        className="absolute -left-24 inset-0 opacity-4 bg-repeat"
+                      <div
+                        className="absolute -top-5 -left-20 inset-0 opacity-4 bg-repeat"
                         style={{
                           backgroundImage: `url('/images/paw-pattern.svg')`,
-                          backgroundPosition: '0 0, 12px 12px'
+                          backgroundPosition: "0 0, 12px 12px",
                         }}
                       />
-                      
+
                       <div className="relative z-10 flex flex-col items-center">
                         <div
                           className={`inline-flex p-3 rounded-2xl text-vet-green `}

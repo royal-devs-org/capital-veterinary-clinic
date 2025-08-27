@@ -118,7 +118,7 @@ export default function GallerySection() {
         </div>
       ),
       className: "md:col-span-2", // Medium horizontal
-      thumbnail: "/images/media/Vet With Dog.png",
+      thumbnail: "/images/media/Vet with Dog.png",
       title: "Dog Care Experts",
     },
     {
