@@ -296,7 +296,7 @@ export default function Navigation() {
           </div>
 
           {/* Contact Info */}
-          <div className="px-6 py-3 bg-gray-50 flex-shrink-0">
+          <div className="px-6 py-3 bg-gray-50 flex-shrink-0 pb-8">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-vet-green" />
