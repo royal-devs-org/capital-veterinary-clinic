@@ -149,7 +149,7 @@ export default function Navigation() {
               <Link href="tel:03489032106">
                 <AnimatedButton
                   variant="outline"
-                  className="border-vet-blue bg-vet-blue !text-white hover:bg-vet-blue/90 flex items-center cursor-pointer"
+                  className="border-vet-green bg-vet-green !text-white hover:bg-vet-green/90 flex items-center cursor-pointer"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
@@ -159,7 +159,7 @@ export default function Navigation() {
               </Link>
               <Link href="#contact">
                 <AnimatedButton
-                  className="bg-vet-green hover:bg-green-600 !text-white cursor-pointer"
+                  className="bg-vet-blue hover:bg-vet-blue/90 !text-white cursor-pointer"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
@@ -271,7 +271,7 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
               >
                 <AnimatedButton
-                  className="w-full px-6 py-3 flex justify-center items-center bg-vet-blue hover:bg-vet-blue/90 !text-white text-base font-semibold shadow-md"
+                  className="w-full px-6 py-3 flex justify-center items-center bg-vet-green hover:bg-vet-green/90 !text-white text-base font-semibold shadow-md"
                   hoverScale={1.02}
                   tapScale={0.98}
                 >
@@ -285,7 +285,7 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
               >
                 <AnimatedButton
-                  className="w-full px-6 py-3 flex justify-center items-center bg-vet-green hover:bg-green-600 !text-white text-base font-semibold shadow-md"
+                  className="w-full px-6 py-3 flex justify-center items-center bg-vet-blue hover:bg-blue-600 !text-white text-base font-semibold shadow-md"
                   hoverScale={1.02}
                   tapScale={0.98}
                 >
