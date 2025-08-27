@@ -149,7 +149,7 @@ export default function Navigation() {
               <Link href="tel:03489032106">
                 <AnimatedButton
                   variant="outline"
-                  className="border-vet-green bg-vet-green !text-white hover:bg-vet-green/90 flex items-center cursor-pointer"
+                  className="border-vet-blue bg-vet-blue !text-white hover:bg-vet-blue/90 flex items-center cursor-pointer"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >
@@ -159,7 +159,7 @@ export default function Navigation() {
               </Link>
               <Link href="#contact">
                 <AnimatedButton
-                  className="bg-vet-blue hover:bg-blue-600 !text-white cursor-pointer"
+                  className="bg-vet-green hover:bg-green-600 !text-white cursor-pointer"
                   hoverScale={1.05}
                   tapScale={0.95}
                 >

@@ -214,13 +214,13 @@ export default function HeroSection() {
       </Container>
       {/* Right Image */}
       {/* Image positioned to avoid overlap */}
-      <div className="absolute bottom-0 w-full flex justify-center sm:justify-end sm:right-4 2xl:right-10 z-10 pointer-events-none overflow-hidden">
+      <div className="absolute bottom-0 w-full flex justify-center sm:justify-end sm:right-8 2xl:right-20 z-10 pointer-events-none overflow-hidden">
         <Image
           src="/images/hero-dog-image.webp"
           alt="Character"
           width={900}
           height={900}
-          className="w-[400px] sm:w-[450px] md:w-[600px] lg:w-[800px] 2xl:w-[1000px] h-auto object-contain max-w-full"
+          className="w-[400px] sm:w-[450px] md:w-[600px] lg:w-[780px] 2xl:w-[1000px] h-auto object-contain max-w-full"
         />
       </div>{" "}
     </section>
