@@ -259,7 +259,7 @@ export default function GallerySection() {
 
   return (
     <section
-      id="gallery"
+      
       className="md:py-20 pt-20 sm:pt-0 sm:pb-0 pb-10 bg-gradient-to-br from-gray-50 to-blue-50"
     >
       <Container className="pb-0 sm:pb-10">

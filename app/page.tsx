@@ -22,41 +22,55 @@ export default function Home() {
         <HeroSection />
       </div>
       
-      <AnimatedSection >
-        <ServicesSection />
-      </AnimatedSection>
+      <div id="services">
+        <AnimatedSection >
+          <ServicesSection />
+        </AnimatedSection>
+      </div>
 
-      <AnimatedSection delay={0.2}>
-        <AboutSection />
-      </AnimatedSection>
-      
-      <ClientOnly>
-        <AnimatedSection delay={0.6}>
-          <GallerySection />
+      <div id="about">
+        <AnimatedSection delay={0.2}>
+          <AboutSection />
         </AnimatedSection>
-      </ClientOnly>
+      </div>
       
-      <ClientOnly>
-        <AnimatedSection delay={0.7}>
-          <StatsSection />
-        </AnimatedSection>
-      </ClientOnly>
+      <div id="gallery">
+        <ClientOnly>
+          <AnimatedSection delay={0.6}>
+            <GallerySection />
+          </AnimatedSection>
+        </ClientOnly>
+      </div>
       
-      <ClientOnly>
-        <AnimatedSection delay={0.8}>
-          <TestimonialsSection />
-        </AnimatedSection>
-      </ClientOnly>
+      <div id="stats">
+        <ClientOnly>
+          <AnimatedSection delay={0.7}>
+            <StatsSection />
+          </AnimatedSection>
+        </ClientOnly>
+      </div>
       
-      <ClientOnly>
-        <HappyFamiliesSection />
-      </ClientOnly>
+      <div id="testimonials">
+        <ClientOnly>
+          <AnimatedSection delay={0.8}>
+            <TestimonialsSection />
+          </AnimatedSection>
+        </ClientOnly>
+      </div>
       
-      <ClientOnly>
-        <AnimatedSection delay={1.0}>
-          <ContactSection />
-        </AnimatedSection>
-      </ClientOnly>
+      <div id="happy-families">
+        <ClientOnly>
+          <HappyFamiliesSection />
+        </ClientOnly>
+      </div>
+      
+      <div id="contact">
+        <ClientOnly>
+          <AnimatedSection delay={1.0}>
+            <ContactSection />
+          </AnimatedSection>
+        </ClientOnly>
+      </div>
       
       <AnimatedSection delay={1.2}>
         <Footer />

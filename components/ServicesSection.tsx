@@ -246,7 +246,7 @@ const bubbleVariants = {
   };
 
   return (
-    <section id="services" className="pt-20 sm:pb-20 pb-10 bg-gray-50">
+    <section className="pt-20 sm:pb-20 pb-10 bg-gray-50">
       <Container>
         {/* Header */}
         <motion.div
