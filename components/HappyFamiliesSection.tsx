@@ -60,6 +60,26 @@ export default function HappyFamiliesSection() {
   // ✅ Load dotlottie animation once visible
   useEffect(() => {
     if (typeof window !== "undefined" && lottieRef.current && isVisible) {
+      const loadLottieAnimation = () => {
+        // inject lottie element
+        const lottieElement = document.createElement("dotlottie-wc");
+        lottieElement.setAttribute(
+          "src",
+          "https://lottie.host/d70d923a-b1d9-4dfd-9ba6-ba5e1085b15e/1FwC85laZq.lottie"
+        );
+        lottieElement.setAttribute("autoplay", "true");
+        lottieElement.setAttribute("loop", "true");
+        lottieElement.setAttribute("speed", "1");
+        lottieElement.style.width = "100%";
+        lottieElement.style.height = "100%";
+        lottieElement.style.display = "block";
+
+        if (lottieRef.current) {
+          lottieRef.current.innerHTML = "";
+          lottieRef.current.appendChild(lottieElement);
+        }
+      };
+
       // load script if not already injected
       if (!document.querySelector("#dotlottie-wc")) {
         const script = document.createElement("script");
@@ -67,23 +87,13 @@ export default function HappyFamiliesSection() {
         script.src =
           "https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js";
         script.type = "module";
+        script.onload = loadLottieAnimation;
+        script.onerror = () => console.error("Failed to load Lottie script");
         document.head.appendChild(script);
+      } else {
+        // Script already loaded, create animation immediately
+        loadLottieAnimation();
       }
-
-      // inject lottie element
-      const lottieElement = document.createElement("dotlottie-wc");
-      lottieElement.setAttribute(
-        "src",
-        "https://lottie.host/d70d923a-b1d9-4dfd-9ba6-ba5e1085b15e/1FwC85laZq.lottie"
-      );
-      lottieElement.setAttribute("autoplay", "true");
-      lottieElement.setAttribute("loop", "true");
-      lottieElement.setAttribute("speed", "1");
-      lottieElement.style.width = "100%";
-      lottieElement.style.height = "100%";
-
-      lottieRef.current.innerHTML = "";
-      lottieRef.current.appendChild(lottieElement);
     }
   }, [isVisible]);
 
@@ -306,7 +316,7 @@ export default function HappyFamiliesSection() {
               {/* Lottie Container */}
               <div 
                 ref={lottieRef}
-                className="relative z-10 w-full h-full flex items-center justify-center scale-150"
+                className="relative z-10 w-full h-full flex items-center justify-center"
               />
               
               {/* Decorative Elements */}
