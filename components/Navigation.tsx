@@ -21,11 +21,23 @@ export default function Navigation() {
     if (!mounted) return;
 
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrolled = window.scrollY > 50;
+      setIsScrolled(scrolled);
+      
+      // Add/remove scrolled class on HTML element for CSS
+      if (scrolled) {
+        document.documentElement.classList.add('scrolled');
+      } else {
+        document.documentElement.classList.remove('scrolled');
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      // Clean up the scrolled class
+      document.documentElement.classList.remove('scrolled');
+    };
   }, [mounted]);
 
   // Lock body scroll when mobile menu is open
@@ -47,16 +59,48 @@ export default function Navigation() {
     };
   }, [isOpen]);
 
-  // Smooth scroll function
+  // Improved smooth scroll function
   const smoothScrollTo = (elementId: string) => {
-    const element = document.getElementById(elementId.replace('#', ''));
+    const targetId = elementId.replace('#', '');
+    const element = document.getElementById(targetId);
+    
     if (element) {
-      const offsetTop = element.offsetTop - 80; // Account for fixed header
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
+      try {
+        // Calculate the offset based on the current navigation height
+        const navHeight = mounted && isScrolled ? 64 : 96; // 64px when scrolled, 96px when not scrolled
+        const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = Math.max(0, elementTop - navHeight);
+
+        // Close mobile menu first if it's open
+        if (isOpen) {
+          setIsOpen(false);
+          // Wait for the sidebar to close before scrolling
+          setTimeout(() => {
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }, 300); // Match the sidebar animation duration
+        } else {
+          // For desktop, scroll immediately
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      } catch (error) {
+        console.error('Error during smooth scroll:', error);
+        // Fallback to simple scroll
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      console.warn(`Element with id '${targetId}' not found`);
     }
+  };
+
+  // Handle navigation item click
+  const handleNavigationClick = (href: string) => {
+    smoothScrollTo(href);
   };
 
   const navigationItems = [
@@ -108,9 +152,9 @@ export default function Navigation() {
         <Container>
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link
-              href="#home"
-              className="flex items-center gap-2 sm:gap-3 flex-shrink-0"
+            <button
+              onClick={() => handleNavigationClick("#home")}
+              className="flex items-center gap-2 sm:gap-3 flex-shrink-0 cursor-pointer"
             >
               <div className="w-10 h-10 sm:w-12 sm:h-12 relative">
                 <Image
@@ -128,14 +172,14 @@ export default function Navigation() {
                   Dr. Usama Naseer - Professional Care 24/7
                 </p>
               </div>
-            </Link>
+            </button>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               {navigationItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => smoothScrollTo(item.href)}
+                  onClick={() => handleNavigationClick(item.href)}
                   className="text-gray-700 hover:text-vet-green font-medium transition-colors duration-200 relative group"
                 >
                   {item.name}
@@ -157,16 +201,13 @@ export default function Navigation() {
                   Call Now
                 </AnimatedButton>
               </Link>
-              <Link href="#contact">
-                <AnimatedButton
-                  className="bg-vet-blue hover:bg-vet-blue/90 !text-white cursor-pointer"
-                  hoverScale={1.05}
-                  tapScale={0.95}
-                >
-                  <Calendar className="w-4 h-4 mr-1" />
-                  Book Appointment
-                </AnimatedButton>
-              </Link>
+              <button
+                onClick={() => handleNavigationClick("#contact")}
+                className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-vet-blue hover:bg-vet-blue/90 text-white h-10 px-4 py-2"
+              >
+                <Calendar className="w-4 h-4 mr-1" />
+                Book Appointment
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -251,7 +292,7 @@ export default function Navigation() {
                 <button
                   key={item.name}
                   onClick={() => {
-                    smoothScrollTo(item.href);
+                    handleNavigationClick(item.href);
                     setIsOpen(false);
                   }}
                   className="block w-full text-left text-gray-700 hover:text-vet-green font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors duration-200"
@@ -263,15 +304,15 @@ export default function Navigation() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="px-6 py-4 flex-shrink-0 border-t border-gray-100">
-            <div className="flex flex-col items-center space-y-3 w-full">
+          <div className="px-6 py-6 flex-shrink-0 border-t border-gray-100">
+            <div className="flex flex-col items-center space-y-4 w-full">
               <Link
                 href="tel:03489032106"
                 className="w-full flex justify-center"
                 onClick={() => setIsOpen(false)}
               >
                 <AnimatedButton
-                  className="w-full px-6 py-3 flex justify-center items-center bg-vet-green hover:bg-vet-green/90 !text-white text-base font-semibold shadow-md"
+                  className="w-full px-6 py-4 flex justify-center items-center bg-vet-green hover:bg-vet-green/90 !text-white text-base font-semibold shadow-md rounded-lg"
                   hoverScale={1.02}
                   tapScale={0.98}
                 >
@@ -279,43 +320,16 @@ export default function Navigation() {
                   Call Now
                 </AnimatedButton>
               </Link>
-              <Link
-                href="#contact"
-                className="w-full flex justify-center"
-                onClick={() => setIsOpen(false)}
+              <button
+                onClick={() => {
+                  handleNavigationClick("#contact");
+                  setIsOpen(false);
+                }}
+                className="w-full px-6 py-4 flex justify-center items-center bg-vet-blue hover:bg-blue-600 text-white text-base font-semibold shadow-md rounded-lg transition-colors duration-200"
               >
-                <AnimatedButton
-                  className="w-full px-6 py-3 flex justify-center items-center bg-vet-blue hover:bg-blue-600 !text-white text-base font-semibold shadow-md"
-                  hoverScale={1.02}
-                  tapScale={0.98}
-                >
-                  Book Appointment
-                </AnimatedButton>
-              </Link>
-            </div>
-          </div>
-
-          {/* Contact Info */}
-          <div className="px-6 py-3 bg-gray-50 flex-shrink-0 pb-8">
-            <div className="space-y-2">
-              <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-vet-green" />
-                <span className="text-xs text-gray-600">
-                  Emergency: 0348-9032106
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Clock className="w-4 h-4 text-vet-green" />
-                <span className="text-xs text-gray-600">
-                  OPD: 11 AM - 11 PM
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="w-4 h-4 text-vet-green" />
-                <span className="text-xs text-gray-600">
-                  Westridge 1, Rawalpindi
-                </span>
-              </div>
+                <Calendar className="w-5 h-5 mr-2" />
+                Book Appointment
+              </button>
             </div>
           </div>
         </div>

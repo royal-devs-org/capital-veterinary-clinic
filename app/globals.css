@@ -21,7 +21,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 96px;
 }
 
 /* Prevent horizontal scroll */
@@ -50,6 +50,18 @@ a[href^="#"] {
   * {
     scroll-behavior: smooth;
   }
+}
+
+/* Adjust scroll padding when navigation is scrolled */
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 96px;
+  }
+}
+
+/* When navigation is scrolled (smaller height) */
+html.scrolled {
+  scroll-padding-top: 64px;
 }
 
 /* Utility classes for brand colors */

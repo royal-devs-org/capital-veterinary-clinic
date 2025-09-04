@@ -197,7 +197,7 @@ export default function TestimonialsSection() {
 
   return (
     <motion.section
-      id="testimonials"
+      
       className="pb-20 pt-30 bg-gradient-to-br from-gray-50 to-white"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
