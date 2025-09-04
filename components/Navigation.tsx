@@ -304,7 +304,7 @@ export default function Navigation() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="px-6 py-6 flex-shrink-0 border-t border-gray-100">
+          <div className="px-6 py-6 flex-shrink-0 border-t border-gray-100 mb-4">
             <div className="flex flex-col items-center space-y-4 w-full">
               <Link
                 href="tel:03489032106"
